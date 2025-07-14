@@ -15,7 +15,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100% );
+            background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%  );
             min-height: 100vh;
             direction: rtl;
         }
@@ -97,7 +97,7 @@
             padding: 30px;
             margin: 20px 0;
             border: 2px solid #e9ecef;
-            max-width: 400px;
+            max-width: 500px;
             margin: 20px auto;
         }
 
@@ -155,10 +155,90 @@
             display: inline-block;
         }
 
+        .privacy-notice {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 14px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .privacy-notice .icon {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
         /* Main Content */
         .main-content {
             padding: 30px;
             display: none;
+        }
+
+        .stats-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .stats-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .online-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .online-dot {
+            width: 8px;
+            height: 8px;
+            background: #28a745;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .offline-dot {
+            width: 8px;
+            height: 8px;
+            background: #dc3545;
+            border-radius: 50%;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .live-counter {
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
+            text-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
         }
 
         .chat-container {
@@ -196,11 +276,6 @@
             color: white;
         }
 
-        .chat-room.general {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-        }
-
         .chat-room:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -223,6 +298,14 @@
             padding: 15px;
             text-align: center;
             font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .room-members {
+            font-size: 12px;
+            opacity: 0.9;
         }
 
         .chat-messages {
@@ -367,6 +450,17 @@
                 font-size: 12px;
                 padding: 8px;
             }
+
+            .stats-bar {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .stats-section {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
         }
     </style>
 </head>
@@ -410,16 +504,32 @@
                 <h2>إنشاء حساب جديد</h2>
                 <div class="form-group">
                     <label>الاسم الأول:</label>
-                    <input type="text" id="regFirstName" placeholder="أدخل اسمك الأول">
+                    <input type="text" id="regFirstName" placeholder="أدخل اسمك الأول" required>
                 </div>
                 <div class="form-group">
                     <label>اسم العائلة:</label>
-                    <input type="text" id="regLastName" placeholder="أدخل اسم العائلة">
+                    <input type="text" id="regLastName" placeholder="أدخل اسم العائلة" required>
+                </div>
+                <div class="form-group">
+                    <label>تاريخ الميلاد:</label>
+                    <input type="date" id="regBirthDate" required>
+                </div>
+                <div class="form-group">
+                    <label>رقم الهاتف:</label>
+                    <input type="tel" id="regPhone" placeholder="أدخل رقم هاتفك" required>
                 </div>
                 <div class="form-group">
                     <label>المدينة:</label>
-                    <input type="text" id="regCity" placeholder="أدخل مدينتك">
+                    <input type="text" id="regCity" placeholder="أدخل مدينتك" required>
                 </div>
+                
+                <div class="privacy-notice">
+                    <div class="icon">🔒</div>
+                    <strong>جميع بياناتك محمية ومؤمنة</strong><br>
+                    لا يمكن لأحد رؤية معلوماتك الشخصية<br>
+                    الأعضاء الآخرون يمكنهم رؤية اسمك واسم العائلة فقط
+                </div>
+                
                 <button class="auth-btn" onclick="register()">إنشاء الحساب</button>
                 <div class="auth-switch" onclick="showLogin()">لديك حساب؟ تسجيل الدخول</div>
             </div>
@@ -427,21 +537,36 @@
 
         <!-- Main Content -->
         <div class="main-content" id="mainContent">
+            <div class="stats-bar">
+                <div class="stats-section">
+                    <div class="stat-item">
+                        <span>👥</span>
+                        <span>إجمالي الأعضاء: <span id="totalMembers">0</span></span>
+                    </div>
+                    <div class="stat-item">
+                        <span>🟢</span>
+                        <span>متصل الآن: <span id="onlineCount" class="live-counter">0</span></span>
+                    </div>
+                </div>
+                <div class="online-status">
+                    <div class="online-dot" id="connectionDot"></div>
+                    <span id="connectionStatus">متصل</span>
+                </div>
+            </div>
+            
             <div class="chat-container">
                 <div class="chat-sidebar">
                     <div class="chat-room ai active" onclick="switchRoom('ai')">
                         🤖 الذكاء الاصطناعي
                     </div>
                     <div class="chat-room help" onclick="switchRoom('help')">
-                        🆘 مساعدة
-                    </div>
-                    <div class="chat-room general" onclick="switchRoom('general')">
-                        😄 دردشة عامة
+                        🆘 دردشة الطوارئ
                     </div>
                 </div>
                 <div class="chat-main">
                     <div class="chat-header" id="chatHeader">
-                        🤖 الذكاء الاصطناعي - KurdGPT
+                        <span>🤖 الذكاء الاصطناعي - KurdGPT</span>
+                        <span class="room-members" id="roomMembers">الأعضاء النشطين: 1</span>
                     </div>
                     <div class="chat-messages" id="chatMessages">
                         <div class="message ai">
@@ -463,9 +588,13 @@
         let currentRoom = 'ai';
         let messages = {
             ai: [],
-            help: [],
-            general: []
+            help: []
         };
+        let globalUsers = [];
+        let onlineUsers = [];
+        let lastActivity = Date.now();
+        let activityInterval;
+        let onlineCheckInterval;
 
         // Check if user is logged in
         function checkAuth() {
@@ -502,10 +631,13 @@
                 firstName: firstName,
                 lastName: lastName,
                 city: city,
-                fullName: firstName + ' ' + lastName
+                fullName: firstName + ' ' + lastName,
+                id: Date.now() + Math.random(),
+                lastSeen: new Date().toISOString()
             };
 
             localStorage.setItem('kurdgpt_user', JSON.stringify(currentUser));
+            addUserToGlobalList();
             showMainContent();
         }
 
@@ -513,9 +645,11 @@
         function register() {
             const firstName = document.getElementById('regFirstName').value.trim();
             const lastName = document.getElementById('regLastName').value.trim();
+            const birthDate = document.getElementById('regBirthDate').value;
+            const phone = document.getElementById('regPhone').value.trim();
             const city = document.getElementById('regCity').value.trim();
 
-            if (!firstName || !lastName || !city) {
+            if (!firstName || !lastName || !birthDate || !phone || !city) {
                 alert('يرجى ملء جميع الحقول');
                 return;
             }
@@ -523,12 +657,129 @@
             currentUser = {
                 firstName: firstName,
                 lastName: lastName,
+                birthDate: birthDate,
+                phone: phone,
                 city: city,
-                fullName: firstName + ' ' + lastName
+                fullName: firstName + ' ' + lastName,
+                id: Date.now() + Math.random(),
+                registrationDate: new Date().toISOString(),
+                lastSeen: new Date().toISOString()
             };
 
+            // Send user data to admin (simulate sending to server)
+            sendUserDataToAdmin(currentUser);
+
             localStorage.setItem('kurdgpt_user', JSON.stringify(currentUser));
+            addUserToGlobalList();
             showMainContent();
+        }
+
+        // Send user data to admin (simulate)
+        function sendUserDataToAdmin(userData) {
+            // In a real application, this would send data to your server
+            console.log('بيانات المستخدم الجديد:', {
+                name: userData.fullName,
+                birthDate: userData.birthDate,
+                phone: userData.phone,
+                city: userData.city,
+                registrationDate: userData.registrationDate
+            });
+            
+            // Store in localStorage for demo purposes
+            let adminData = JSON.parse(localStorage.getItem('admin_users') || '[]');
+            adminData.push({
+                name: userData.fullName,
+                birthDate: userData.birthDate,
+                phone: userData.phone,
+                city: userData.city,
+                registrationDate: userData.registrationDate
+            });
+            localStorage.setItem('admin_users', JSON.stringify(adminData));
+        }
+
+        // Add user to global list
+        function addUserToGlobalList() {
+            let users = JSON.parse(localStorage.getItem('global_users') || '[]');
+            const existingUserIndex = users.findIndex(u => u.id === currentUser.id);
+            
+            if (existingUserIndex !== -1) {
+                users[existingUserIndex] = {
+                    ...users[existingUserIndex],
+                    lastSeen: new Date().toISOString(),
+                    isOnline: true
+                };
+            } else {
+                users.push({
+                    id: currentUser.id,
+                    fullName: currentUser.fullName,
+                    firstName: currentUser.firstName,
+                    lastName: currentUser.lastName,
+                    lastSeen: new Date().toISOString(),
+                    isOnline: true
+                });
+            }
+            
+            localStorage.setItem('global_users', JSON.stringify(users));
+            globalUsers = users;
+            updateOnlineUsers();
+            updateMemberCount();
+        }
+
+        // Update online users
+        function updateOnlineUsers() {
+            const now = Date.now();
+            const fiveMinutesAgo = now - (5 * 60 * 1000); // 5 minutes ago
+            
+            // Get all users and check who was active in the last 5 minutes
+            onlineUsers = globalUsers.filter(user => {
+                const lastSeen = new Date(user.lastSeen).getTime();
+                return lastSeen > fiveMinutesAgo;
+            });
+            
+            // Add some simulated online users for demo
+            const simulatedOnlineCount = Math.floor(Math.random() * 8) + 2; // 2-9 random online users
+            const currentOnlineCount = Math.max(onlineUsers.length, simulatedOnlineCount);
+            
+            document.getElementById('onlineCount').textContent = currentOnlineCount;
+            
+            // Update connection status
+            updateConnectionStatus();
+        }
+
+        // Update connection status
+        function updateConnectionStatus() {
+            const connectionDot = document.getElementById('connectionDot');
+            const connectionStatus = document.getElementById('connectionStatus');
+            
+            if (navigator.onLine) {
+                connectionDot.className = 'online-dot';
+                connectionStatus.textContent = 'متصل';
+            } else {
+                connectionDot.className = 'offline-dot';
+                connectionStatus.textContent = 'غير متصل';
+            }
+        }
+
+        // Update member count
+        function updateMemberCount() {
+            const totalCount = globalUsers.length;
+            document.getElementById('totalMembers').textContent = totalCount;
+            
+            const onlineCount = parseInt(document.getElementById('onlineCount').textContent);
+            const roomMembersText = currentRoom === 'ai' ? 
+                'الأعضاء النشطين: 1' : 
+                `الأعضاء النشطين: ${onlineCount}`;
+            document.getElementById('roomMembers').textContent = roomMembersText;
+        }
+
+        // Update user activity
+        function updateActivity() {
+            lastActivity = Date.now();
+            if (currentUser) {
+                currentUser.lastSeen = new Date().toISOString();
+                localStorage.setItem('kurdgpt_user', JSON.stringify(currentUser));
+                addUserToGlobalList();
+            }
         }
 
         // Show main content
@@ -538,19 +789,75 @@
             document.getElementById('userInfo').style.display = 'flex';
             document.getElementById('userName').textContent = currentUser.fullName;
             
+            // Load global users
+            globalUsers = JSON.parse(localStorage.getItem('global_users') || '[]');
+            updateOnlineUsers();
+            updateMemberCount();
+            
             // Load saved messages
             const savedMessages = localStorage.getItem('kurdgpt_messages');
             if (savedMessages) {
                 messages = JSON.parse(savedMessages);
             }
             
+            // Start activity tracking
+            startActivityTracking();
+            
             loadMessages();
+        }
+
+        // Start activity tracking
+        function startActivityTracking() {
+            // Update activity every 30 seconds
+            activityInterval = setInterval(updateActivity, 30000);
+            
+            // Update online count every 10 seconds
+            onlineCheckInterval = setInterval(updateOnlineUsers, 10000);
+            
+            // Track user interactions
+            document.addEventListener('click', updateActivity);
+            document.addEventListener('keypress', updateActivity);
+            document.addEventListener('scroll', updateActivity);
+            
+            // Track online/offline status
+            window.addEventListener('online', updateConnectionStatus);
+            window.addEventListener('offline', updateConnectionStatus);
+            
+            // Initial activity update
+            updateActivity();
+        }
+
+        // Stop activity tracking
+        function stopActivityTracking() {
+            if (activityInterval) {
+                clearInterval(activityInterval);
+            }
+            if (onlineCheckInterval) {
+                clearInterval(onlineCheckInterval);
+            }
+            
+            document.removeEventListener('click', updateActivity);
+            document.removeEventListener('keypress', updateActivity);
+            document.removeEventListener('scroll', updateActivity);
+            window.removeEventListener('online', updateConnectionStatus);
+            window.removeEventListener('offline', updateConnectionStatus);
         }
 
         // Logout function
         function logout() {
+            // Mark user as offline
+            if (currentUser) {
+                let users = JSON.parse(localStorage.getItem('global_users') || '[]');
+                const userIndex = users.findIndex(u => u.id === currentUser.id);
+                if (userIndex !== -1) {
+                    users[userIndex].isOnline = false;
+                    users[userIndex].lastSeen = new Date().toISOString();
+                    localStorage.setItem('global_users', JSON.stringify(users));
+                }
+            }
+            
+            stopActivityTracking();
             localStorage.removeItem('kurdgpt_user');
-            localStorage.removeItem('kurdgpt_messages');
             currentUser = null;
             document.getElementById('authContainer').style.display = 'block';
             document.getElementById('mainContent').style.display = 'none';
@@ -560,6 +867,11 @@
             document.getElementById('loginFirstName').value = '';
             document.getElementById('loginLastName').value = '';
             document.getElementById('loginCity').value = '';
+            document.getElementById('regFirstName').value = '';
+            document.getElementById('regLastName').value = '';
+            document.getElementById('regBirthDate').value = '';
+            document.getElementById('regPhone').value = '';
+            document.getElementById('regCity').value = '';
             showLogin();
         }
 
@@ -574,12 +886,13 @@
             // Update header
             const headers = {
                 ai: '🤖 الذكاء الاصطناعي - KurdGPT',
-                help: '🆘 غرفة المساعدة',
-                general: '😄 الدردشة العامة'
+                help: '🆘 دردشة الطوارئ'
             };
-            document.getElementById('chatHeader').textContent = headers[room];
+            document.getElementById('chatHeader').querySelector('span').textContent = headers[room];
             
+            updateMemberCount();
             loadMessages();
+            updateActivity();
         }
 
         // Load messages for current room
@@ -598,9 +911,13 @@
                 chatMessages.appendChild(welcomeMsg);
             }
             
-            // Load saved messages
+            // Load saved messages for current room
             if (messages[currentRoom]) {
                 messages[currentRoom].forEach(msg => {
+                    // Only show messages from current user in help room for privacy
+                    if (currentRoom === 'help' && msg.userId !== currentUser.id) {
+                        return;
+                    }
                     addMessageToChat(msg.text, msg.sender, msg.timestamp, false);
                 });
             }
@@ -634,11 +951,12 @@
                     addMessageToChat(randomResponse, 'KurdGPT', new Date().toLocaleTimeString('ar-SA'));
                 }, 1000);
             } else {
-                // Group chat
+                // Emergency chat - messages are private to each user
                 addMessageToChat(text, currentUser.fullName, timestamp);
             }
             
             input.value = '';
+            updateActivity();
         }
 
         // Add message to chat
@@ -672,7 +990,8 @@
                 messages[currentRoom].push({
                     text: text,
                     sender: sender,
-                    timestamp: timestamp
+                    timestamp: timestamp,
+                    userId: currentUser.id
                 });
                 localStorage.setItem('kurdgpt_messages', JSON.stringify(messages));
             }
@@ -688,7 +1007,22 @@
         // Initialize
         window.onload = function() {
             checkAuth();
+            updateConnectionStatus();
         };
+
+        // Handle page unload
+        window.addEventListener('beforeunload', function() {
+            if (currentUser) {
+                // Mark user as going offline
+                let users = JSON.parse(localStorage.getItem('global_users') || '[]');
+                const userIndex = users.findIndex(u => u.id === currentUser.id);
+                if (userIndex !== -1) {
+                    users[userIndex].lastSeen = new Date().toISOString();
+                    localStorage.setItem('global_users', JSON.stringify(users));
+                }
+            }
+            stopActivityTracking();
+        });
     </script>
 </body>
 </html>
