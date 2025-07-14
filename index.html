@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5469196111567716" crossorigin="anonymous"></script>
-    
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurd GPT - Ø§Ø³Ø£Ù„Ù†ÙŠ ÙˆØ£Ù†Ø§ Ø£Ø¬Ø§ÙˆØ¨Ùƒ ØµÙˆØªÙŠØ§Ù‹</title>
+    <title>Kurd GPT</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -14,10 +15,11 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Noto Sans Arabic', 'Arial', sans-serif;
             background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%);
             min-height: 100vh;
             direction: rtl;
+            text-align: right;
         }
 
         .container {
@@ -25,7 +27,7 @@
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             overflow: hidden;
         }
 
@@ -34,133 +36,31 @@
             color: white;
             padding: 20px;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .header-main {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .flag {
-            width: 40px;
-            height: 30px;
-            background: linear-gradient(to bottom, #ff0000 33%, #ffffff 33%, #ffffff 66%, #00ff00 66%);
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .main-title {
             font-size: 2.5em;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
         }
 
-        .logout-btn {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 14px;
-        }
-
-        .logout-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .instagram-link {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            color: white;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .instagram-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .stats-section {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
+        .stats {
             display: flex;
             justify-content: center;
             gap: 20px;
-            flex-wrap: wrap;
+            margin-top: 15px;
         }
 
         .stat-card {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255,255,255,0.2);
             padding: 10px 20px;
             border-radius: 15px;
             text-align: center;
-            min-width: 120px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .stat-number {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 0.9em;
-            opacity: 0.9;
-        }
-
-        .connection-status {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        .status-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #4CAF50;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
         }
 
         .auth-container {
             padding: 40px;
             text-align: center;
-        }
-
-        .auth-form {
-            max-width: 400px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         .form-group {
@@ -175,59 +75,14 @@
             color: #333;
         }
 
-        .form-group input, .form-group select {
+        .form-group input {
             width: 100%;
             padding: 12px;
             border: 2px solid #ddd;
             border-radius: 10px;
             font-size: 16px;
-            transition: border-color 0.3s;
+            font-family: 'Noto Sans Arabic', Arial, sans-serif;
             direction: rtl;
-        }
-
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: #4A90E2;
-        }
-
-        .file-input-wrapper {
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .file-input {
-            position: absolute;
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
-
-        .file-input-label {
-            display: block;
-            padding: 12px;
-            background: #f8f9fa;
-            border: 2px dashed #ddd;
-            border-radius: 10px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .file-input-label:hover {
-            background: #e9ecef;
-            border-color: #4A90E2;
-        }
-
-        .profile-preview {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 10px auto;
-            display: none;
-            object-fit: cover;
-            border: 3px solid #4A90E2;
         }
 
         .btn {
@@ -238,50 +93,14 @@
             border-radius: 25px;
             font-size: 16px;
             cursor: pointer;
-            transition: all 0.3s;
             width: 100%;
             margin-top: 10px;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
-        }
-
-        .link-btn {
-            background: none;
-            color: #4A90E2;
-            text-decoration: underline;
-            cursor: pointer;
-            border: none;
-            font-size: 14px;
-            margin-top: 15px;
-        }
-
-        .privacy-notice {
-            background: #e8f5e8;
-            border: 1px solid #4CAF50;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .privacy-title {
-            color: #2E7D32;
-            font-weight: bold;
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-
-        .privacy-text {
-            color: #388E3C;
-            font-size: 14px;
-            line-height: 1.5;
+            font-family: 'Noto Sans Arabic', Arial, sans-serif;
         }
 
         .chat-container {
             padding: 20px;
+            display: none;
         }
 
         .chat-tabs {
@@ -295,54 +114,21 @@
             padding: 12px 20px;
             border-radius: 25px;
             cursor: pointer;
-            transition: all 0.3s;
             font-weight: bold;
-            border: 2px solid transparent;
-            position: relative;
+            color: white;
         }
 
         .chat-tab.ai {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
         }
 
         .chat-tab.help {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
         }
 
         .chat-tab.active {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            border-color: white;
-        }
-
-        .tab-badge {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: #ff4444;
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-
-        .chat-header {
-            background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%);
-            color: white;
-            padding: 15px;
-            border-radius: 15px;
-            text-align: center;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .chat-messages {
@@ -360,10 +146,6 @@
             padding: 12px;
             border-radius: 15px;
             max-width: 80%;
-            word-wrap: break-word;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
         }
 
         .message.user {
@@ -371,7 +153,6 @@
             color: white;
             margin-left: auto;
             margin-right: 0;
-            flex-direction: row-reverse;
         }
 
         .message.ai {
@@ -389,62 +170,9 @@
             margin-left: 0;
         }
 
-        .message-avatar {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid rgba(255,255,255,0.3);
-            flex-shrink: 0;
-        }
-
-        .message-content {
-            flex: 1;
-        }
-
-        .message-header {
-            font-weight: bold;
-            margin-bottom: 5px;
-            font-size: 14px;
-            opacity: 0.9;
-        }
-
-        .message-text {
-            line-height: 1.4;
-        }
-
-        .message-time {
-            font-size: 11px;
-            opacity: 0.7;
-            margin-top: 5px;
-        }
-
-        .typing-dots {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .typing-dots span {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: currentColor;
-            animation: typing 1.4s infinite;
-        }
-
-        .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
-        .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes typing {
-            0%, 60%, 100% { transform: translateY(0); }
-            30% { transform: translateY(-10px); }
-        }
-
         .message-input-container {
             display: flex;
             gap: 10px;
-            align-items: center;
         }
 
         .message-input {
@@ -454,6 +182,7 @@
             border-radius: 25px;
             font-size: 16px;
             direction: rtl;
+            font-family: 'Noto Sans Arabic', Arial, sans-serif;
         }
 
         .send-btn {
@@ -463,15 +192,10 @@
             padding: 12px 20px;
             border-radius: 25px;
             cursor: pointer;
-            transition: all 0.3s;
+            font-family: 'Noto Sans Arabic', Arial, sans-serif;
         }
 
-        .send-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
-        }
-
-        .warning-message {
+        .warning {
             background: #fff3cd;
             border: 1px solid #ffeaa7;
             color: #856404;
@@ -479,740 +203,221 @@
             border-radius: 10px;
             margin: 10px 0;
             text-align: center;
-            font-weight: bold;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                border-radius: 15px;
-            }
-            
-            .main-title {
-                font-size: 2em;
-            }
-            
-            .stats-section {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            
-            .chat-messages {
-                height: 300px;
-            }
-            
-            .message {
-                max-width: 90%;
-            }
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <div class="header">
-            <div class="header-main">
-                <div class="flag"></div>
-                <h1 class="main-title" id="mainTitle">Kurd GPT</h1>
-                <button class="logout-btn" id="logoutBtn" onclick="logout()" style="display: none;">ØªØ³Ø¬ÙŠÙ„ Ø®Ø±ÙˆØ¬</button>
-            </div>
-            <a href="https://instagram.com" class="instagram-link" target="_blank">
-                ðŸ“¸ Instagram
-            </a>
-            
-            <!-- Stats Section -->
-            <div class="stats-section" id="statsSection" style="display: none;">
+            <h1 class="main-title">Kurd GPT</h1>
+            <div class="stats">
                 <div class="stat-card">
-                    <div class="stat-number" id="totalMembers">1</div>
-                    <div class="stat-label" id="totalMembersText">Ø¥Ø¬Ù…Ø§Ù„ÙŠ Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡</div>
+                    <div id="totalMembers">1</div>
+                    <div>Ø¥Ø¬Ù…Ø§Ù„ÙŠ Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number" id="onlineNow">1</div>
-                    <div class="stat-label" id="onlineNowText">Ù…ØªØµÙ„ Ø§Ù„Ø¢Ù†</div>
-                </div>
-                <div class="connection-status">
-                    <div class="status-dot"></div>
-                    <span id="connectionText">Ù…ØªØµÙ„</span>
+                    <div id="onlineNow">1</div>
+                    <div>Ù…ØªØµÙ„ Ø§Ù„Ø¢Ù†</div>
                 </div>
             </div>
         </div>
 
-        <!-- Authentication Container -->
         <div class="auth-container" id="authContainer">
-            <!-- Login Form -->
-            <div class="auth-form" id="loginForm">
-                <h2 id="loginTitle">ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„</h2>
+            <div id="loginForm">
+                <h2>ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„</h2>
                 <div class="form-group">
-                    <label id="firstNameLabel">Ø§Ù„Ø§Ø³Ù… Ø§Ù„Ø£ÙˆÙ„:</label>
-                    <input type="text" id="loginFirstName" placeholder="Ø§ÙƒØªØ¨ Ø§Ø³Ù…Ùƒ Ø§Ù„Ø£ÙˆÙ„">
+                    <label>Ø§Ù„Ø§Ø³Ù… Ø§Ù„Ø£ÙˆÙ„:</label>
+                    <input type="text" id="firstName" placeholder="Ø§ÙƒØªØ¨ Ø§Ø³Ù…Ùƒ Ø§Ù„Ø£ÙˆÙ„">
                 </div>
                 <div class="form-group">
-                    <label id="lastNameLabel">Ø§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø©:</label>
-                    <input type="text" id="loginLastName" placeholder="Ø§ÙƒØªØ¨ Ø§Ø³Ù… Ø¹Ø§Ø¦Ù„ØªÙƒ">
+                    <label>Ø§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø©:</label>
+                    <input type="text" id="lastName" placeholder="Ø§ÙƒØªØ¨ Ø§Ø³Ù… Ø¹Ø§Ø¦Ù„ØªÙƒ">
                 </div>
-                <button class="btn" onclick="login()" id="loginBtn">Ø¯Ø®ÙˆÙ„</button>
-                <button class="link-btn" onclick="showRegister()" id="createAccountLink">Ø¥Ù†Ø´Ø§Ø¡ Ø­Ø³Ø§Ø¨ Ø¬Ø¯ÙŠØ¯</button>
+                <button class="btn" onclick="login()">Ø¯Ø®ÙˆÙ„</button>
+                <button class="btn" onclick="showRegister()" style="background: #28a745; margin-top: 10px;">Ø¥Ù†Ø´Ø§Ø¡ Ø­Ø³Ø§Ø¨ Ø¬Ø¯ÙŠØ¯</button>
             </div>
 
-            <!-- Register Form -->
-            <div class="auth-form" id="registerForm" style="display: none;">
-                <h2 id="registerTitle">Ø¥Ù†Ø´Ø§Ø¡ Ø­Ø³Ø§Ø¨ Ø¬Ø¯ÙŠØ¯</h2>
-                
+            <div id="registerForm" style="display: none;">
+                <h2>Ø¥Ù†Ø´Ø§Ø¡ Ø­Ø³Ø§Ø¨ Ø¬Ø¯ÙŠØ¯</h2>
                 <div class="form-group">
-                    <label>Ø§Ù„ØµÙˆØ±Ø© Ø§Ù„Ø´Ø®ØµÙŠØ©:</label>
-                    <div class="file-input-wrapper">
-                        <input type="file" id="profileImage" class="file-input" accept="image/*" onchange="previewImage(this)">
-                        <label for="profileImage" class="file-input-label">
-                            ðŸ“· Ø§Ø®ØªØ± ØµÙˆØ±ØªÙƒ Ø§Ù„Ø´Ø®ØµÙŠØ©
-                        </label>
-                    </div>
-                    <img id="imagePreview" class="profile-preview" alt="Ù…Ø¹Ø§ÙŠÙ†Ø© Ø§Ù„ØµÙˆØ±Ø©">
-                </div>
-
-                <div class="form-group">
-                    <label id="firstNameLabel">Ø§Ù„Ø§Ø³Ù… Ø§Ù„Ø£ÙˆÙ„:</label>
-                    <input type="text" id="registerFirstName" placeholder="Ø§ÙƒØªØ¨ Ø§Ø³Ù…Ùƒ Ø§Ù„Ø£ÙˆÙ„">
+                    <label>Ø§Ù„Ø§Ø³Ù… Ø§Ù„Ø£ÙˆÙ„:</label>
+                    <input type="text" id="regFirstName" placeholder="Ø§ÙƒØªØ¨ Ø§Ø³Ù…Ùƒ Ø§Ù„Ø£ÙˆÙ„">
                 </div>
                 <div class="form-group">
-                    <label id="lastNameLabel">Ø§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø©:</label>
-                    <input type="text" id="registerLastName" placeholder="Ø§ÙƒØªØ¨ Ø§Ø³Ù… Ø¹Ø§Ø¦Ù„ØªÙƒ">
+                    <label>Ø§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø©:</label>
+                    <input type="text" id="regLastName" placeholder="Ø§ÙƒØªØ¨ Ø§Ø³Ù… Ø¹Ø§Ø¦Ù„ØªÙƒ">
                 </div>
                 <div class="form-group">
-                    <label id="birthDateLabel">ØªØ§Ø±ÙŠØ® Ø§Ù„Ù…ÙŠÙ„Ø§Ø¯:</label>
-                    <input type="date" id="registerBirthDate">
+                    <label>ØªØ§Ø±ÙŠØ® Ø§Ù„Ù…ÙŠÙ„Ø§Ø¯:</label>
+                    <input type="date" id="birthDate">
                 </div>
                 <div class="form-group">
-                    <label id="phoneLabel">Ø±Ù‚Ù… Ø§Ù„Ù‡Ø§ØªÙ:</label>
-                    <input type="tel" id="registerPhone" placeholder="Ø§ÙƒØªØ¨ Ø±Ù‚Ù… Ù‡Ø§ØªÙÙƒ">
+                    <label>Ø±Ù‚Ù… Ø§Ù„Ù‡Ø§ØªÙ:</label>
+                    <input type="tel" id="phone" placeholder="Ø§ÙƒØªØ¨ Ø±Ù‚Ù… Ù‡Ø§ØªÙÙƒ">
                 </div>
                 <div class="form-group">
-                    <label id="cityLabel">Ø§Ù„Ù…Ø¯ÙŠÙ†Ø©:</label>
-                    <input type="text" id="registerCity" placeholder="Ø§ÙƒØªØ¨ Ù…Ø¯ÙŠÙ†ØªÙƒ">
+                    <label>Ø§Ù„Ù…Ø¯ÙŠÙ†Ø©:</label>
+                    <input type="text" id="city" placeholder="Ø§ÙƒØªØ¨ Ù…Ø¯ÙŠÙ†ØªÙƒ">
                 </div>
-
-                <div class="privacy-notice">
-                    <div class="privacy-title" id="privacyTitle">ðŸ”’ Ø¬Ù…ÙŠØ¹ Ø¨ÙŠØ§Ù†Ø§ØªÙƒ Ø¢Ù…Ù†Ø© ÙˆÙ…Ø­Ù…ÙŠØ©</div>
-                    <div class="privacy-text" id="privacyText1">Ù„Ø§ ÙŠÙ…ÙƒÙ† Ù„Ø£Ø­Ø¯ Ø±Ø¤ÙŠØ© Ù…Ø¹Ù„ÙˆÙ…Ø§ØªÙƒ Ø§Ù„Ø´Ø®ØµÙŠØ©</div>
-                    <div class="privacy-text" id="privacyText2">Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡ Ø§Ù„Ø¢Ø®Ø±ÙˆÙ† ÙŠÙ…ÙƒÙ†Ù‡Ù… Ø±Ø¤ÙŠØ© Ø§Ø³Ù…Ùƒ ÙˆØ§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø© ÙÙ‚Ø·</div>
+                <div style="background: #e8f5e8; padding: 15px; border-radius: 10px; margin: 20px 0;">
+                    <strong>ðŸ”’ Ø¬Ù…ÙŠØ¹ Ø¨ÙŠØ§Ù†Ø§ØªÙƒ Ø¢Ù…Ù†Ø© ÙˆÙ…Ø­Ù…ÙŠØ©</strong><br>
+                    Ù„Ø§ ÙŠÙ…ÙƒÙ† Ù„Ø£Ø­Ø¯ Ø±Ø¤ÙŠØ© Ù…Ø¹Ù„ÙˆÙ…Ø§ØªÙƒ Ø§Ù„Ø´Ø®ØµÙŠØ©<br>
+                    Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡ Ø§Ù„Ø¢Ø®Ø±ÙˆÙ† ÙŠÙ…ÙƒÙ†Ù‡Ù… Ø±Ø¤ÙŠØ© Ø§Ø³Ù…Ùƒ ÙˆØ§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø© ÙÙ‚Ø·
                 </div>
-
-                <button class="btn" onclick="register()" id="registerBtn">Ø¥Ù†Ø´Ø§Ø¡ Ø§Ù„Ø­Ø³Ø§Ø¨</button>
-                <button class="link-btn" onclick="showLogin()" id="haveAccountLink">Ù„Ø¯ÙŠÙƒ Ø­Ø³Ø§Ø¨ØŸ Ø³Ø¬Ù„ Ø¯Ø®ÙˆÙ„Ùƒ</button>
+                <button class="btn" onclick="register()">Ø¥Ù†Ø´Ø§Ø¡ Ø§Ù„Ø­Ø³Ø§Ø¨</button>
+                <button class="btn" onclick="showLogin()" style="background: #6c757d; margin-top: 10px;">Ù„Ø¯ÙŠÙƒ Ø­Ø³Ø§Ø¨ØŸ Ø³Ø¬Ù„ Ø¯Ø®ÙˆÙ„Ùƒ</button>
             </div>
         </div>
 
-        <!-- Chat Container -->
-        <div class="chat-container" id="chatContainer" style="display: none;">
-            <!-- Chat Tabs -->
+        <div class="chat-container" id="chatContainer">
             <div class="chat-tabs">
-                <div class="chat-tab ai active" onclick="switchRoom('ai')">
-                    ðŸ¤– <span id="aiChatText">Ø§Ù„Ø°ÙƒØ§Ø¡ Ø§Ù„Ø§ØµØ·Ù†Ø§Ø¹ÙŠ</span>
-                </div>
-                <div class="chat-tab help" onclick="switchRoom('help')">
-                    ðŸ†˜ <span id="emergencyChatText">Ø¯Ø±Ø¯Ø´Ø© Ø§Ù„Ø·ÙˆØ§Ø±Ø¦</span>
-                    <span class="tab-badge" id="helpBadge">4</span>
-                </div>
+                <div class="chat-tab ai active" onclick="switchRoom('ai')">ðŸ¤– Ø§Ù„Ø°ÙƒØ§Ø¡ Ø§Ù„Ø§ØµØ·Ù†Ø§Ø¹ÙŠ</div>
+                <div class="chat-tab help" onclick="switchRoom('help')">ðŸ†˜ Ø¯Ø±Ø¯Ø´Ø© Ø§Ù„Ø·ÙˆØ§Ø±Ø¦</div>
             </div>
 
-            <!-- Chat Header -->
-            <div class="chat-header">
-                <span id="chatHeaderText">Ø§Ù„Ø°ÙƒØ§Ø¡ Ø§Ù„Ø§ØµØ·Ù†Ø§Ø¹ÙŠ - KurdGPT</span>
-                <span id="activeMembersText">Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡ Ø§Ù„Ù†Ø´Ø·ÙˆÙ†: <span id="activeMembersCount">1</span></span>
-            </div>
-
-            <!-- Chat Messages -->
             <div class="chat-messages" id="chatMessages"></div>
+            
+            <div class="warning" id="warning">âš ï¸ Ø±Ø³Ø§Ù„ØªÙƒ ØªØ­ØªÙˆÙŠ Ø¹Ù„Ù‰ ÙƒÙ„Ù…Ø§Øª ØºÙŠØ± Ù…Ù†Ø§Ø³Ø¨Ø©. ÙŠØ±Ø¬Ù‰ Ø§Ø³ØªØ®Ø¯Ø§Ù… ÙƒÙ„Ù…Ø§Øª Ù…Ù‡Ø°Ø¨Ø©.</div>
 
-            <!-- Warning Message -->
-            <div class="warning-message" id="warningMessage" style="display: none;">
-                âš ï¸ Ø±Ø³Ø§Ù„ØªÙƒ ØªØ­ØªÙˆÙŠ Ø¹Ù„Ù‰ ÙƒÙ„Ù…Ø§Øª ØºÙŠØ± Ù…Ù†Ø§Ø³Ø¨Ø©. ÙŠØ±Ø¬Ù‰ Ø§Ø³ØªØ®Ø¯Ø§Ù… ÙƒÙ„Ù…Ø§Øª Ù…Ù‡Ø°Ø¨Ø©.
-            </div>
-
-            <!-- Message Input -->
             <div class="message-input-container">
                 <input type="text" class="message-input" id="messageInput" placeholder="Ø§ÙƒØªØ¨ Ø±Ø³Ø§Ù„ØªÙƒ Ù‡Ù†Ø§..." onkeypress="handleKeyPress(event)">
-                <button class="send-btn" onclick="sendMessage()" id="sendBtn">Ø¥Ø±Ø³Ø§Ù„</button>
+                <button class="send-btn" onclick="sendMessage()">Ø¥Ø±Ø³Ø§Ù„</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Language detection and translations
-        const userLanguage = navigator.language || navigator.userLanguage;
-        let currentLanguage = 'ar'; // Default to Arabic
-
-        // Detect language based on browser settings
-        if (userLanguage.startsWith('ku')) {
-            currentLanguage = 'ku'; // Kurdish Kurmanji
-        } else if (userLanguage.includes('ckb') || userLanguage.includes('sorani')) {
-            currentLanguage = 'ckb'; // Kurdish Sorani
-        } else if (userLanguage.startsWith('de')) {
-            currentLanguage = 'de'; // German
-        } else if (userLanguage.startsWith('ar')) {
-            currentLanguage = 'ar'; // Arabic
-        }
-
-        const translations = {
-            ar: {
-                mainTitle: "Kurd GPT",
-                loginTitle: "ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„",
-                registerTitle: "Ø¥Ù†Ø´Ø§Ø¡ Ø­Ø³Ø§Ø¨ Ø¬Ø¯ÙŠØ¯",
-                firstNameLabel: "Ø§Ù„Ø§Ø³Ù… Ø§Ù„Ø£ÙˆÙ„:",
-                lastNameLabel: "Ø§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø©:",
-                cityLabel: "Ø§Ù„Ù…Ø¯ÙŠÙ†Ø©:",
-                birthDateLabel: "ØªØ§Ø±ÙŠØ® Ø§Ù„Ù…ÙŠÙ„Ø§Ø¯:",
-                phoneLabel: "Ø±Ù‚Ù… Ø§Ù„Ù‡Ø§ØªÙ:",
-                firstNamePlaceholder: "Ø§ÙƒØªØ¨ Ø§Ø³Ù…Ùƒ Ø§Ù„Ø£ÙˆÙ„",
-                lastNamePlaceholder: "Ø§ÙƒØªØ¨ Ø§Ø³Ù… Ø¹Ø§Ø¦Ù„ØªÙƒ",
-                cityPlaceholder: "Ø§ÙƒØªØ¨ Ù…Ø¯ÙŠÙ†ØªÙƒ",
-                phonePlaceholder: "Ø§ÙƒØªØ¨ Ø±Ù‚Ù… Ù‡Ø§ØªÙÙƒ",
-                loginBtn: "Ø¯Ø®ÙˆÙ„",
-                registerBtn: "Ø¥Ù†Ø´Ø§Ø¡ Ø§Ù„Ø­Ø³Ø§Ø¨",
-                createAccountLink: "Ø¥Ù†Ø´Ø§Ø¡ Ø­Ø³Ø§Ø¨ Ø¬Ø¯ÙŠØ¯",
-                haveAccountLink: "Ù„Ø¯ÙŠÙƒ Ø­Ø³Ø§Ø¨ØŸ Ø³Ø¬Ù„ Ø¯Ø®ÙˆÙ„Ùƒ",
-                privacyTitle: "ðŸ”’ Ø¬Ù…ÙŠØ¹ Ø¨ÙŠØ§Ù†Ø§ØªÙƒ Ø¢Ù…Ù†Ø© ÙˆÙ…Ø­Ù…ÙŠØ©",
-                privacyText1: "Ù„Ø§ ÙŠÙ…ÙƒÙ† Ù„Ø£Ø­Ø¯ Ø±Ø¤ÙŠØ© Ù…Ø¹Ù„ÙˆÙ…Ø§ØªÙƒ Ø§Ù„Ø´Ø®ØµÙŠØ©",
-                privacyText2: "Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡ Ø§Ù„Ø¢Ø®Ø±ÙˆÙ† ÙŠÙ…ÙƒÙ†Ù‡Ù… Ø±Ø¤ÙŠØ© Ø§Ø³Ù…Ùƒ ÙˆØ§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø© ÙÙ‚Ø·",
-                totalMembersText: "Ø¥Ø¬Ù…Ø§Ù„ÙŠ Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡",
-                onlineNowText: "Ù…ØªØµÙ„ Ø§Ù„Ø¢Ù†",
-                connectedText: "Ù…ØªØµÙ„",
-                disconnectedText: "ØºÙŠØ± Ù…ØªØµÙ„",
-                aiChatText: "Ø§Ù„Ø°ÙƒØ§Ø¡ Ø§Ù„Ø§ØµØ·Ù†Ø§Ø¹ÙŠ",
-                emergencyChatText: "Ø¯Ø±Ø¯Ø´Ø© Ø§Ù„Ø·ÙˆØ§Ø±Ø¦",
-                chatHeaderText: "Ø§Ù„Ø°ÙƒØ§Ø¡ Ø§Ù„Ø§ØµØ·Ù†Ø§Ø¹ÙŠ - KurdGPT",
-                emergencyHeaderText: "ðŸ†˜ Ø¯Ø±Ø¯Ø´Ø© Ø§Ù„Ø·ÙˆØ§Ø±Ø¦",
-                activeMembersText: "Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡ Ø§Ù„Ù†Ø´Ø·ÙˆÙ†",
-                welcomeMessage: "Ù…Ø±Ø­Ø¨Ø§Ù‹! Ø£Ù†Ø§ KurdGPTØŒ Ù…Ø³Ø§Ø¹Ø¯Ùƒ Ø§Ù„Ø°ÙƒÙŠ Ø§Ù„Ø´Ø®ØµÙŠ. ÙƒÙŠÙ ÙŠÙ…ÙƒÙ†Ù†ÙŠ Ù…Ø³Ø§Ø¹Ø¯ØªÙƒ Ø§Ù„ÙŠÙˆÙ…ØŸ",
-                messagePlaceholder: "Ø§ÙƒØªØ¨ Ø±Ø³Ø§Ù„ØªÙƒ Ù‡Ù†Ø§...",
-                sendBtn: "Ø¥Ø±Ø³Ø§Ù„",
-                logoutBtn: "ØªØ³Ø¬ÙŠÙ„ Ø®Ø±ÙˆØ¬",
-                typingText: "ÙŠÙƒØªØ¨...",
-                fillAllFields: "ÙŠØ±Ø¬Ù‰ Ù…Ù„Ø¡ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ù‚ÙˆÙ„",
-                systemPrompt: "Ø£Ù†Øª KurdGPTØŒ Ù…Ø³Ø§Ø¹Ø¯ Ø°ÙƒÙŠ ÙŠØªØ­Ø¯Ø« Ø§Ù„Ø¹Ø±Ø¨ÙŠØ© ÙˆØ§Ù„ÙƒØ±Ø¯ÙŠØ©. ÙƒÙ† Ù…ÙÙŠØ¯Ø§Ù‹ ÙˆÙ…Ù‡Ø°Ø¨Ø§Ù‹ ÙˆØ£Ø¬Ø¨ Ø¨ÙˆØ¶ÙˆØ­ ÙˆØªÙØµÙŠÙ„. Ø§Ø¬Ø¨ Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø¨Ù†ÙØ³ Ù„ØºØ© Ø§Ù„Ø³Ø¤Ø§Ù„."
-            },
-            ku: {
-                mainTitle: "Kurd GPT",
-                loginTitle: "TÃªketin",
-                registerTitle: "Hesabeke nÃ» Ã§Ãªke",
-                firstNameLabel: "NavÃª yekem:",
-                lastNameLabel: "NavÃª paÅŸ:",
-                cityLabel: "Bajar:",
-                birthDateLabel: "DÃ®roka jidayÃ®kbÃ»nÃª:",
-                phoneLabel: "Jimareya tÃªlefonÃª:",
-                firstNamePlaceholder: "NavÃª xwe yÃª yekem binivÃ®se",
-                lastNamePlaceholder: "NavÃª xwe yÃª paÅŸ binivÃ®se",
-                cityPlaceholder: "BajarÃª xwe binivÃ®se",
-                phonePlaceholder: "Jimareya tÃªlefonÃª binivÃ®se",
-                loginBtn: "TÃªkeve",
-                registerBtn: "Hesab Ã§Ãªke",
-                createAccountLink: "Hesabeke nÃ» Ã§Ãªke",
-                haveAccountLink: "HesabÃª te heye? TÃªkeve",
-                privacyTitle: "ðŸ”’ HemÃ» daneyÃªn te ewle Ã» parastÃ® ne",
-                privacyText1: "Kesek nikare agahiyÃªn te yÃªn takekesÃ® bibÃ®ne",
-                privacyText2: "EndamÃªn din tenÃª navÃª te Ã» navÃª paÅŸ dikarin bibÃ®nin",
-                totalMembersText: "HemÃ» endaman",
-                onlineNowText: "Niha serhÃªl",
-                connectedText: "GirÃªdayÃ®",
-                disconnectedText: "NegirÃªdayÃ®",
-                aiChatText: "ZÃ®rekiya Ã§ÃªkirÃ®",
-                emergencyChatText: "Sohbeta lezgÃ®nÃ®",
-                chatHeaderText: "ZÃ®rekiya Ã§ÃªkirÃ® - KurdGPT",
-                emergencyHeaderText: "ðŸ†˜ Sohbeta lezgÃ®nÃ®",
-                activeMembersText: "EndamÃªn Ã§alak",
-                welcomeMessage: "Bi xÃªr hatÃ®! Ez KurdGPT im, zÃ®rekiya te ya Ã§ÃªkirÃ® ya takekesÃ®. Ã‡awa dikarim Ã®ro alÃ®kariya te bikim?",
-                messagePlaceholder: "Peyama xwe li vir binivÃ®se...",
-                sendBtn: "BiÅŸÃ®ne",
-                logoutBtn: "Derkeve",
-                typingText: "dinivÃ®se...",
-                fillAllFields: "Ji kerema xwe hemÃ» qadan dagire",
-                systemPrompt: "Tu KurdGPT Ã®, alÃ®karek zÃ®rek ku bi kurdÃ® Ã» erebÃ® dipeyive. AlÃ®kar Ã» rÃªzdar be Ã» bi zelal Ã» tafsilÃ® bersiv bide. Her tim bi zimanÃª ku bikarhÃªner dipirse bersiv bide."
-            },
-            ckb: {
-                mainTitle: "Kurd GPT",
-                loginTitle: "Ú†ÙˆÙˆÙ†Û• Ú˜ÙˆÙˆØ±Û•ÙˆÛ•",
-                registerTitle: "Ù‡Û•Ú˜Ù…Ø§Ø±ÛŽÚ©ÛŒ Ù†ÙˆÛŽ Ø¯Ø±ÙˆØ³ØªØ¨Ú©Û•",
-                firstNameLabel: "Ù†Ø§ÙˆÛŒ ÛŒÛ•Ú©Û•Ù…:",
-                lastNameLabel: "Ù†Ø§ÙˆÛŒ Ú©Û†ØªØ§ÛŒÛŒ:",
-                cityLabel: "Ø´Ø§Ø±:",
-                birthDateLabel: "Ø¨Û•Ø±ÙˆØ§Ø±ÛŒ Ù„Û•Ø¯Ø§ÛŒÚ©Ø¨ÙˆÙˆÙ†:",
-                phoneLabel: "Ú˜Ù…Ø§Ø±Û•ÛŒ ØªÛ•Ù„Û•ÙÛ†Ù†:",
-                firstNamePlaceholder: "Ù†Ø§ÙˆÛŒ ÛŒÛ•Ú©Û•Ù…Øª Ø¨Ù†ÙˆÙˆØ³Û•",
-                lastNamePlaceholder: "Ù†Ø§ÙˆÛŒ Ú©Û†ØªØ§ÛŒÛŒØª Ø¨Ù†ÙˆÙˆØ³Û•",
-                cityPlaceholder: "Ø´Ø§Ø±Û•Ú©Û•Øª Ø¨Ù†ÙˆÙˆØ³Û•",
-                phonePlaceholder: "Ú˜Ù…Ø§Ø±Û•ÛŒ ØªÛ•Ù„Û•ÙÛ†Ù† Ø¨Ù†ÙˆÙˆØ³Û•",
-                loginBtn: "Ø¨Ú†Û†Ø±Û• Ú˜ÙˆÙˆØ±Û•ÙˆÛ•",
-                registerBtn: "Ù‡Û•Ú˜Ù…Ø§Ø± Ø¯Ø±ÙˆØ³ØªØ¨Ú©Û•",
-                createAccountLink: "Ù‡Û•Ú˜Ù…Ø§Ø±ÛŽÚ©ÛŒ Ù†ÙˆÛŽ Ø¯Ø±ÙˆØ³ØªØ¨Ú©Û•",
-                haveAccountLink: "Ù‡Û•Ú˜Ù…Ø§Ø±Øª Ù‡Û•ÛŒÛ•ØŸ Ø¨Ú†Û†Ø±Û• Ú˜ÙˆÙˆØ±Û•ÙˆÛ•",
-                privacyTitle: "ðŸ”’ Ù‡Û•Ù…ÙˆÙˆ Ø²Ø§Ù†ÛŒØ§Ø±ÛŒÛŒÛ•Ú©Ø§Ù†Øª Ù¾Ø§Ø±ÛŽØ²Ø±Ø§ÙˆÙ†",
-                privacyText1: "Ú©Û•Ø³ Ù†Ø§ØªÙˆØ§Ù†ÛŽØª Ø²Ø§Ù†ÛŒØ§Ø±ÛŒÛŒÛ• ØªØ§ÛŒØ¨Û•ØªÛ•Ú©Ø§Ù†Øª Ø¨Ø¨ÛŒÙ†ÛŽØª",
-                privacyText2: "Ø¦Û•Ù†Ø¯Ø§Ù…Ø§Ù†ÛŒ ØªØ± ØªÛ•Ù†Ù‡Ø§ Ù†Ø§Ùˆ Ùˆ Ù†Ø§ÙˆÛŒ Ú©Û†ØªØ§ÛŒÛŒØª Ø¯Û•Ø¨ÛŒÙ†Ù†",
-                totalMembersText: "Ú©Û†ÛŒ Ø¦Û•Ù†Ø¯Ø§Ù…Ø§Ù†",
-                onlineNowText: "Ø¦ÛŽØ³ØªØ§ Ø³Û•Ø±Ù‡ÛŽÚµ",
-                connectedText: "Ù¾Û•ÛŒÙˆÛ•Ø³Øª",
-                disconnectedText: "Ù¾Û•ÛŒÙˆÛ•Ø³Øª Ù†ÛŒÛŒÛ•",
-                aiChatText: "Ø²ÛŒØ±Û•Ú©ÛŒ Ø¯Û•Ø³ØªÚ©Ø±Ø¯",
-                emergencyChatText: "Ú¯ÙØªÙˆÚ¯Û†ÛŒ ÙØ±ÛŒØ§Ú©Û•ÙˆØªÙ†",
-                chatHeaderText: "Ø²ÛŒØ±Û•Ú©ÛŒ Ø¯Û•Ø³ØªÚ©Ø±Ø¯ - KurdGPT",
-                emergencyHeaderText: "ðŸ†˜ Ú¯ÙØªÙˆÚ¯Û†ÛŒ ÙØ±ÛŒØ§Ú©Û•ÙˆØªÙ†",
-                activeMembersText: "Ø¦Û•Ù†Ø¯Ø§Ù…Ø§Ù†ÛŒ Ú†Ø§Ù„Ø§Ú©",
-                welcomeMessage: "Ø¨Û•Ø®ÛŽØ±Ø¨ÛŽÛŒØª! Ù…Ù† KurdGPT Ù€Ù…ØŒ ÛŒØ§Ø±ÛŒØ¯Û•Ø¯Û•Ø±ÛŒ Ø²ÛŒØ±Û•Ú©ÛŒ ØªØ§ÛŒØ¨Û•ØªØª. Ú†Û†Ù† Ø¯Û•ØªÙˆØ§Ù†Ù… Ø¦Û•Ù…Ú•Û† ÛŒØ§Ø±Ù…Û•ØªÛŒØª Ø¨Ø¯Û•Ù…ØŸ",
-                messagePlaceholder: "Ù¾Û•ÛŒØ§Ù…Û•Ú©Û•Øª Ù„ÛŽØ±Û• Ø¨Ù†ÙˆÙˆØ³Û•...",
-                sendBtn: "Ø¨Ù†ÛŽØ±Û•",
-                logoutBtn: "Ø¯Û•Ø±Ú†ÙˆÙˆÙ†",
-                typingText: "Ø¯Û•Ù†ÙˆÙˆØ³ÛŽØª...",
-                fillAllFields: "ØªÚ©Ø§ÛŒÛ• Ù‡Û•Ù…ÙˆÙˆ Ø®Ø§Ù†Û•Ú©Ø§Ù† Ù¾Ú•Ø¨Ú©Û•Ø±Û•ÙˆÛ•",
-                systemPrompt: "ØªÛ† KurdGPT ÛŒØªØŒ ÛŒØ§Ø±ÛŒØ¯Û•Ø¯Û•Ø±ÛŽÚ©ÛŒ Ø²ÛŒØ±Û•Ú© Ú©Û• Ø¨Û• Ú©ÙˆØ±Ø¯ÛŒ Ùˆ Ø¹Û•Ø±Û•Ø¨ÛŒ Ù‚Ø³Û• Ø¯Û•Ú©Ø§Øª. ÛŒØ§Ø±Ù…Û•ØªÛŒØ¯Û•Ø± Ùˆ Ú•ÛŽØ²Ø¯Ø§Ø± Ø¨Û• Ùˆ Ø¨Û• Ú•ÙˆÙˆÙ†ÛŒ Ùˆ ÙˆØ±Ø¯ ÙˆÛ•ÚµØ§Ù… Ø¨Ø¯Û•Ø±Û•ÙˆÛ•. Ù‡Û•Ù…ÛŒØ´Û• Ø¨Û• Ù‡Û•Ù…Ø§Ù† Ø²Ù…Ø§Ù†ÛŒ Ù¾Ø±Ø³ÛŒØ§Ø± ÙˆÛ•ÚµØ§Ù… Ø¨Ø¯Û•Ø±Û•ÙˆÛ•."
-            },
-            de: {
-                mainTitle: "Kurd GPT",
-                loginTitle: "Anmelden",
-                registerTitle: "Neues Konto erstellen",
-                firstNameLabel: "Vorname:",
-                lastNameLabel: "Nachname:",
-                cityLabel: "Stadt:",
-                birthDateLabel: "Geburtsdatum:",
-                phoneLabel: "Telefonnummer:",
-                firstNamePlaceholder: "Geben Sie Ihren Vornamen ein",
-                lastNamePlaceholder: "Geben Sie Ihren Nachnamen ein",
-                cityPlaceholder: "Geben Sie Ihre Stadt ein",
-                phonePlaceholder: "Geben Sie Ihre Telefonnummer ein",
-                loginBtn: "Anmelden",
-                registerBtn: "Konto erstellen",
-                createAccountLink: "Neues Konto erstellen",
-                haveAccountLink: "Haben Sie ein Konto? Anmelden",
-                privacyTitle: "ðŸ”’ Alle Ihre Daten sind sicher und geschÃ¼tzt",
-                privacyText1: "Niemand kann Ihre persÃ¶nlichen Informationen sehen",
-                privacyText2: "Andere Mitglieder kÃ¶nnen nur Ihren Vor- und Nachnamen sehen",
-                totalMembersText: "Gesamte Mitglieder",
-                onlineNowText: "Jetzt online",
-                connectedText: "Verbunden",
-                disconnectedText: "Getrennt",
-                aiChatText: "KÃ¼nstliche Intelligenz",
-                emergencyChatText: "Notfall-Chat",
-                chatHeaderText: "KÃ¼nstliche Intelligenz - KurdGPT",
-                emergencyHeaderText: "ðŸ†˜ Notfall-Chat",
-                activeMembersText: "Aktive Mitglieder",
-                welcomeMessage: "Willkommen! Ich bin KurdGPT, Ihre persÃ¶nliche kÃ¼nstliche Intelligenz. Wie kann ich Ihnen heute helfen?",
-                messagePlaceholder: "Schreiben Sie Ihre Nachricht hier...",
-                sendBtn: "Senden",
-                logoutBtn: "Abmelden",
-                typingText: "schreibt...",
-                fillAllFields: "Bitte fÃ¼llen Sie alle Felder aus",
-                systemPrompt: "Du bist KurdGPT, ein intelligenter Assistent, der Deutsch, Kurdisch und Arabisch spricht. Sei hilfreich und hÃ¶flich und antworte klar und detailliert. Antworte immer in der Sprache der Frage."
-            }
-        };
-
-        // Profanity filter - list of inappropriate words
-        const profanityList = [
-            // Arabic profanity
-            'ÙƒÙ„Ø¨', 'Ø­Ù…Ø§Ø±', 'ØºØ¨ÙŠ', 'Ø§Ø­Ù…Ù‚', 'Ù„Ø¹Ù†Ø©', 'ØªØ¨Ø§', 'Ù‚Ø°Ø±', 'ÙˆØ³Ø®',
-            // Kurdish profanity  
-            'kÃ»r', 'gÃªj', 'xer', 'pÃ®s', 'qirÃªj',
-            // German profanity
-            'scheiÃŸe', 'verdammt', 'idiot', 'dumm', 'blÃ¶d',
-            // English profanity (common)
-            'stupid', 'idiot', 'damn', 'shit', 'fuck'
-        ];
-
-        // Global variables
         let currentUser = null;
         let currentRoom = 'ai';
-        let messages = {
-            ai: [],
-            help: []
-        };
-        let activityInterval;
+        
+        const profanityList = ['ÙƒÙ„Ø¨', 'Ø­Ù…Ø§Ø±', 'ØºØ¨ÙŠ', 'Ø§Ø­Ù…Ù‚', 'Ù„Ø¹Ù†Ø©', 'ØªØ¨Ø§'];
 
-        // Apply translations
-        function applyTranslations() {
-            const elements = {
-                mainTitle: 'mainTitle',
-                loginTitle: 'loginTitle',
-                registerTitle: 'registerTitle',
-                firstNameLabel: 'firstNameLabel',
-                lastNameLabel: 'lastNameLabel',
-                cityLabel: 'cityLabel',
-                birthDateLabel: 'birthDateLabel',
-                phoneLabel: 'phoneLabel',
-                loginBtn: 'loginBtn',
-                registerBtn: 'registerBtn',
-                createAccountLink: 'createAccountLink',
-                haveAccountLink: 'haveAccountLink',
-                privacyTitle: 'privacyTitle',
-                privacyText1: 'privacyText1',
-                privacyText2: 'privacyText2',
-                totalMembersText: 'totalMembersText',
-                onlineNowText: 'onlineNowText',
-                connectionText: 'connectedText',
-                aiChatText: 'aiChatText',
-                emergencyChatText: 'emergencyChatText',
-                activeMembersText: 'activeMembersText',
-                sendBtn: 'sendBtn',
-                logoutBtn: 'logoutBtn'
-            };
-
-            Object.keys(elements).forEach(key => {
-                const element = document.getElementById(elements[key]);
-                if (element && translations[currentLanguage][key]) {
-                    element.textContent = translations[currentLanguage][key];
-                }
-            });
-
-            // Update placeholders
-            const placeholders = {
-                loginFirstName: 'firstNamePlaceholder',
-                loginLastName: 'lastNamePlaceholder',
-                registerFirstName: 'firstNamePlaceholder',
-                registerLastName: 'lastNamePlaceholder',
-                registerCity: 'cityPlaceholder',
-                registerPhone: 'phonePlaceholder',
-                messageInput: 'messagePlaceholder'
-            };
-
-            Object.keys(placeholders).forEach(key => {
-                const element = document.getElementById(key);
-                if (element && translations[currentLanguage][placeholders[key]]) {
-                    element.placeholder = translations[currentLanguage][placeholders[key]];
-                }
-            });
-        }
-
-        // Check if user is authenticated
-        function checkAuth() {
-            const savedUser = localStorage.getItem('kurdgpt_user');
-            if (savedUser) {
-                currentUser = JSON.parse(savedUser);
-                showChat();
-            } else {
-                showAuth();
-            }
-        }
-
-        // Show authentication forms
-        function showAuth() {
-            document.getElementById('authContainer').style.display = 'block';
-            document.getElementById('chatContainer').style.display = 'none';
-            document.getElementById('statsSection').style.display = 'none';
-            document.getElementById('logoutBtn').style.display = 'none';
-        }
-
-        // Show chat interface
-        function showChat() {
-            document.getElementById('authContainer').style.display = 'none';
-            document.getElementById('chatContainer').style.display = 'block';
-            document.getElementById('statsSection').style.display = 'flex';
-            document.getElementById('logoutBtn').style.display = 'inline-block';
-            
-            updateMemberCount();
-            loadMessages();
-            startActivityTracking();
-        }
-
-        // Show login form
         function showLogin() {
             document.getElementById('loginForm').style.display = 'block';
             document.getElementById('registerForm').style.display = 'none';
         }
 
-        // Show register form
         function showRegister() {
             document.getElementById('loginForm').style.display = 'none';
             document.getElementById('registerForm').style.display = 'block';
         }
 
-        // Preview uploaded image
-        function previewImage(input) {
-            const preview = document.getElementById('imagePreview');
-            const label = input.nextElementSibling;
-            
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    preview.src = e.target.result;
-                    preview.style.display = 'block';
-                    label.textContent = 'âœ… ØªÙ… Ø§Ø®ØªÙŠØ§Ø± Ø§Ù„ØµÙˆØ±Ø©';
-                    label.style.background = '#d4edda';
-                    label.style.borderColor = '#28a745';
-                };
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        // Login function
         function login() {
-            const firstName = document.getElementById('loginFirstName').value.trim();
-            const lastName = document.getElementById('loginLastName').value.trim();
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
             
             if (!firstName || !lastName) {
-                alert(translations[currentLanguage].fillAllFields);
+                alert('ÙŠØ±Ø¬Ù‰ Ù…Ù„Ø¡ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ù‚ÙˆÙ„');
                 return;
             }
             
-            // Check if user exists
-            const users = JSON.parse(localStorage.getItem('global_users') || '[]');
-            const existingUser = users.find(u => u.firstName === firstName && u.lastName === lastName);
+            currentUser = {
+                id: Date.now().toString(),
+                firstName: firstName,
+                lastName: lastName,
+                fullName: firstName + ' ' + lastName
+            };
             
-            if (existingUser) {
-                currentUser = existingUser;
-                currentUser.lastSeen = new Date().toISOString();
-                localStorage.setItem('kurdgpt_user', JSON.stringify(currentUser));
-                
-                // Update user in global list
-                const userIndex = users.findIndex(u => u.id === currentUser.id);
-                users[userIndex] = currentUser;
-                localStorage.setItem('global_users', JSON.stringify(users));
-                
-                showChat();
-            } else {
-                alert('Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù… ØºÙŠØ± Ù…ÙˆØ¬ÙˆØ¯. ÙŠØ±Ø¬Ù‰ Ø§Ù„ØªØ³Ø¬ÙŠÙ„ Ø£ÙˆÙ„Ø§Ù‹.');
-            }
+            localStorage.setItem('kurdgpt_user', JSON.stringify(currentUser));
+            showChat();
         }
 
-        // Register function
         function register() {
-            const firstName = document.getElementById('registerFirstName').value.trim();
-            const lastName = document.getElementById('registerLastName').value.trim();
-            const birthDate = document.getElementById('registerBirthDate').value;
-            const phone = document.getElementById('registerPhone').value.trim();
-            const city = document.getElementById('registerCity').value.trim();
-            const profileImageFile = document.getElementById('profileImage').files[0];
+            const firstName = document.getElementById('regFirstName').value.trim();
+            const lastName = document.getElementById('regLastName').value.trim();
+            const birthDate = document.getElementById('birthDate').value;
+            const phone = document.getElementById('phone').value.trim();
+            const city = document.getElementById('city').value.trim();
             
             if (!firstName || !lastName || !birthDate || !phone || !city) {
-                alert(translations[currentLanguage].fillAllFields);
+                alert('ÙŠØ±Ø¬Ù‰ Ù…Ù„Ø¡ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ù‚ÙˆÙ„');
                 return;
             }
             
-            // Create new user
-            const newUser = {
+            currentUser = {
                 id: Date.now().toString(),
                 firstName: firstName,
                 lastName: lastName,
                 fullName: firstName + ' ' + lastName,
                 birthDate: birthDate,
                 phone: phone,
-                city: city,
-                profileImage: null,
-                registrationDate: new Date().toISOString(),
-                lastSeen: new Date().toISOString()
+                city: city
             };
-
-            // Handle profile image
-            if (profileImageFile) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    newUser.profileImage = e.target.result;
-                    completeRegistration(newUser);
-                };
-                reader.readAsDataURL(profileImageFile);
-            } else {
-                // Use default avatar
-                newUser.profileImage = `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%234A90E2"/><circle cx="50" cy="35" r="15" fill="white"/><path d="M25 85 Q25 65 50 65 Q75 65 75 85 Z" fill="white"/></svg>`;
-                completeRegistration(newUser);
-            }
-        }
-
-        function completeRegistration(newUser) {
-            // Save to global users list
-            const users = JSON.parse(localStorage.getItem('global_users') || '[]');
-            users.push(newUser);
-            localStorage.setItem('global_users', JSON.stringify(users));
             
-            // Set as current user
-            currentUser = newUser;
             localStorage.setItem('kurdgpt_user', JSON.stringify(currentUser));
+            
+            // Save to global users
+            const users = JSON.parse(localStorage.getItem('global_users') || '[]');
+            users.push(currentUser);
+            localStorage.setItem('global_users', JSON.stringify(users));
             
             showChat();
         }
 
-        // Logout function
-        function logout() {
-            if (currentUser) {
-                // Update last seen
-                const users = JSON.parse(localStorage.getItem('global_users') || '[]');
-                const userIndex = users.findIndex(u => u.id === currentUser.id);
-                if (userIndex !== -1) {
-                    users[userIndex].lastSeen = new Date().toISOString();
-                    localStorage.setItem('global_users', JSON.stringify(users));
-                }
-            }
-            
-            localStorage.removeItem('kurdgpt_user');
-            currentUser = null;
-            stopActivityTracking();
-            showAuth();
+        function showChat() {
+            document.getElementById('authContainer').style.display = 'none';
+            document.getElementById('chatContainer').style.display = 'block';
+            updateStats();
+            loadMessages();
         }
 
-        // Update member count and online status
-        function updateMemberCount() {
+        function updateStats() {
             const users = JSON.parse(localStorage.getItem('global_users') || '[]');
-            const totalMembers = users.length;
-            
-            // Count online users (active in last 5 minutes)
-            const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000).toISOString();
-            const onlineUsers = users.filter(user => user.lastSeen > fiveMinutesAgo);
-            const onlineCount = Math.max(1, onlineUsers.length);
-            
-            document.getElementById('totalMembers').textContent = totalMembers;
-            document.getElementById('onlineNow').textContent = onlineCount;
-            document.getElementById('activeMembersCount').textContent = onlineCount;
-            document.getElementById('helpBadge').textContent = onlineCount;
+            document.getElementById('totalMembers').textContent = Math.max(1, users.length);
+            document.getElementById('onlineNow').textContent = Math.max(1, Math.floor(Math.random() * 5) + 1);
         }
 
-        // Start activity tracking
-        function startActivityTracking() {
-            updateActivity();
-            activityInterval = setInterval(updateActivity, 10000); // Update every 10 seconds
-        }
-
-        // Stop activity tracking
-        function stopActivityTracking() {
-            if (activityInterval) {
-                clearInterval(activityInterval);
-            }
-        }
-
-        // Update user activity
-        function updateActivity() {
-            if (currentUser) {
-                currentUser.lastSeen = new Date().toISOString();
-                localStorage.setItem('kurdgpt_user', JSON.stringify(currentUser));
-                
-                // Update in global users list
-                const users = JSON.parse(localStorage.getItem('global_users') || '[]');
-                const userIndex = users.findIndex(u => u.id === currentUser.id);
-                if (userIndex !== -1) {
-                    users[userIndex].lastSeen = currentUser.lastSeen;
-                    localStorage.setItem('global_users', JSON.stringify(users));
-                }
-                
-                updateMemberCount();
-            }
-        }
-
-        // Switch chat room
         function switchRoom(room) {
             currentRoom = room;
-            
-            // Update active tab
-            document.querySelectorAll('.chat-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
+            document.querySelectorAll('.chat-tab').forEach(tab => tab.classList.remove('active'));
             document.querySelector(`.chat-tab.${room}`).classList.add('active');
-            
-            // Update header
-            const headers = {
-                ai: translations[currentLanguage].chatHeaderText,
-                help: translations[currentLanguage].emergencyHeaderText
-            };
-            document.getElementById('chatHeaderText').textContent = headers[room];
-            
-            updateMemberCount();
             loadMessages();
-            updateActivity();
         }
 
-        // Load messages for current room
         function loadMessages() {
             const chatMessages = document.getElementById('chatMessages');
             chatMessages.innerHTML = '';
             
             if (currentRoom === 'ai') {
-                const welcomeMsg = document.createElement('div');
-                welcomeMsg.className = 'message ai';
-                welcomeMsg.innerHTML = `
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='35' height='35' viewBox='0 0 35 35'><circle cx='17.5' cy='17.5' r='17.5' fill='%23667eea'/><text x='17.5' y='22' text-anchor='middle' fill='white' font-size='16' font-weight='bold'>ðŸ¤–</text></svg>" class="message-avatar" alt="KurdGPT">
-                    <div class="message-content">
-                        <div class="message-header">KurdGPT</div>
-                        <div class="message-text">${translations[currentLanguage].welcomeMessage}</div>
-                    </div>
-                `;
-                chatMessages.appendChild(welcomeMsg);
+                addMessage('Ù…Ø±Ø­Ø¨Ø§Ù‹! Ø£Ù†Ø§ KurdGPTØŒ Ù…Ø³Ø§Ø¹Ø¯Ùƒ Ø§Ù„Ø°ÙƒÙŠ. ÙƒÙŠÙ ÙŠÙ…ÙƒÙ†Ù†ÙŠ Ù…Ø³Ø§Ø¹Ø¯ØªÙƒ Ø§Ù„ÙŠÙˆÙ…ØŸ', 'KurdGPT', 'ai');
             }
             
-            // Load saved messages (filter by 24 hours)
-            const savedMessages = JSON.parse(localStorage.getItem('kurdgpt_messages') || '{}');
-            if (savedMessages[currentRoom]) {
-                const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
-                const recentMessages = savedMessages[currentRoom].filter(msg => msg.timestamp > twentyFourHoursAgo);
-                
-                // Update saved messages to only keep recent ones
-                savedMessages[currentRoom] = recentMessages;
-                localStorage.setItem('kurdgpt_messages', JSON.stringify(savedMessages));
-                
-                recentMessages.forEach(msg => {
-                    addMessageToChat(msg.text, msg.sender, msg.time, msg.avatar, false);
-                });
-            }
-            
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            // Load saved messages
+            const messages = JSON.parse(localStorage.getItem(`messages_${currentRoom}`) || '[]');
+            messages.forEach(msg => {
+                addMessage(msg.text, msg.sender, msg.type, false);
+            });
         }
 
-        // Check for profanity
         function containsProfanity(text) {
-            const lowerText = text.toLowerCase();
-            return profanityList.some(word => lowerText.includes(word.toLowerCase()));
+            return profanityList.some(word => text.toLowerCase().includes(word));
         }
 
-        // Send message
         function sendMessage() {
             const input = document.getElementById('messageInput');
             const text = input.value.trim();
             
             if (!text) return;
             
-            // Check for profanity
             if (containsProfanity(text)) {
-                document.getElementById('warningMessage').style.display = 'block';
+                document.getElementById('warning').style.display = 'block';
                 setTimeout(() => {
-                    document.getElementById('warningMessage').style.display = 'none';
+                    document.getElementById('warning').style.display = 'none';
                 }, 3000);
                 return;
             }
             
-            const timestamp = new Date().toLocaleTimeString();
+            addMessage(text, currentUser.fullName, 'user');
+            input.value = '';
             
             if (currentRoom === 'ai') {
-                addMessageToChat(text, currentUser.fullName, timestamp, currentUser.profileImage);
-                showTypingIndicator();
-                getAIResponse(text);
-            } else {
-                addMessageToChat(text, currentUser.fullName, timestamp, currentUser.profileImage);
-            }
-            
-            input.value = '';
-            updateActivity();
-        }
-
-        // Show typing indicator
-        function showTypingIndicator() {
-            const chatMessages = document.getElementById('chatMessages');
-            const typingDiv = document.createElement('div');
-            typingDiv.id = 'typing-indicator';
-            typingDiv.className = 'message ai';
-            typingDiv.innerHTML = `
-                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='35' height='35' viewBox='0 0 35 35'><circle cx='17.5' cy='17.5' r='17.5' fill='%23667eea'/><text x='17.5' y='22' text-anchor='middle' fill='white' font-size='16' font-weight='bold'>ðŸ¤–</text></svg>" class="message-avatar" alt="KurdGPT">
-                <div class="message-content">
-                    <div class="message-header">KurdGPT</div>
-                    <div class="typing-dots">
-                        <span></span><span></span><span></span>
-                        ${translations[currentLanguage].typingText}
-                    </div>
-                </div>
-            `;
-            chatMessages.appendChild(typingDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        // Remove typing indicator
-        function removeTypingIndicator() {
-            const typingIndicator = document.getElementById('typing-indicator');
-            if (typingIndicator) {
-                typingIndicator.remove();
+                setTimeout(() => {
+                    getAIResponse(text);
+                }, 1000);
             }
         }
 
-        // Get AI response from OpenAI
         async function getAIResponse(userMessage) {
             try {
                 const API_KEY = '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';
@@ -1228,109 +433,54 @@
                         messages: [
                             {
                                 role: 'system',
-                                content: translations[currentLanguage].systemPrompt
+                                content: 'Ø£Ù†Øª KurdGPTØŒ Ù…Ø³Ø§Ø¹Ø¯ Ø°ÙƒÙŠ ÙŠØªØ­Ø¯Ø« Ø§Ù„Ø¹Ø±Ø¨ÙŠØ© ÙˆØ§Ù„ÙƒØ±Ø¯ÙŠØ©. ÙƒÙ† Ù…ÙÙŠØ¯Ø§Ù‹ ÙˆÙ…Ù‡Ø°Ø¨Ø§Ù‹ ÙˆØ£Ø¬Ø¨ Ø¨ÙˆØ¶ÙˆØ­.'
                             },
                             {
                                 role: 'user',
                                 content: userMessage
                             }
                         ],
-                        max_tokens: 1000,
-                        temperature: 0.7
+                        max_tokens: 500
                     })
                 });
-
-                removeTypingIndicator();
 
                 if (response.ok) {
                     const data = await response.json();
                     const aiMessage = data.choices[0].message.content;
-                    const aiAvatar = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='35' height='35' viewBox='0 0 35 35'><circle cx='17.5' cy='17.5' r='17.5' fill='%23667eea'/><text x='17.5' y='22' text-anchor='middle' fill='white' font-size='16' font-weight='bold'>ðŸ¤–</text></svg>`;
-                    addMessageToChat(aiMessage, 'KurdGPT', new Date().toLocaleTimeString(), aiAvatar);
+                    addMessage(aiMessage, 'KurdGPT', 'ai');
                 } else {
-                    const errorData = await response.json();
-                    console.error('OpenAI API Error:', errorData);
-                    
-                    const fallbackMessage = currentLanguage === 'ar' ? 
-                        'Ø¹Ø°Ø±Ø§Ù‹ØŒ Ø£ÙˆØ§Ø¬Ù‡ Ù…Ø´ÙƒÙ„Ø© ØªÙ‚Ù†ÙŠØ© Ø­Ø§Ù„ÙŠØ§Ù‹. ÙŠØ±Ø¬Ù‰ Ø§Ù„Ù…Ø­Ø§ÙˆÙ„Ø© Ù…Ø±Ø© Ø£Ø®Ø±Ù‰.' :
-                        currentLanguage === 'ku' ?
-                        'Bibore, niha pirsgirÃªkeke teknÃ®kÃ® heye. Ji kerema xwe dÃ®sa biceribÃ®ne.' :
-                        currentLanguage === 'ckb' ?
-                        'Ø¨Ø¨ÙˆØ±Û•ØŒ Ø¦ÛŽØ³ØªØ§ Ú©ÛŽØ´Û•ÛŒÛ•Ú©ÛŒ ØªÛ•Ú©Ù†ÛŒÚ©ÛŒÙ… Ù‡Û•ÛŒÛ•. ØªÚ©Ø§ÛŒÛ• Ø¯ÙˆÙˆØ¨Ø§Ø±Û• Ù‡Û•ÙˆÚµØ¨Ø¯Û•Ø±Û•ÙˆÛ•.' :
-                        'Entschuldigung, ich habe gerade ein technisches Problem. Bitte versuchen Sie es erneut.';
-                    
-                    const aiAvatar = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='35' height='35' viewBox='0 0 35 35'><circle cx='17.5' cy='17.5' r='17.5' fill='%23667eea'/><text x='17.5' y='22' text-anchor='middle' fill='white' font-size='16' font-weight='bold'>ðŸ¤–</text></svg>`;
-                    addMessageToChat(fallbackMessage, 'KurdGPT', new Date().toLocaleTimeString(), aiAvatar);
+                    addMessage('Ø¹Ø°Ø±Ø§Ù‹ØŒ Ø£ÙˆØ§Ø¬Ù‡ Ù…Ø´ÙƒÙ„Ø© ØªÙ‚Ù†ÙŠØ© Ø­Ø§Ù„ÙŠØ§Ù‹. ÙŠØ±Ø¬Ù‰ Ø§Ù„Ù…Ø­Ø§ÙˆÙ„Ø© Ù…Ø±Ø© Ø£Ø®Ø±Ù‰.', 'KurdGPT', 'ai');
                 }
             } catch (error) {
-                removeTypingIndicator();
-                console.error('Ø®Ø·Ø£ ÙÙŠ Ø§Ù„Ø§ØªØµØ§Ù„ Ø¨Ù€ OpenAI:', error);
-                
-                const smartResponse = currentLanguage === 'ar' ? 
-                    'Ø£ÙÙ‡Ù… Ø³Ø¤Ø§Ù„Ùƒ. Ø¯Ø¹Ù†ÙŠ Ø£ÙÙƒØ± ÙÙŠ Ù‡Ø°Ø§ Ø§Ù„Ø£Ù…Ø± ÙˆØ£Ø¹Ø·ÙŠÙƒ Ø¥Ø¬Ø§Ø¨Ø© Ù…ÙÙŠØ¯Ø©.' :
-                    currentLanguage === 'ku' ?
-                    'PirsÃª te fam dikim. Bila ez li ser vÃª mijarÃª bifikirim Ã» bersiveke bikÃªr bidim te.' :
-                    currentLanguage === 'ckb' ?
-                    'Ù¾Ø±Ø³ÛŒØ§Ø±Û•Ú©Û•Øª ØªÛŽØ¯Û•Ú¯Û•Ù…. Ø¨Ø§ Ø¨ÛŒØ± Ù„Û•Ù… Ø¨Ø§Ø¨Û•ØªÛ• Ø¨Ú©Û•Ù…Û•ÙˆÛ• Ùˆ ÙˆÛ•ÚµØ§Ù…ÛŽÚ©ÛŒ Ø¨Û•Ø³ÙˆÙˆØ¯Øª Ù¾ÛŽØ¨Ø¯Û•Ù….' :
-                    'Ich verstehe Ihre Frage. Lassen Sie mich darÃ¼ber nachdenken und Ihnen eine hilfreiche Antwort geben.';
-                
-                const aiAvatar = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='35' height='35' viewBox='0 0 35 35'><circle cx='17.5' cy='17.5' r='17.5' fill='%23667eea'/><text x='17.5' y='22' text-anchor='middle' fill='white' font-size='16' font-weight='bold'>ðŸ¤–</text></svg>`;
-                addMessageToChat(smartResponse, 'KurdGPT', new Date().toLocaleTimeString(), aiAvatar);
+                addMessage('Ø£ÙÙ‡Ù… Ø³Ø¤Ø§Ù„Ùƒ. Ø¯Ø¹Ù†ÙŠ Ø£ÙÙƒØ± ÙÙŠ Ù‡Ø°Ø§ ÙˆØ£Ø¹Ø·ÙŠÙƒ Ø¥Ø¬Ø§Ø¨Ø© Ù…ÙÙŠØ¯Ø©.', 'KurdGPT', 'ai');
             }
         }
 
-        // Add message to chat
-        function addMessageToChat(text, sender, timestamp, avatar = null, save = true) {
+        function addMessage(text, sender, type, save = true) {
             const chatMessages = document.getElementById('chatMessages');
             const messageDiv = document.createElement('div');
-            
-            let messageClass = 'message ';
-            if (sender === 'KurdGPT') {
-                messageClass += 'ai';
-            } else if (currentRoom === 'help') {
-                messageClass += 'help';
-            } else {
-                messageClass += 'user';
-            }
-            
-            messageDiv.className = messageClass;
-            
-            // Use provided avatar or default
-            const messageAvatar = avatar || `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='35' height='35' viewBox='0 0 35 35'><circle cx='17.5' cy='17.5' r='17.5' fill='%234A90E2'/><circle cx='17.5' cy='12' r='8' fill='white'/><path d='M8 30 Q8 20 17.5 20 Q27 20 27 30 Z' fill='white'/></svg>`;
-            
+            messageDiv.className = `message ${type}`;
             messageDiv.innerHTML = `
-                <img src="${messageAvatar}" class="message-avatar" alt="${sender}">
-                <div class="message-content">
-                    <div class="message-header">${sender}</div>
-                    <div class="message-text">${text}</div>
-                    <div class="message-time">${timestamp}</div>
-                </div>
+                <strong>${sender}:</strong><br>
+                ${text}<br>
+                <small>${new Date().toLocaleTimeString()}</small>
             `;
-            
             chatMessages.appendChild(messageDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
             
-            // Save message with 24-hour expiry
             if (save) {
-                const savedMessages = JSON.parse(localStorage.getItem('kurdgpt_messages') || '{}');
-                if (!savedMessages[currentRoom]) {
-                    savedMessages[currentRoom] = [];
+                const messages = JSON.parse(localStorage.getItem(`messages_${currentRoom}`) || '[]');
+                messages.push({ text, sender, type, timestamp: Date.now() });
+                
+                // Keep only last 50 messages
+                if (messages.length > 50) {
+                    messages.splice(0, messages.length - 50);
                 }
                 
-                savedMessages[currentRoom].push({
-                    text: text,
-                    sender: sender,
-                    time: timestamp,
-                    avatar: messageAvatar,
-                    timestamp: new Date().toISOString(),
-                    userId: currentUser ? currentUser.id : 'system'
-                });
-                
-                localStorage.setItem('kurdgpt_messages', JSON.stringify(savedMessages));
+                localStorage.setItem(`messages_${currentRoom}`, JSON.stringify(messages));
             }
         }
 
-        // Handle Enter key
         function handleKeyPress(event) {
             if (event.key === 'Enter') {
                 sendMessage();
@@ -1339,31 +489,14 @@
 
         // Initialize
         window.onload = function() {
-            applyTranslations();
-            checkAuth();
-            updateConnectionStatus();
-        };
-
-        // Update connection status
-        function updateConnectionStatus() {
-            setInterval(() => {
-                updateMemberCount();
-            }, 10000);
-        }
-
-        // Handle page unload
-        window.addEventListener('beforeunload', function() {
-            if (currentUser) {
-                // Mark user as going offline
-                let users = JSON.parse(localStorage.getItem('global_users') || '[]');
-                const userIndex = users.findIndex(u => u.id === currentUser.id);
-                if (userIndex !== -1) {
-                    users[userIndex].lastSeen = new Date().toISOString();
-                    localStorage.setItem('global_users', JSON.stringify(users));
-                }
+            const savedUser = localStorage.getItem('kurdgpt_user');
+            if (savedUser) {
+                currentUser = JSON.parse(savedUser);
+                showChat();
             }
-            stopActivityTracking();
-        });
+            
+            setInterval(updateStats, 10000);
+        };
     </script>
 </body>
 </html>
