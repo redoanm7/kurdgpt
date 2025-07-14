@@ -2,209 +2,36 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurd GPT</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Noto Sans Arabic', 'Arial', sans-serif;
-            background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%);
-            min-height: 100vh;
-            direction: rtl;
-            text-align: right;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .main-title {
-            font-size: 2.5em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        .stat-card {
-            background: rgba(255,255,255,0.2);
-            padding: 10px 20px;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        .auth-container {
-            padding: 40px;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            text-align: right;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            font-size: 16px;
-            font-family: 'Noto Sans Arabic', Arial, sans-serif;
-            direction: rtl;
-        }
-
-        .btn {
-            background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 16px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-            font-family: 'Noto Sans Arabic', Arial, sans-serif;
-        }
-
-        .chat-container {
-            padding: 20px;
-            display: none;
-        }
-
-        .chat-tabs {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            justify-content: center;
-        }
-
-        .chat-tab {
-            padding: 12px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-        }
-
-        .chat-tab.ai {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .chat-tab.help {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        }
-
-        .chat-tab.active {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .chat-messages {
-            height: 400px;
-            overflow-y: auto;
-            border: 1px solid #ddd;
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 20px;
-            background: #f8f9fa;
-        }
-
-        .message {
-            margin-bottom: 15px;
-            padding: 12px;
-            border-radius: 15px;
-            max-width: 80%;
-        }
-
-        .message.user {
-            background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%);
-            color: white;
-            margin-left: auto;
-            margin-right: 0;
-        }
-
-        .message.ai {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            margin-right: auto;
-            margin-left: 0;
-        }
-
-        .message.help {
-            background: white;
-            border: 1px solid #ddd;
-            color: #333;
-            margin-right: auto;
-            margin-left: 0;
-        }
-
-        .message-input-container {
-            display: flex;
-            gap: 10px;
-        }
-
-        .message-input {
-            flex: 1;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 25px;
-            font-size: 16px;
-            direction: rtl;
-            font-family: 'Noto Sans Arabic', Arial, sans-serif;
-        }
-
-        .send-btn {
-            background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-family: 'Noto Sans Arabic', Arial, sans-serif;
-        }
-
-        .warning {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            color: #856404;
-            padding: 10px;
-            border-radius: 10px;
-            margin: 10px 0;
-            text-align: center;
-            display: none;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%); min-height: 100vh; direction: rtl; }
+        .container { max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%); color: white; padding: 20px; text-align: center; }
+        .main-title { font-size: 2.5em; font-weight: bold; margin-bottom: 10px; }
+        .stats { display: flex; justify-content: center; gap: 20px; margin-top: 15px; }
+        .stat-card { background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 15px; text-align: center; }
+        .auth-container { padding: 40px; text-align: center; }
+        .form-group { margin-bottom: 20px; text-align: right; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #333; }
+        .form-group input { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; direction: rtl; }
+        .btn { background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%); color: white; border: none; padding: 12px 30px; border-radius: 25px; font-size: 16px; cursor: pointer; width: 100%; margin-top: 10px; }
+        .chat-container { padding: 20px; display: none; }
+        .chat-tabs { display: flex; gap: 10px; margin-bottom: 20px; justify-content: center; }
+        .chat-tab { padding: 12px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; color: white; }
+        .chat-tab.ai { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .chat-tab.help { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .chat-tab.active { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .chat-messages { height: 400px; overflow-y: auto; border: 1px solid #ddd; border-radius: 15px; padding: 15px; margin-bottom: 20px; background: #f8f9fa; }
+        .message { margin-bottom: 15px; padding: 12px; border-radius: 15px; max-width: 80%; }
+        .message.user { background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%); color: white; margin-left: auto; margin-right: 0; }
+        .message.ai { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; margin-right: auto; margin-left: 0; }
+        .message.help { background: white; border: 1px solid #ddd; color: #333; margin-right: auto; margin-left: 0; }
+        .message-input-container { display: flex; gap: 10px; }
+        .message-input { flex: 1; padding: 12px; border: 2px solid #ddd; border-radius: 25px; font-size: 16px; direction: rtl; }
+        .send-btn { background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%); color: white; border: none; padding: 12px 20px; border-radius: 25px; cursor: pointer; }
+        .warning { background: #fff3cd; border: 1px solid #ffeaa7; color: #856404; padding: 10px; border-radius: 10px; margin: 10px 0; text-align: center; display: none; }
     </style>
 </head>
 <body>
@@ -214,75 +41,75 @@
             <div class="stats">
                 <div class="stat-card">
                     <div id="totalMembers">1</div>
-                    <div>Ø¥Ø¬Ù…Ø§Ù„ÙŠ Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡</div>
+                    <div>إجمالي الأعضاء</div>
                 </div>
                 <div class="stat-card">
                     <div id="onlineNow">1</div>
-                    <div>Ù…ØªØµÙ„ Ø§Ù„Ø¢Ù†</div>
+                    <div>متصل الآن</div>
                 </div>
             </div>
         </div>
 
         <div class="auth-container" id="authContainer">
             <div id="loginForm">
-                <h2>ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„</h2>
+                <h2>تسجيل الدخول</h2>
                 <div class="form-group">
-                    <label>Ø§Ù„Ø§Ø³Ù… Ø§Ù„Ø£ÙˆÙ„:</label>
-                    <input type="text" id="firstName" placeholder="Ø§ÙƒØªØ¨ Ø§Ø³Ù…Ùƒ Ø§Ù„Ø£ÙˆÙ„">
+                    <label>الاسم الأول:</label>
+                    <input type="text" id="firstName" placeholder="اكتب اسمك الأول">
                 </div>
                 <div class="form-group">
-                    <label>Ø§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø©:</label>
-                    <input type="text" id="lastName" placeholder="Ø§ÙƒØªØ¨ Ø§Ø³Ù… Ø¹Ø§Ø¦Ù„ØªÙƒ">
+                    <label>اسم العائلة:</label>
+                    <input type="text" id="lastName" placeholder="اكتب اسم عائلتك">
                 </div>
-                <button class="btn" onclick="login()">Ø¯Ø®ÙˆÙ„</button>
-                <button class="btn" onclick="showRegister()" style="background: #28a745; margin-top: 10px;">Ø¥Ù†Ø´Ø§Ø¡ Ø­Ø³Ø§Ø¨ Ø¬Ø¯ÙŠØ¯</button>
+                <button class="btn" onclick="login()">دخول</button>
+                <button class="btn" onclick="showRegister()" style="background: #28a745; margin-top: 10px;">إنشاء حساب جديد</button>
             </div>
 
             <div id="registerForm" style="display: none;">
-                <h2>Ø¥Ù†Ø´Ø§Ø¡ Ø­Ø³Ø§Ø¨ Ø¬Ø¯ÙŠØ¯</h2>
+                <h2>إنشاء حساب جديد</h2>
                 <div class="form-group">
-                    <label>Ø§Ù„Ø§Ø³Ù… Ø§Ù„Ø£ÙˆÙ„:</label>
-                    <input type="text" id="regFirstName" placeholder="Ø§ÙƒØªØ¨ Ø§Ø³Ù…Ùƒ Ø§Ù„Ø£ÙˆÙ„">
+                    <label>الاسم الأول:</label>
+                    <input type="text" id="regFirstName" placeholder="اكتب اسمك الأول">
                 </div>
                 <div class="form-group">
-                    <label>Ø§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø©:</label>
-                    <input type="text" id="regLastName" placeholder="Ø§ÙƒØªØ¨ Ø§Ø³Ù… Ø¹Ø§Ø¦Ù„ØªÙƒ">
+                    <label>اسم العائلة:</label>
+                    <input type="text" id="regLastName" placeholder="اكتب اسم عائلتك">
                 </div>
                 <div class="form-group">
-                    <label>ØªØ§Ø±ÙŠØ® Ø§Ù„Ù…ÙŠÙ„Ø§Ø¯:</label>
+                    <label>تاريخ الميلاد:</label>
                     <input type="date" id="birthDate">
                 </div>
                 <div class="form-group">
-                    <label>Ø±Ù‚Ù… Ø§Ù„Ù‡Ø§ØªÙ:</label>
-                    <input type="tel" id="phone" placeholder="Ø§ÙƒØªØ¨ Ø±Ù‚Ù… Ù‡Ø§ØªÙÙƒ">
+                    <label>رقم الهاتف:</label>
+                    <input type="tel" id="phone" placeholder="اكتب رقم هاتفك">
                 </div>
                 <div class="form-group">
-                    <label>Ø§Ù„Ù…Ø¯ÙŠÙ†Ø©:</label>
-                    <input type="text" id="city" placeholder="Ø§ÙƒØªØ¨ Ù…Ø¯ÙŠÙ†ØªÙƒ">
+                    <label>المدينة:</label>
+                    <input type="text" id="city" placeholder="اكتب مدينتك">
                 </div>
                 <div style="background: #e8f5e8; padding: 15px; border-radius: 10px; margin: 20px 0;">
-                    <strong>ðŸ”’ Ø¬Ù…ÙŠØ¹ Ø¨ÙŠØ§Ù†Ø§ØªÙƒ Ø¢Ù…Ù†Ø© ÙˆÙ…Ø­Ù…ÙŠØ©</strong><br>
-                    Ù„Ø§ ÙŠÙ…ÙƒÙ† Ù„Ø£Ø­Ø¯ Ø±Ø¤ÙŠØ© Ù…Ø¹Ù„ÙˆÙ…Ø§ØªÙƒ Ø§Ù„Ø´Ø®ØµÙŠØ©<br>
-                    Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡ Ø§Ù„Ø¢Ø®Ø±ÙˆÙ† ÙŠÙ…ÙƒÙ†Ù‡Ù… Ø±Ø¤ÙŠØ© Ø§Ø³Ù…Ùƒ ÙˆØ§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø© ÙÙ‚Ø·
+                    <strong>🔒 جميع بياناتك آمنة ومحمية</strong><br>
+                    لا يمكن لأحد رؤية معلوماتك الشخصية<br>
+                    الأعضاء الآخرون يمكنهم رؤية اسمك واسم العائلة فقط
                 </div>
-                <button class="btn" onclick="register()">Ø¥Ù†Ø´Ø§Ø¡ Ø§Ù„Ø­Ø³Ø§Ø¨</button>
-                <button class="btn" onclick="showLogin()" style="background: #6c757d; margin-top: 10px;">Ù„Ø¯ÙŠÙƒ Ø­Ø³Ø§Ø¨ØŸ Ø³Ø¬Ù„ Ø¯Ø®ÙˆÙ„Ùƒ</button>
+                <button class="btn" onclick="register()">إنشاء الحساب</button>
+                <button class="btn" onclick="showLogin()" style="background: #6c757d; margin-top: 10px;">لديك حساب؟ سجل دخولك</button>
             </div>
         </div>
 
         <div class="chat-container" id="chatContainer">
             <div class="chat-tabs">
-                <div class="chat-tab ai active" onclick="switchRoom('ai')">ðŸ¤– Ø§Ù„Ø°ÙƒØ§Ø¡ Ø§Ù„Ø§ØµØ·Ù†Ø§Ø¹ÙŠ</div>
-                <div class="chat-tab help" onclick="switchRoom('help')">ðŸ†˜ Ø¯Ø±Ø¯Ø´Ø© Ø§Ù„Ø·ÙˆØ§Ø±Ø¦</div>
+                <div class="chat-tab ai active" onclick="switchRoom('ai')">🤖 الذكاء الاصطناعي</div>
+                <div class="chat-tab help" onclick="switchRoom('help')">🆘 دردشة الطوارئ</div>
             </div>
 
             <div class="chat-messages" id="chatMessages"></div>
             
-            <div class="warning" id="warning">âš ï¸ Ø±Ø³Ø§Ù„ØªÙƒ ØªØ­ØªÙˆÙŠ Ø¹Ù„Ù‰ ÙƒÙ„Ù…Ø§Øª ØºÙŠØ± Ù…Ù†Ø§Ø³Ø¨Ø©. ÙŠØ±Ø¬Ù‰ Ø§Ø³ØªØ®Ø¯Ø§Ù… ÙƒÙ„Ù…Ø§Øª Ù…Ù‡Ø°Ø¨Ø©.</div>
+            <div class="warning" id="warning">⚠️ رسالتك تحتوي على كلمات غير مناسبة. يرجى استخدام كلمات مهذبة.</div>
 
             <div class="message-input-container">
-                <input type="text" class="message-input" id="messageInput" placeholder="Ø§ÙƒØªØ¨ Ø±Ø³Ø§Ù„ØªÙƒ Ù‡Ù†Ø§..." onkeypress="handleKeyPress(event)">
-                <button class="send-btn" onclick="sendMessage()">Ø¥Ø±Ø³Ø§Ù„</button>
+                <input type="text" class="message-input" id="messageInput" placeholder="اكتب رسالتك هنا..." onkeypress="handleKeyPress(event)">
+                <button class="send-btn" onclick="sendMessage()">إرسال</button>
             </div>
         </div>
     </div>
@@ -290,8 +117,7 @@
     <script>
         let currentUser = null;
         let currentRoom = 'ai';
-        
-        const profanityList = ['ÙƒÙ„Ø¨', 'Ø­Ù…Ø§Ø±', 'ØºØ¨ÙŠ', 'Ø§Ø­Ù…Ù‚', 'Ù„Ø¹Ù†Ø©', 'ØªØ¨Ø§'];
+        const profanityList = ['كلب', 'حمار', 'غبي', 'احمق', 'لعنة', 'تبا'];
 
         function showLogin() {
             document.getElementById('loginForm').style.display = 'block';
@@ -308,7 +134,7 @@
             const lastName = document.getElementById('lastName').value.trim();
             
             if (!firstName || !lastName) {
-                alert('ÙŠØ±Ø¬Ù‰ Ù…Ù„Ø¡ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ù‚ÙˆÙ„');
+                alert('يرجى ملء جميع الحقول');
                 return;
             }
             
@@ -331,7 +157,7 @@
             const city = document.getElementById('city').value.trim();
             
             if (!firstName || !lastName || !birthDate || !phone || !city) {
-                alert('ÙŠØ±Ø¬Ù‰ Ù…Ù„Ø¡ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ù‚ÙˆÙ„');
+                alert('يرجى ملء جميع الحقول');
                 return;
             }
             
@@ -347,7 +173,6 @@
             
             localStorage.setItem('kurdgpt_user', JSON.stringify(currentUser));
             
-            // Save to global users
             const users = JSON.parse(localStorage.getItem('global_users') || '[]');
             users.push(currentUser);
             localStorage.setItem('global_users', JSON.stringify(users));
@@ -380,10 +205,9 @@
             chatMessages.innerHTML = '';
             
             if (currentRoom === 'ai') {
-                addMessage('Ù…Ø±Ø­Ø¨Ø§Ù‹! Ø£Ù†Ø§ KurdGPTØŒ Ù…Ø³Ø§Ø¹Ø¯Ùƒ Ø§Ù„Ø°ÙƒÙŠ. ÙƒÙŠÙ ÙŠÙ…ÙƒÙ†Ù†ÙŠ Ù…Ø³Ø§Ø¹Ø¯ØªÙƒ Ø§Ù„ÙŠÙˆÙ…ØŸ', 'KurdGPT', 'ai');
+                addMessage('مرحباً! أنا KurdGPT، مساعدك الذكي. كيف يمكنني مساعدتك اليوم؟', 'KurdGPT', 'ai');
             }
             
-            // Load saved messages
             const messages = JSON.parse(localStorage.getItem(`messages_${currentRoom}`) || '[]');
             messages.forEach(msg => {
                 addMessage(msg.text, msg.sender, msg.type, false);
@@ -433,7 +257,7 @@
                         messages: [
                             {
                                 role: 'system',
-                                content: 'Ø£Ù†Øª KurdGPTØŒ Ù…Ø³Ø§Ø¹Ø¯ Ø°ÙƒÙŠ ÙŠØªØ­Ø¯Ø« Ø§Ù„Ø¹Ø±Ø¨ÙŠØ© ÙˆØ§Ù„ÙƒØ±Ø¯ÙŠØ©. ÙƒÙ† Ù…ÙÙŠØ¯Ø§Ù‹ ÙˆÙ…Ù‡Ø°Ø¨Ø§Ù‹ ÙˆØ£Ø¬Ø¨ Ø¨ÙˆØ¶ÙˆØ­.'
+                                content: 'أنت KurdGPT، مساعد ذكي يتحدث العربية والكردية. كن مفيداً ومهذباً وأجب بوضوح.'
                             },
                             {
                                 role: 'user',
@@ -441,7 +265,7 @@
                             }
                         ],
                         max_tokens: 500
-                    })
+                    } )
                 });
 
                 if (response.ok) {
@@ -449,10 +273,10 @@
                     const aiMessage = data.choices[0].message.content;
                     addMessage(aiMessage, 'KurdGPT', 'ai');
                 } else {
-                    addMessage('Ø¹Ø°Ø±Ø§Ù‹ØŒ Ø£ÙˆØ§Ø¬Ù‡ Ù…Ø´ÙƒÙ„Ø© ØªÙ‚Ù†ÙŠØ© Ø­Ø§Ù„ÙŠØ§Ù‹. ÙŠØ±Ø¬Ù‰ Ø§Ù„Ù…Ø­Ø§ÙˆÙ„Ø© Ù…Ø±Ø© Ø£Ø®Ø±Ù‰.', 'KurdGPT', 'ai');
+                    addMessage('عذراً، أواجه مشكلة تقنية حالياً. يرجى المحاولة مرة أخرى.', 'KurdGPT', 'ai');
                 }
             } catch (error) {
-                addMessage('Ø£ÙÙ‡Ù… Ø³Ø¤Ø§Ù„Ùƒ. Ø¯Ø¹Ù†ÙŠ Ø£ÙÙƒØ± ÙÙŠ Ù‡Ø°Ø§ ÙˆØ£Ø¹Ø·ÙŠÙƒ Ø¥Ø¬Ø§Ø¨Ø© Ù…ÙÙŠØ¯Ø©.', 'KurdGPT', 'ai');
+                addMessage('أفهم سؤالك. دعني أفكر في هذا وأعطيك إجابة مفيدة.', 'KurdGPT', 'ai');
             }
         }
 
@@ -472,7 +296,6 @@
                 const messages = JSON.parse(localStorage.getItem(`messages_${currentRoom}`) || '[]');
                 messages.push({ text, sender, type, timestamp: Date.now() });
                 
-                // Keep only last 50 messages
                 if (messages.length > 50) {
                     messages.splice(0, messages.length - 50);
                 }
@@ -487,7 +310,6 @@
             }
         }
 
-        // Initialize
         window.onload = function() {
             const savedUser = localStorage.getItem('kurdgpt_user');
             if (savedUser) {
@@ -500,4 +322,3 @@
     </script>
 </body>
 </html>
-
