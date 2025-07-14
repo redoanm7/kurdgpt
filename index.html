@@ -54,8 +54,135 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
+        .user-info {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-left: 20px;
+            display: none;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logout-btn {
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Auth Screens */
+        .auth-container {
+            padding: 40px;
+            text-align: center;
+            display: block;
+        }
+
+        .auth-form {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 2px solid #e9ecef;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        .auth-form h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            direction: rtl;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #4A90E2;
+            box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .auth-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+        }
+
+        .auth-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .auth-switch {
+            color: #4A90E2;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        .privacy-notice {
+            background: #e8f5e8;
+            border: 2px solid #4caf50;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #2e7d32;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .privacy-notice .icon {
+            font-size: 20px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* Main Content */
         .main-content {
             padding: 30px;
+            display: none;
         }
 
         .input-section {
@@ -195,6 +322,97 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* Chat Section */
+        .chat-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 2px solid #e9ecef;
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .chat-messages {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: white;
+            direction: rtl;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            background: #e3f2fd;
+            border-left: 4px solid #4A90E2;
+        }
+
+        .chat-message .user-name {
+            font-weight: bold;
+            color: #4A90E2;
+            margin-bottom: 5px;
+        }
+
+        .chat-message .message-text {
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+
+        .chat-message .message-time {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .chat-input-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 14px;
+            direction: rtl;
+        }
+
+        .chat-input:focus {
+            outline: none;
+            border-color: #4A90E2;
+        }
+
+        .chat-send-btn {
+            background: #4A90E2;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .chat-send-btn:hover {
+            background: #357ABD;
+            transform: scale(1.05);
+        }
+
         .instagram-section {
             background: linear-gradient(135deg, #833AB4 0%, #E1306C 50%, #FD1D1D 100%);
             border-radius: 15px;
@@ -241,6 +459,18 @@
             font-size: 14px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             z-index: 1000;
+            display: none;
+        }
+
+        .error-message {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            color: #c62828;
+            text-align: center;
+            display: none;
         }
 
         @media (max-width: 768px) {
@@ -258,22 +488,108 @@
                 height: 28px;
             }
             
-            .main-content {
+            .main-content, .auth-container {
                 padding: 20px;
+            }
+
+            .auth-form {
+                padding: 20px;
+            }
+
+            .chat-messages {
+                height: 250px;
             }
         }
     </style>
 </head>
 <body>
-    <button class="history-btn" onclick="showHistory()">📚 السجل</button>
+    <button class="history-btn" id="historyBtn" onclick="showHistory()">📚 السجل</button>
     
     <div class="container">
         <div class="header">
             <img src="kurdistan_flag.jpg" alt="علم كردستان" class="flag">
             <h1>Kurd GPT</h1>
+            <div class="user-info" id="userInfo">
+                <span id="userName">مرحباً</span>
+                <button class="logout-btn" onclick="logout()">تسجيل الخروج</button>
+            </div>
         </div>
         
-        <div class="main-content">
+        <!-- Auth Container -->
+        <div class="auth-container" id="authContainer">
+            <div class="privacy-notice">
+                <span class="icon">🔒</span>
+                <strong>خصوصيتك مهمة لنا!</strong><br>
+                لن تظهر بياناتك الشخصية (الإيميل أو رقم الهاتف) لأي شخص آخر.<br>
+                سيظهر فقط اسم المستخدم الذي تختاره في الدردشة الجماعية.
+            </div>
+
+            <!-- Login Form -->
+            <div class="auth-form" id="loginForm">
+                <h2>تسجيل الدخول</h2>
+                <div class="form-group">
+                    <label for="loginEmail">البريد الإلكتروني:</label>
+                    <input type="email" id="loginEmail" placeholder="example@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">كلمة المرور:</label>
+                    <input type="password" id="loginPassword" placeholder="كلمة المرور" required>
+                </div>
+                <button class="auth-btn" onclick="loginUser()">تسجيل الدخول</button>
+                <div class="auth-switch" onclick="showRegisterForm()">
+                    ليس لديك حساب؟ إنشاء حساب جديد
+                </div>
+            </div>
+
+            <!-- Register Form -->
+            <div class="auth-form" id="registerForm" style="display: none;">
+                <h2>إنشاء حساب جديد</h2>
+                <div class="form-group">
+                    <label for="registerEmail">البريد الإلكتروني:</label>
+                    <input type="email" id="registerEmail" placeholder="example@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">كلمة المرور:</label>
+                    <input type="password" id="registerPassword" placeholder="كلمة المرور (6 أحرف على الأقل)" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">تأكيد كلمة المرور:</label>
+                    <input type="password" id="confirmPassword" placeholder="أعد كتابة كلمة المرور" required>
+                </div>
+                <button class="auth-btn" onclick="registerUser()">إنشاء الحساب</button>
+                <div class="auth-switch" onclick="showLoginForm()">
+                    لديك حساب بالفعل؟ تسجيل الدخول
+                </div>
+            </div>
+
+            <!-- Profile Completion Form -->
+            <div class="auth-form" id="profileForm" style="display: none;">
+                <h2>إكمال الملف الشخصي</h2>
+                <div class="privacy-notice">
+                    <span class="icon">👤</span>
+                    <strong>معلومات للعرض العام:</strong><br>
+                    هذه المعلومات ستظهر للمستخدمين الآخرين في الدردشة الجماعية فقط.
+                </div>
+                <div class="form-group">
+                    <label for="firstName">الاسم الأول:</label>
+                    <input type="text" id="firstName" placeholder="الاسم الأول" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">اسم العائلة:</label>
+                    <input type="text" id="lastName" placeholder="اسم العائلة" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">المدينة:</label>
+                    <input type="text" id="city" placeholder="المدينة التي تعيش فيها" required>
+                </div>
+                <button class="auth-btn" onclick="completeProfile()">حفظ المعلومات والدخول</button>
+            </div>
+
+            <div class="error-message" id="errorMessage"></div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content" id="mainContent">
             <div class="input-section">
                 <h3>اكتب سؤالك هنا:</h3>
                 <textarea id="questionInput" placeholder="مثال: اشرح لي تاريخ كردستان"></textarea>
@@ -305,6 +621,23 @@
                 </div>
                 <div id="answerText" class="answer-text"></div>
             </div>
+
+            <!-- Chat Section -->
+            <div class="chat-section">
+                <div class="chat-header">
+                    <h3>💬 الدردشة الجماعية</h3>
+                    <span style="font-size: 12px; color: #666;">شارك أفكارك مع المجتمع</span>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div style="text-align: center; color: #666; padding: 20px;">
+                        مرحباً بك في الدردشة الجماعية! شارك أفكارك واطرح أسئلتك.
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="اكتب رسالتك هنا..." maxlength="500">
+                    <button class="chat-send-btn" onclick="sendChatMessage()">📤</button>
+                </div>
+            </div>
             
             <div class="instagram-section">
                 <h4>تابعني على الإنستغرام</h4>
@@ -316,7 +649,315 @@
         </div>
     </div>
 
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+        import { getFirestore, doc, setDoc, getDoc, collection, addDoc, query, orderBy, limit, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAg-E2kgYN18-ghXlwyQvRxOh5xF8tDiEU",
+            authDomain: "kurd-gpt.firebaseapp.com",
+            projectId: "kurd-gpt",
+            storageBucket: "kurd-gpt.firebasestorage.app",
+            messagingSenderId: "146430936384",
+            appId: "1:146430936384:web:f363256f3125c362d6e6a5",
+            measurementId: "G-WWZD1331JR"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig );
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Global variables
+        window.auth = auth;
+        window.db = db;
+        window.currentUser = null;
+        window.currentUserProfile = null;
+
+        // Auth state listener
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                window.currentUser = user;
+                await loadUserProfile(user.uid);
+                if (window.currentUserProfile) {
+                    showMainContent();
+                } else {
+                    showProfileForm();
+                }
+            } else {
+                window.currentUser = null;
+                window.currentUserProfile = null;
+                showAuthContainer();
+            }
+        });
+
+        // Load user profile
+        async function loadUserProfile(uid) {
+            try {
+                const docRef = doc(db, 'users', uid);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    window.currentUserProfile = docSnap.data();
+                    return true;
+                }
+                return false;
+            } catch (error) {
+                console.error('Error loading profile:', error);
+                return false;
+            }
+        }
+
+        // Save user profile
+        async function saveUserProfile(uid, profileData) {
+            try {
+                const docRef = doc(db, 'users', uid);
+                await setDoc(docRef, {
+                    ...profileData,
+                    createdAt: new Date(),
+                    lastActive: new Date()
+                });
+                return true;
+            } catch (error) {
+                console.error('Error saving profile:', error);
+                return false;
+            }
+        }
+
+        // Show/Hide functions
+        function showAuthContainer() {
+            document.getElementById('authContainer').style.display = 'block';
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('userInfo').style.display = 'none';
+            document.getElementById('historyBtn').style.display = 'none';
+        }
+
+        function showMainContent() {
+            document.getElementById('authContainer').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+            document.getElementById('userInfo').style.display = 'flex';
+            document.getElementById('historyBtn').style.display = 'block';
+            
+            if (window.currentUserProfile) {
+                document.getElementById('userName').textContent = `مرحباً ${window.currentUserProfile.firstName}`;
+                startChatListener();
+            }
+        }
+
+        function showProfileForm() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('profileForm').style.display = 'block';
+        }
+
+        // Auth functions
+        window.showLoginForm = function() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('profileForm').style.display = 'none';
+            hideError();
+        }
+
+        window.showRegisterForm = function() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+            document.getElementById('profileForm').style.display = 'none';
+            hideError();
+        }
+
+        window.loginUser = async function() {
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value;
+
+            if (!email || !password) {
+                showError('يرجى إدخال البريد الإلكتروني وكلمة المرور');
+                return;
+            }
+
+            try {
+                await signInWithEmailAndPassword(auth, email, password);
+                hideError();
+            } catch (error) {
+                console.error('Login error:', error);
+                showError('خطأ في تسجيل الدخول. تحقق من البريد الإلكتروني وكلمة المرور.');
+            }
+        }
+
+        window.registerUser = async function() {
+            const email = document.getElementById('registerEmail').value.trim();
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (!email || !password || !confirmPassword) {
+                showError('يرجى ملء جميع الحقول');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                showError('كلمة المرور وتأكيد كلمة المرور غير متطابقتين');
+                return;
+            }
+
+            if (password.length < 6) {
+                showError('كلمة المرور يجب أن تكون 6 أحرف على الأقل');
+                return;
+            }
+
+            try {
+                await createUserWithEmailAndPassword(auth, email, password);
+                hideError();
+            } catch (error) {
+                console.error('Registration error:', error);
+                if (error.code === 'auth/email-already-in-use') {
+                    showError('هذا البريد الإلكتروني مستخدم بالفعل');
+                } else {
+                    showError('خطأ في إنشاء الحساب. يرجى المحاولة مرة أخرى.');
+                }
+            }
+        }
+
+        window.completeProfile = async function() {
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const city = document.getElementById('city').value.trim();
+
+            if (!firstName || !lastName || !city) {
+                showError('يرجى ملء جميع الحقول');
+                return;
+            }
+
+            if (!window.currentUser) {
+                showError('خطأ في النظام. يرجى تسجيل الدخول مرة أخرى.');
+                return;
+            }
+
+            const profileData = {
+                firstName,
+                lastName,
+                city,
+                email: window.currentUser.email
+            };
+
+            const success = await saveUserProfile(window.currentUser.uid, profileData);
+            if (success) {
+                window.currentUserProfile = profileData;
+                showMainContent();
+                hideError();
+            } else {
+                showError('خطأ في حفظ المعلومات. يرجى المحاولة مرة أخرى.');
+            }
+        }
+
+        window.logout = async function() {
+            try {
+                await signOut(auth);
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        }
+
+        // Chat functions
+        function startChatListener() {
+            const chatMessages = document.getElementById('chatMessages');
+            const q = query(
+                collection(db, 'chatMessages'),
+                orderBy('timestamp', 'desc'),
+                limit(50)
+            );
+
+            onSnapshot(q, (snapshot) => {
+                const messages = [];
+                snapshot.forEach((doc) => {
+                    messages.push({ id: doc.id, ...doc.data() });
+                });
+                
+                messages.reverse(); // Show oldest first
+                displayChatMessages(messages);
+            });
+        }
+
+        function displayChatMessages(messages) {
+            const chatMessages = document.getElementById('chatMessages');
+            
+            if (messages.length === 0) {
+                chatMessages.innerHTML = `
+                    <div style="text-align: center; color: #666; padding: 20px;">
+                        مرحباً بك في الدردشة الجماعية! شارك أفكارك واطرح أسئلتك.
+                    </div>
+                `;
+                return;
+            }
+
+            chatMessages.innerHTML = messages.map(message => `
+                <div class="chat-message">
+                    <div class="user-name">${message.userName} - ${message.userCity}</div>
+                    <div class="message-text">${message.text}</div>
+                    <div class="message-time">${formatTime(message.timestamp)}</div>
+                </div>
+            `).join('');
+
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        window.sendChatMessage = async function() {
+            const chatInput = document.getElementById('chatInput');
+            const messageText = chatInput.value.trim();
+
+            if (!messageText) return;
+            if (!window.currentUser || !window.currentUserProfile) return;
+
+            try {
+                await addDoc(collection(db, 'chatMessages'), {
+                    text: messageText,
+                    userName: `${window.currentUserProfile.firstName} ${window.currentUserProfile.lastName}`,
+                    userCity: window.currentUserProfile.city,
+                    userId: window.currentUser.uid,
+                    timestamp: new Date()
+                });
+
+                chatInput.value = '';
+            } catch (error) {
+                console.error('Error sending message:', error);
+                showError('خطأ في إرسال الرسالة');
+            }
+        }
+
+        // Utility functions
+        function formatTime(timestamp) {
+            if (!timestamp) return '';
+            const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+            return date.toLocaleString('ar-SA', {
+                hour: '2-digit',
+                minute: '2-digit',
+                day: '2-digit',
+                month: '2-digit'
+            });
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+
+        function hideError() {
+            document.getElementById('errorMessage').style.display = 'none';
+        }
+
+        // Chat input enter key listener
+        document.getElementById('chatInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                window.sendChatMessage();
+            }
+        });
+    </script>
+
     <script>
+        // Original GPT functionality
         let currentAudio = null;
         let isPlaying = false;
         let questionsHistory = JSON.parse(localStorage.getItem('kurdGptHistory') || '[]');
@@ -340,7 +981,7 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer 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'
+                        'Authorization': 'Bearer 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'
                     },
                     body: JSON.stringify({
                         model: 'gpt-4o-mini',
@@ -356,7 +997,7 @@
                         ],
                         max_tokens: 1000,
                         temperature: 0.3
-                    })
+                    } )
                 });
                 
                 if (!response.ok) {
@@ -503,4 +1144,3 @@
     </script>
 </body>
 </html>
-
