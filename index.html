@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5469196111567716" crossorigin="anonymous"></script>
-
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5469196111567716"
-     crossorigin="anonymous"></script>
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5469196111567716" crossorigin="anonymous"></script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurd GPT - اسألني وأنا أجاوبك صوتياً</title>
@@ -19,9 +15,8 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #87CEEB 0%, #F0F8FF 100%);
+            background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100% );
             min-height: 100vh;
-            padding: 20px;
             direction: rtl;
         }
 
@@ -39,6 +34,14 @@
             color: white;
             padding: 20px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .header-main {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -60,29 +63,25 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .user-info {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 15px;
-            border-radius: 10px;
-            margin-left: 20px;
-            display: none;
+        .instagram-link {
+            display: inline-flex;
             align-items: center;
-            gap: 10px;
-        }
-
-        .logout-btn {
-            background: rgba(255, 255, 255, 0.3);
-            border: none;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.15);
             color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 15px;
+            text-decoration: none;
             font-size: 12px;
+            font-weight: bold;
             transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .logout-btn:hover {
-            background: rgba(255, 255, 255, 0.4);
+        .instagram-link:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
 
         /* Auth Screens */
@@ -100,12 +99,6 @@
             border: 2px solid #e9ecef;
             max-width: 400px;
             margin: 20px auto;
-        }
-
-        .auth-form h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 1.5em;
         }
 
         .form-group {
@@ -154,12 +147,6 @@
             box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
         }
 
-        .auth-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-
         .auth-switch {
             color: #4A90E2;
             cursor: pointer;
@@ -168,224 +155,124 @@
             display: inline-block;
         }
 
-        .privacy-notice {
-            background: #e8f5e8;
-            border: 2px solid #4caf50;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px 0;
-            color: #2e7d32;
-            font-size: 14px;
-            text-align: center;
-        }
-
-        .privacy-notice .icon {
-            font-size: 20px;
-            margin-bottom: 8px;
-            display: block;
-        }
-
         /* Main Content */
         .main-content {
             padding: 30px;
             display: none;
         }
 
-        .input-section {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 20px;
-            border: 2px solid #e9ecef;
-        }
-
-        .input-section h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
-
-        #questionInput {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            font-size: 16px;
-            resize: vertical;
-            min-height: 100px;
-            font-family: inherit;
-            direction: rtl;
-        }
-
-        #questionInput:focus {
-            outline: none;
-            border-color: #4A90E2;
-            box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
-        }
-
-        .language-section {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 20px;
-            border: 2px solid #e9ecef;
-        }
-
-        #languageSelect {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            font-size: 16px;
-            background: white;
-            direction: rtl;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 20px;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
-        }
-
-        .submit-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .answer-section {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 20px;
-            border: 2px solid #e9ecef;
-            display: none;
-        }
-
-        .answer-header {
+        .chat-container {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 15px;
+            height: 500px;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
         }
 
-        .answer-text {
-            line-height: 1.8;
-            font-size: 16px;
-            color: #2c3e50;
-            direction: rtl;
-        }
-
-        .play-btn {
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .play-btn:hover {
-            transform: scale(1.05);
-        }
-
-        .loading {
-            text-align: center;
+        .chat-sidebar {
+            width: 200px;
+            background: #f8f9fa;
+            border-left: 2px solid #e9ecef;
             padding: 20px;
-            color: #666;
         }
 
-        .spinner {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #4A90E2;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 10px;
+        .chat-room {
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-weight: bold;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .chat-room.ai {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
         }
 
-        /* Chat Section */
-        .chat-section {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 20px;
-            border: 2px solid #e9ecef;
+        .chat-room.help {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .chat-room.general {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .chat-room:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .chat-room.active {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .chat-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .chat-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e9ecef;
+            background: #4A90E2;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
         }
 
         .chat-messages {
-            height: 300px;
+            flex: 1;
+            padding: 20px;
             overflow-y: auto;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
             background: white;
-            direction: rtl;
         }
 
-        .chat-message {
+        .message {
             margin-bottom: 15px;
             padding: 10px;
             border-radius: 10px;
-            background: #e3f2fd;
-            border-left: 4px solid #4A90E2;
+            max-width: 80%;
         }
 
-        .chat-message .user-name {
-            font-weight: bold;
-            color: #4A90E2;
+        .message.user {
+            background: #e3f2fd;
+            margin-right: auto;
+            border: 1px solid #bbdefb;
+        }
+
+        .message.other {
+            background: #f5f5f5;
+            margin-left: auto;
+            border: 1px solid #e0e0e0;
+        }
+
+        .message.ai {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-left: auto;
+        }
+
+        .message-header {
+            font-size: 12px;
+            color: #666;
             margin-bottom: 5px;
         }
 
-        .chat-message .message-text {
-            color: #2c3e50;
-            line-height: 1.4;
-        }
-
-        .chat-message .message-time {
-            font-size: 12px;
-            color: #666;
-            margin-top: 5px;
+        .message.ai .message-header {
+            color: rgba(255,255,255,0.8);
         }
 
         .chat-input-container {
+            padding: 15px;
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
             display: flex;
             gap: 10px;
-            align-items: center;
         }
 
         .chat-input {
@@ -402,81 +289,43 @@
             border-color: #4A90E2;
         }
 
-        .chat-send-btn {
+        .send-btn {
+            padding: 12px 20px;
             background: #4A90E2;
             color: white;
             border: none;
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
+            border-radius: 25px;
             cursor: pointer;
-            font-size: 18px;
-            transition: all 0.3s ease;
+            font-weight: bold;
         }
 
-        .chat-send-btn:hover {
+        .send-btn:hover {
             background: #357ABD;
-            transform: scale(1.05);
         }
 
-        .instagram-section {
-            background: linear-gradient(135deg, #833AB4 0%, #E1306C 50%, #FD1D1D 100%);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            color: white;
-            margin-top: 30px;
-        }
-
-        .instagram-section h4 {
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .instagram-link {
-            display: inline-flex;
+        .user-info {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-left: 20px;
+            display: none;
             align-items: center;
             gap: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 20px;
-            border-radius: 25px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
         }
 
-        .instagram-link:hover {
+        .logout-btn {
             background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .history-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: #4A90E2;
-            color: white;
             border: none;
-            border-radius: 50px;
-            padding: 12px 20px;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
             cursor: pointer;
-            font-size: 14px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            display: none;
+            font-size: 12px;
+            transition: all 0.3s ease;
         }
 
-        .error-message {
-            background: #ffebee;
-            border: 2px solid #f44336;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 15px 0;
-            color: #c62828;
-            text-align: center;
-            display: none;
+        .logout-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
         }
 
         @media (max-width: 768px) {
@@ -485,668 +334,361 @@
                 border-radius: 15px;
             }
             
+            .header {
+                padding: 15px;
+            }
+            
             .header h1 {
-                font-size: 2em;
+                font-size: 1.8em;
             }
             
-            .flag {
-                width: 40px;
-                height: 28px;
+            .instagram-link {
+                font-size: 11px;
+                padding: 5px 10px;
             }
             
-            .main-content, .auth-container {
-                padding: 20px;
+            .chat-container {
+                height: 400px;
+                flex-direction: column;
             }
-
-            .auth-form {
-                padding: 20px;
+            
+            .chat-sidebar {
+                width: 100%;
+                height: 80px;
+                display: flex;
+                gap: 10px;
+                padding: 10px;
+                overflow-x: auto;
             }
-
-            .chat-messages {
-                height: 250px;
+            
+            .chat-room {
+                min-width: 80px;
+                margin-bottom: 0;
+                font-size: 12px;
+                padding: 8px;
             }
         }
     </style>
 </head>
 <body>
-    <button class="history-btn" id="historyBtn" onclick="showHistory()">📚 السجل</button>
-    
     <div class="container">
         <div class="header">
-            <img src="kurdistan_flag.jpg" alt="علم كردستان" class="flag">
-            <h1>Kurd GPT</h1>
-            <div class="user-info" id="userInfo">
-                <span id="userName">مرحباً</span>
-                <button class="logout-btn" onclick="logout()">تسجيل الخروج</button>
+            <div class="header-main">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iMzUiIHZpZXdCb3g9IjAgMCA1MCAzNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjM1IiBmaWxsPSIjRkYwMDAwIi8+CjxyZWN0IHk9IjExLjY2NjciIHdpZHRoPSI1MCIgaGVpZ2h0PSIxMS42NjY3IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjIzLjMzMzMiIHdpZHRoPSI1MCIgaGVpZ2h0PSIxMS42NjY3IiBmaWxsPSIjMDA4MDAwIi8+CjxjaXJjbGUgY3g9IjI1IiBjeT0iMTcuNSIgcj0iNSIgZmlsbD0iI0ZGRkYwMCIvPgo8L3N2Zz4K" alt="Kurdistan Flag" class="flag">
+                <h1>Kurd GPT</h1>
+                <div class="user-info" id="userInfo">
+                    <span id="userName"></span>
+                    <button class="logout-btn" onclick="logout()">تسجيل خروج</button>
+                </div>
             </div>
+            <a href="https://www.instagram.com/redoan.m7?igsh=MTV2eXhyZXcyZTg0cQ==" target="_blank" class="instagram-link">
+                📸 Instagram
+            </a>
         </div>
-        
+
         <!-- Auth Container -->
         <div class="auth-container" id="authContainer">
-            <div class="privacy-notice">
-                <span class="icon">🔒</span>
-                <strong>خصوصيتك مهمة لنا!</strong><br>
-                لن تظهر بياناتك الشخصية (الإيميل أو رقم الهاتف) لأي شخص آخر.<br>
-                سيظهر فقط اسم المستخدم الذي تختاره في الدردشة الجماعية.
-            </div>
-
-            <!-- Login Form -->
             <div class="auth-form" id="loginForm">
                 <h2>تسجيل الدخول</h2>
                 <div class="form-group">
-                    <label for="loginEmail">البريد الإلكتروني:</label>
-                    <input type="email" id="loginEmail" placeholder="example@email.com" required>
+                    <label>الاسم الأول:</label>
+                    <input type="text" id="loginFirstName" placeholder="أدخل اسمك الأول">
                 </div>
                 <div class="form-group">
-                    <label for="loginPassword">كلمة المرور:</label>
-                    <input type="password" id="loginPassword" placeholder="كلمة المرور" required>
+                    <label>اسم العائلة:</label>
+                    <input type="text" id="loginLastName" placeholder="أدخل اسم العائلة">
                 </div>
-                <button class="auth-btn" onclick="loginUser()">تسجيل الدخول</button>
-                <div class="auth-switch" onclick="showRegisterForm()">
-                    ليس لديك حساب؟ إنشاء حساب جديد
+                <div class="form-group">
+                    <label>المدينة:</label>
+                    <input type="text" id="loginCity" placeholder="أدخل مدينتك">
                 </div>
+                <button class="auth-btn" onclick="login( )">تسجيل الدخول</button>
+                <div class="auth-switch" onclick="showRegister()">إنشاء حساب جديد</div>
             </div>
 
-            <!-- Register Form -->
             <div class="auth-form" id="registerForm" style="display: none;">
                 <h2>إنشاء حساب جديد</h2>
                 <div class="form-group">
-                    <label for="registerEmail">البريد الإلكتروني:</label>
-                    <input type="email" id="registerEmail" placeholder="example@email.com" required>
+                    <label>الاسم الأول:</label>
+                    <input type="text" id="regFirstName" placeholder="أدخل اسمك الأول">
                 </div>
                 <div class="form-group">
-                    <label for="registerPassword">كلمة المرور:</label>
-                    <input type="password" id="registerPassword" placeholder="كلمة المرور (6 أحرف على الأقل)" required>
+                    <label>اسم العائلة:</label>
+                    <input type="text" id="regLastName" placeholder="أدخل اسم العائلة">
                 </div>
                 <div class="form-group">
-                    <label for="confirmPassword">تأكيد كلمة المرور:</label>
-                    <input type="password" id="confirmPassword" placeholder="أعد كتابة كلمة المرور" required>
+                    <label>المدينة:</label>
+                    <input type="text" id="regCity" placeholder="أدخل مدينتك">
                 </div>
-                <button class="auth-btn" onclick="registerUser()">إنشاء الحساب</button>
-                <div class="auth-switch" onclick="showLoginForm()">
-                    لديك حساب بالفعل؟ تسجيل الدخول
-                </div>
+                <button class="auth-btn" onclick="register()">إنشاء الحساب</button>
+                <div class="auth-switch" onclick="showLogin()">لديك حساب؟ تسجيل الدخول</div>
             </div>
-
-            <!-- Profile Completion Form -->
-            <div class="auth-form" id="profileForm" style="display: none;">
-                <h2>إكمال الملف الشخصي</h2>
-                <div class="privacy-notice">
-                    <span class="icon">👤</span>
-                    <strong>معلومات للعرض العام:</strong><br>
-                    هذه المعلومات ستظهر للمستخدمين الآخرين في الدردشة الجماعية فقط.
-                </div>
-                <div class="form-group">
-                    <label for="firstName">الاسم الأول:</label>
-                    <input type="text" id="firstName" placeholder="الاسم الأول" required>
-                </div>
-                <div class="form-group">
-                    <label for="lastName">اسم العائلة:</label>
-                    <input type="text" id="lastName" placeholder="اسم العائلة" required>
-                </div>
-                <div class="form-group">
-                    <label for="city">المدينة:</label>
-                    <input type="text" id="city" placeholder="المدينة التي تعيش فيها" required>
-                </div>
-                <button class="auth-btn" onclick="completeProfile()">حفظ المعلومات والدخول</button>
-            </div>
-
-            <div class="error-message" id="errorMessage"></div>
         </div>
-        
+
         <!-- Main Content -->
         <div class="main-content" id="mainContent">
-            <div class="input-section">
-                <h3>اكتب سؤالك هنا:</h3>
-                <textarea id="questionInput" placeholder="مثال: اشرح لي تاريخ كردستان"></textarea>
-            </div>
-            
-            <div class="language-section">
-                <h3>اختر لغة الإجابة:</h3>
-                <select id="languageSelect">
-                    <option value="العربية">العربية</option>
-                    <option value="کوردی">کوردی</option>
-                    <option value="Deutsch">Deutsch</option>
-                </select>
-            </div>
-            
-            <button class="submit-btn" onclick="submitQuestion()">إرسال السؤال</button>
-            
-            <div id="loadingSection" class="loading" style="display: none;">
-                <div class="spinner"></div>
-                <p>جاري المعالجة...</p>
-            </div>
-            
-            <div id="answerSection" class="answer-section">
-                <div class="answer-header">
-                    <h3>💬 الإجابة:</h3>
-                    <button class="play-btn" onclick="playAudio()">
-                        <span id="playIcon">🔊</span>
-                        <span id="playText">تشغيل الصوت</span>
-                    </button>
-                </div>
-                <div id="answerText" class="answer-text"></div>
-            </div>
-
-            <!-- Chat Section -->
-            <div class="chat-section">
-                <div class="chat-header">
-                    <h3>💬 الدردشة الجماعية</h3>
-                    <span style="font-size: 12px; color: #666;">شارك أفكارك مع المجتمع</span>
-                </div>
-                <div class="chat-messages" id="chatMessages">
-                    <div style="text-align: center; color: #666; padding: 20px;">
-                        مرحباً بك في الدردشة الجماعية! شارك أفكارك واطرح أسئلتك.
+            <div class="chat-container">
+                <div class="chat-sidebar">
+                    <div class="chat-room ai active" onclick="switchRoom('ai')">
+                        🤖 الذكاء الاصطناعي
+                    </div>
+                    <div class="chat-room help" onclick="switchRoom('help')">
+                        🆘 مساعدة
+                    </div>
+                    <div class="chat-room general" onclick="switchRoom('general')">
+                        😄 دردشة عامة
                     </div>
                 </div>
-                <div class="chat-input-container">
-                    <input type="text" class="chat-input" id="chatInput" placeholder="اكتب رسالتك هنا..." maxlength="500">
-                    <button class="chat-send-btn" onclick="sendChatMessage()">📤</button>
+                <div class="chat-main">
+                    <div class="chat-header" id="chatHeader">
+                        🤖 الذكاء الاصطناعي - KurdGPT
+                    </div>
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message ai">
+                            <div class="message-header">KurdGPT</div>
+                            مرحباً! أنا KurdGPT، ذكاءك الاصطناعي الشخصي. كيف يمكنني مساعدتك اليوم؟
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <input type="text" class="chat-input" id="messageInput" placeholder="اكتب رسالتك هنا..." onkeypress="handleKeyPress(event)">
+                        <button class="send-btn" onclick="sendMessage()">إرسال</button>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="instagram-section">
-                <h4>تابعني على الإنستغرام</h4>
-                <a href="https://www.instagram.com/redoan.m7" target="_blank" class="instagram-link">
-                    <span>📸</span>
-                    <span>@redoan.m7</span>
-                </a>
             </div>
         </div>
     </div>
 
-    <!-- Firebase SDK -->
-    <script type="module">
-        // Import Firebase modules
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
-        import { getFirestore, doc, setDoc, getDoc, collection, addDoc, query, orderBy, limit, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
-
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAg-E2kgYN18-ghXlwyQvRxOh5xF8tDiEU",
-            authDomain: "kurd-gpt.firebaseapp.com",
-            projectId: "kurd-gpt",
-            storageBucket: "kurd-gpt.firebasestorage.app",
-            messagingSenderId: "146430936384",
-            appId: "1:146430936384:web:f363256f3125c362d6e6a5",
-            measurementId: "G-WWZD1331JR"
+    <script>
+        let currentUser = null;
+        let currentRoom = 'ai';
+        let messages = {
+            ai: [],
+            help: [],
+            general: []
         };
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig );
-        const auth = getAuth(app);
-        const db = getFirestore(app);
-
-        // Global variables
-        window.auth = auth;
-        window.db = db;
-        window.currentUser = null;
-        window.currentUserProfile = null;
-
-        // Auth state listener
-        onAuthStateChanged(auth, async (user) => {
-            if (user) {
-                window.currentUser = user;
-                await loadUserProfile(user.uid);
-                if (window.currentUserProfile) {
-                    showMainContent();
-                } else {
-                    showProfileForm();
-                }
-            } else {
-                window.currentUser = null;
-                window.currentUserProfile = null;
-                showAuthContainer();
-            }
-        });
-
-        // Load user profile
-        async function loadUserProfile(uid) {
-            try {
-                const docRef = doc(db, 'users', uid);
-                const docSnap = await getDoc(docRef);
-                if (docSnap.exists()) {
-                    window.currentUserProfile = docSnap.data();
-                    return true;
-                }
-                return false;
-            } catch (error) {
-                console.error('Error loading profile:', error);
-                return false;
+        // Check if user is logged in
+        function checkAuth() {
+            const savedUser = localStorage.getItem('kurdgpt_user');
+            if (savedUser) {
+                currentUser = JSON.parse(savedUser);
+                showMainContent();
             }
         }
 
-        // Save user profile
-        async function saveUserProfile(uid, profileData) {
-            try {
-                const docRef = doc(db, 'users', uid);
-                await setDoc(docRef, {
-                    ...profileData,
-                    createdAt: new Date(),
-                    lastActive: new Date()
-                });
-                return true;
-            } catch (error) {
-                console.error('Error saving profile:', error);
-                return false;
+        // Show/Hide forms
+        function showLogin() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('registerForm').style.display = 'none';
+        }
+
+        function showRegister() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+        }
+
+        // Login function
+        function login() {
+            const firstName = document.getElementById('loginFirstName').value.trim();
+            const lastName = document.getElementById('loginLastName').value.trim();
+            const city = document.getElementById('loginCity').value.trim();
+
+            if (!firstName || !lastName || !city) {
+                alert('يرجى ملء جميع الحقول');
+                return;
             }
+
+            currentUser = {
+                firstName: firstName,
+                lastName: lastName,
+                city: city,
+                fullName: firstName + ' ' + lastName
+            };
+
+            localStorage.setItem('kurdgpt_user', JSON.stringify(currentUser));
+            showMainContent();
         }
 
-        // Show/Hide functions
-        function showAuthContainer() {
-            document.getElementById('authContainer').style.display = 'block';
-            document.getElementById('mainContent').style.display = 'none';
-            document.getElementById('userInfo').style.display = 'none';
-            document.getElementById('historyBtn').style.display = 'none';
+        // Register function
+        function register() {
+            const firstName = document.getElementById('regFirstName').value.trim();
+            const lastName = document.getElementById('regLastName').value.trim();
+            const city = document.getElementById('regCity').value.trim();
+
+            if (!firstName || !lastName || !city) {
+                alert('يرجى ملء جميع الحقول');
+                return;
+            }
+
+            currentUser = {
+                firstName: firstName,
+                lastName: lastName,
+                city: city,
+                fullName: firstName + ' ' + lastName
+            };
+
+            localStorage.setItem('kurdgpt_user', JSON.stringify(currentUser));
+            showMainContent();
         }
 
+        // Show main content
         function showMainContent() {
             document.getElementById('authContainer').style.display = 'none';
             document.getElementById('mainContent').style.display = 'block';
             document.getElementById('userInfo').style.display = 'flex';
-            document.getElementById('historyBtn').style.display = 'block';
+            document.getElementById('userName').textContent = currentUser.fullName;
             
-            if (window.currentUserProfile) {
-                document.getElementById('userName').textContent = `مرحباً ${window.currentUserProfile.firstName}`;
-                startChatListener();
+            // Load saved messages
+            const savedMessages = localStorage.getItem('kurdgpt_messages');
+            if (savedMessages) {
+                messages = JSON.parse(savedMessages);
             }
+            
+            loadMessages();
         }
 
-        function showProfileForm() {
-            document.getElementById('loginForm').style.display = 'none';
-            document.getElementById('registerForm').style.display = 'none';
-            document.getElementById('profileForm').style.display = 'block';
+        // Logout function
+        function logout() {
+            localStorage.removeItem('kurdgpt_user');
+            localStorage.removeItem('kurdgpt_messages');
+            currentUser = null;
+            document.getElementById('authContainer').style.display = 'block';
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('userInfo').style.display = 'none';
+            
+            // Clear forms
+            document.getElementById('loginFirstName').value = '';
+            document.getElementById('loginLastName').value = '';
+            document.getElementById('loginCity').value = '';
+            showLogin();
         }
 
-        // Auth functions
-        window.showLoginForm = function() {
-            document.getElementById('loginForm').style.display = 'block';
-            document.getElementById('registerForm').style.display = 'none';
-            document.getElementById('profileForm').style.display = 'none';
-            hideError();
-        }
-
-        window.showRegisterForm = function() {
-            document.getElementById('loginForm').style.display = 'none';
-            document.getElementById('registerForm').style.display = 'block';
-            document.getElementById('profileForm').style.display = 'none';
-            hideError();
-        }
-
-        window.loginUser = async function() {
-            const email = document.getElementById('loginEmail').value.trim();
-            const password = document.getElementById('loginPassword').value;
-
-            if (!email || !password) {
-                showError('يرجى إدخال البريد الإلكتروني وكلمة المرور');
-                return;
-            }
-
-            try {
-                await signInWithEmailAndPassword(auth, email, password);
-                hideError();
-            } catch (error) {
-                console.error('Login error:', error);
-                showError('خطأ في تسجيل الدخول. تحقق من البريد الإلكتروني وكلمة المرور.');
-            }
-        }
-
-        window.registerUser = async function() {
-            const email = document.getElementById('registerEmail').value.trim();
-            const password = document.getElementById('registerPassword').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-
-            if (!email || !password || !confirmPassword) {
-                showError('يرجى ملء جميع الحقول');
-                return;
-            }
-
-            if (password !== confirmPassword) {
-                showError('كلمة المرور وتأكيد كلمة المرور غير متطابقتين');
-                return;
-            }
-
-            if (password.length < 6) {
-                showError('كلمة المرور يجب أن تكون 6 أحرف على الأقل');
-                return;
-            }
-
-            try {
-                await createUserWithEmailAndPassword(auth, email, password);
-                hideError();
-            } catch (error) {
-                console.error('Registration error:', error);
-                if (error.code === 'auth/email-already-in-use') {
-                    showError('هذا البريد الإلكتروني مستخدم بالفعل');
-                } else {
-                    showError('خطأ في إنشاء الحساب. يرجى المحاولة مرة أخرى.');
-                }
-            }
-        }
-
-        window.completeProfile = async function() {
-            const firstName = document.getElementById('firstName').value.trim();
-            const lastName = document.getElementById('lastName').value.trim();
-            const city = document.getElementById('city').value.trim();
-
-            if (!firstName || !lastName || !city) {
-                showError('يرجى ملء جميع الحقول');
-                return;
-            }
-
-            if (!window.currentUser) {
-                showError('خطأ في النظام. يرجى تسجيل الدخول مرة أخرى.');
-                return;
-            }
-
-            const profileData = {
-                firstName,
-                lastName,
-                city,
-                email: window.currentUser.email
+        // Switch chat room
+        function switchRoom(room) {
+            currentRoom = room;
+            
+            // Update active room
+            document.querySelectorAll('.chat-room').forEach(r => r.classList.remove('active'));
+            document.querySelector(`.chat-room.${room}`).classList.add('active');
+            
+            // Update header
+            const headers = {
+                ai: '🤖 الذكاء الاصطناعي - KurdGPT',
+                help: '🆘 غرفة المساعدة',
+                general: '😄 الدردشة العامة'
             };
-
-            const success = await saveUserProfile(window.currentUser.uid, profileData);
-            if (success) {
-                window.currentUserProfile = profileData;
-                showMainContent();
-                hideError();
-            } else {
-                showError('خطأ في حفظ المعلومات. يرجى المحاولة مرة أخرى.');
-            }
-        }
-
-        window.logout = async function() {
-            try {
-                await signOut(auth);
-            } catch (error) {
-                console.error('Logout error:', error);
-            }
-        }
-
-        // Chat functions
-        function startChatListener() {
-            const chatMessages = document.getElementById('chatMessages');
-            const q = query(
-                collection(db, 'chatMessages'),
-                orderBy('timestamp', 'desc'),
-                limit(50)
-            );
-
-            onSnapshot(q, (snapshot) => {
-                const messages = [];
-                snapshot.forEach((doc) => {
-                    messages.push({ id: doc.id, ...doc.data() });
-                });
-                
-                messages.reverse(); // Show oldest first
-                displayChatMessages(messages);
-            });
-        }
-
-        function displayChatMessages(messages) {
-            const chatMessages = document.getElementById('chatMessages');
+            document.getElementById('chatHeader').textContent = headers[room];
             
-            if (messages.length === 0) {
-                chatMessages.innerHTML = `
-                    <div style="text-align: center; color: #666; padding: 20px;">
-                        مرحباً بك في الدردشة الجماعية! شارك أفكارك واطرح أسئلتك.
-                    </div>
+            loadMessages();
+        }
+
+        // Load messages for current room
+        function loadMessages() {
+            const chatMessages = document.getElementById('chatMessages');
+            chatMessages.innerHTML = '';
+            
+            if (currentRoom === 'ai') {
+                // AI welcome message
+                const welcomeMsg = document.createElement('div');
+                welcomeMsg.className = 'message ai';
+                welcomeMsg.innerHTML = `
+                    <div class="message-header">KurdGPT</div>
+                    مرحباً ${currentUser.fullName}! أنا KurdGPT، ذكاءك الاصطناعي الشخصي. كيف يمكنني مساعدتك اليوم؟
                 `;
-                return;
+                chatMessages.appendChild(welcomeMsg);
             }
-
-            chatMessages.innerHTML = messages.map(message => `
-                <div class="chat-message">
-                    <div class="user-name">${message.userName} - ${message.userCity}</div>
-                    <div class="message-text">${message.text}</div>
-                    <div class="message-time">${formatTime(message.timestamp)}</div>
-                </div>
-            `).join('');
-
-            // Scroll to bottom
+            
+            // Load saved messages
+            if (messages[currentRoom]) {
+                messages[currentRoom].forEach(msg => {
+                    addMessageToChat(msg.text, msg.sender, msg.timestamp, false);
+                });
+            }
+            
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        window.sendChatMessage = async function() {
-            const chatInput = document.getElementById('chatInput');
-            const messageText = chatInput.value.trim();
-
-            if (!messageText) return;
-            if (!window.currentUser || !window.currentUserProfile) return;
-
-            try {
-                await addDoc(collection(db, 'chatMessages'), {
-                    text: messageText,
-                    userName: `${window.currentUserProfile.firstName} ${window.currentUserProfile.lastName}`,
-                    userCity: window.currentUserProfile.city,
-                    userId: window.currentUser.uid,
-                    timestamp: new Date()
-                });
-
-                chatInput.value = '';
-            } catch (error) {
-                console.error('Error sending message:', error);
-                showError('خطأ في إرسال الرسالة');
-            }
-        }
-
-        // Utility functions
-        function formatTime(timestamp) {
-            if (!timestamp) return '';
-            const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
-            return date.toLocaleString('ar-SA', {
-                hour: '2-digit',
-                minute: '2-digit',
-                day: '2-digit',
-                month: '2-digit'
-            });
-        }
-
-        function showError(message) {
-            const errorDiv = document.getElementById('errorMessage');
-            errorDiv.textContent = message;
-            errorDiv.style.display = 'block';
-        }
-
-        function hideError() {
-            document.getElementById('errorMessage').style.display = 'none';
-        }
-
-        // Chat input enter key listener
-        document.getElementById('chatInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                window.sendChatMessage();
-            }
-        });
-    </script>
-
-    <script>
-        // Original GPT functionality
-        let currentAudio = null;
-        let isPlaying = false;
-        let questionsHistory = JSON.parse(localStorage.getItem('kurdGptHistory') || '[]');
-
-        async function submitQuestion() {
-            const question = document.getElementById('questionInput').value.trim();
-            const language = document.getElementById('languageSelect').value;
+        // Send message
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const text = input.value.trim();
             
-            if (!question) {
-                alert('يرجى إدخال سؤال');
-                return;
-            }
+            if (!text) return;
             
-            // إظهار التحميل
-            document.getElementById('loadingSection').style.display = 'block';
-            document.getElementById('answerSection').style.display = 'none';
-            document.querySelector('.submit-btn').disabled = true;
+            const timestamp = new Date().toLocaleTimeString('ar-SA');
             
-            try {
-                const response = await fetch('https://api.openai.com/v1/chat/completions', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer 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'
-                    },
-                    body: JSON.stringify({
-                        model: 'gpt-4o-mini',
-                        messages: [
-                            {
-                                role: 'system',
-                                content: `أنت مساعد ذكي متخصص في الإجابة باللغة ${language}. قدم إجابات مفيدة ودقيقة ومفصلة. إذا كان السؤال عن كردستان أو الثقافة الكردية، قدم معلومات شاملة ومحترمة.`
-                            },
-                            {
-                                role: 'user',
-                                content: question
-                            }
-                        ],
-                        max_tokens: 1000,
-                        temperature: 0.3
-                    } )
-                });
+            if (currentRoom === 'ai') {
+                // Add user message
+                addMessageToChat(text, currentUser.fullName, timestamp);
                 
-                if (!response.ok) {
-                    throw new Error('خطأ في الاتصال بالخدمة');
+                // Simulate AI response
+                setTimeout(() => {
+                    const aiResponses = [
+                        'شكراً لك على سؤالك! هذا موضوع مثير للاهتمام.',
+                        'أفهم ما تقصده. دعني أساعدك في هذا الأمر.',
+                        'هذا سؤال رائع! إليك ما أعرفه عن هذا الموضوع...',
+                        'يمكنني مساعدتك في ذلك. هل تريد المزيد من التفاصيل؟',
+                        'ممتاز! هذا يذكرني بموضوع مشابه...'
+                    ];
+                    const randomResponse = aiResponses[Math.floor(Math.random() * aiResponses.length)];
+                    addMessageToChat(randomResponse, 'KurdGPT', new Date().toLocaleTimeString('ar-SA'));
+                }, 1000);
+            } else {
+                // Group chat
+                addMessageToChat(text, currentUser.fullName, timestamp);
+            }
+            
+            input.value = '';
+        }
+
+        // Add message to chat
+        function addMessageToChat(text, sender, timestamp, save = true) {
+            const chatMessages = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            
+            let messageClass = 'message ';
+            if (sender === 'KurdGPT') {
+                messageClass += 'ai';
+            } else if (sender === currentUser.fullName) {
+                messageClass += 'user';
+            } else {
+                messageClass += 'other';
+            }
+            
+            messageDiv.className = messageClass;
+            messageDiv.innerHTML = `
+                <div class="message-header">${sender} - ${timestamp}</div>
+                ${text}
+            `;
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            // Save message
+            if (save && sender !== 'KurdGPT') {
+                if (!messages[currentRoom]) {
+                    messages[currentRoom] = [];
                 }
-                
-                const data = await response.json();
-                const answer = data.choices[0].message.content;
-                
-                // إظهار الإجابة
-                document.getElementById('answerText').textContent = answer;
-                document.getElementById('answerSection').style.display = 'block';
-                
-                // حفظ في السجل
-                const qa = {
-                    question: question,
-                    answer: answer,
-                    language: language,
-                    timestamp: new Date().toLocaleString('ar-SA')
-                };
-                questionsHistory.unshift(qa);
-                if (questionsHistory.length > 50) questionsHistory.pop();
-                localStorage.setItem('kurdGptHistory', JSON.stringify(questionsHistory));
-                
-            } catch (error) {
-                document.getElementById('answerText').textContent = 'عذراً، حدث خطأ أثناء معالجة سؤالك. يرجى المحاولة مرة أخرى.';
-                document.getElementById('answerSection').style.display = 'block';
-            } finally {
-                document.getElementById('loadingSection').style.display = 'none';
-                document.querySelector('.submit-btn').disabled = false;
+                messages[currentRoom].push({
+                    text: text,
+                    sender: sender,
+                    timestamp: timestamp
+                });
+                localStorage.setItem('kurdgpt_messages', JSON.stringify(messages));
             }
         }
-        
-        function playAudio() {
-            const answerText = document.getElementById('answerText').textContent;
-            const language = document.getElementById('languageSelect').value;
-            
-            if (!answerText) return;
-            
-            if (isPlaying && currentAudio) {
-                currentAudio.pause();
-                currentAudio = null;
-                isPlaying = false;
-                updatePlayButton(false);
-                return;
-            }
-            
-            // تحديد اللغة للمتصفح
-            let lang = 'ar-SA';
-            if (language === 'کوردی') lang = 'ku';
-            else if (language === 'Deutsch') lang = 'de-DE';
-            
-            if ('speechSynthesis' in window) {
-                const utterance = new SpeechSynthesisUtterance(answerText);
-                utterance.lang = lang;
-                utterance.rate = 0.8;
-                utterance.pitch = 1;
-                
-                utterance.onstart = () => {
-                    isPlaying = true;
-                    updatePlayButton(true);
-                };
-                
-                utterance.onend = () => {
-                    isPlaying = false;
-                    updatePlayButton(false);
-                };
-                
-                utterance.onerror = () => {
-                    isPlaying = false;
-                    updatePlayButton(false);
-                    alert('خطأ في تشغيل الصوت');
-                };
-                
-                speechSynthesis.speak(utterance);
-                currentAudio = utterance;
-            } else {
-                alert('متصفحك لا يدعم تشغيل الصوت');
+
+        // Handle Enter key
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
             }
         }
-        
-        function updatePlayButton(playing) {
-            const playIcon = document.getElementById('playIcon');
-            const playText = document.getElementById('playText');
-            
-            if (playing) {
-                playIcon.textContent = '⏸️';
-                playText.textContent = 'إيقاف الصوت';
-            } else {
-                playIcon.textContent = '🔊';
-                playText.textContent = 'تشغيل الصوت';
-            }
-        }
-        
-        function showHistory() {
-            if (questionsHistory.length === 0) {
-                alert('لا توجد أسئلة محفوظة');
-                return;
-            }
-            
-            let historyHtml = '<div style="max-height: 400px; overflow-y: auto; direction: rtl;">';
-            questionsHistory.forEach((qa, index) => {
-                historyHtml += `
-                    <div style="border: 1px solid #ddd; margin: 10px 0; padding: 15px; border-radius: 10px; background: #f9f9f9;">
-                        <div style="font-weight: bold; color: #2c3e50; margin-bottom: 8px;">
-                            ${qa.timestamp} - ${qa.language}
-                        </div>
-                        <div style="margin-bottom: 10px;">
-                            <strong>السؤال:</strong> ${qa.question}
-                        </div>
-                        <div>
-                            <strong>الإجابة:</strong> ${qa.answer.substring(0, 200)}${qa.answer.length > 200 ? '...' : ''}
-                        </div>
-                    </div>
-                `;
-            });
-            historyHtml += '</div>';
-            
-            const newWindow = window.open('', '_blank', 'width=800,height=600');
-            newWindow.document.write(`
-                <html dir="rtl">
-                <head>
-                    <title>سجل الأسئلة - Kurd GPT</title>
-                    <meta charset="UTF-8">
-                    <style>
-                        body { font-family: Arial, sans-serif; padding: 20px; direction: rtl; }
-                        h1 { color: #4A90E2; text-align: center; }
-                    </style>
-                </head>
-                <body>
-                    <h1>📚 سجل الأسئلة - Kurd GPT</h1>
-                    ${historyHtml}
-                </body>
-                </html>
-            `);
-        }
-        
-        // إضافة مستمع للضغط على Enter
-        document.getElementById('questionInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter' && e.ctrlKey) {
-                submitQuestion();
-            }
-        });
+
+        // Initialize
+        window.onload = function() {
+            checkAuth();
+        };
     </script>
 </body>
 </html>
