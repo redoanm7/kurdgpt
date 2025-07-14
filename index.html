@@ -5,7 +5,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurd GPT - اسألني وأنا أجاوبك صوتياً</title>
+    <title>Kurd GPT - Ø§Ø³Ø£Ù„Ù†ÙŠ ÙˆØ£Ù†Ø§ Ø£Ø¬Ø§ÙˆØ¨Ùƒ ØµÙˆØªÙŠØ§Ù‹</title>
     <style>
         * {
             margin: 0;
@@ -15,9 +15,14 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%  );
+            background: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%);
             min-height: 100vh;
             direction: rtl;
+            transition: all 0.3s ease;
+        }
+
+        body.ltr {
+            direction: ltr;
         }
 
         .container {
@@ -46,6 +51,7 @@
             align-items: center;
             justify-content: center;
             gap: 15px;
+            width: 100%;
         }
 
         .flag {
@@ -61,6 +67,43 @@
             font-size: 2.5em;
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 5px;
+            z-index: 1000;
+        }
+
+        body.ltr .language-selector {
+            right: auto;
+            left: 20px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .lang-btn.active {
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .instagram-link {
@@ -106,6 +149,10 @@
             text-align: right;
         }
 
+        body.ltr .form-group {
+            text-align: left;
+        }
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
@@ -119,7 +166,7 @@
             border: 2px solid #ddd;
             border-radius: 8px;
             font-size: 16px;
-            direction: rtl;
+            direction: inherit;
         }
 
         .form-group input:focus {
@@ -256,6 +303,11 @@
             padding: 20px;
         }
 
+        body.ltr .chat-sidebar {
+            border-left: none;
+            border-right: 2px solid #e9ecef;
+        }
+
         .chat-room {
             padding: 12px;
             margin-bottom: 10px;
@@ -328,16 +380,31 @@
             border: 1px solid #bbdefb;
         }
 
+        body.ltr .message.user {
+            margin-right: 0;
+            margin-left: auto;
+        }
+
         .message.other {
             background: #f5f5f5;
             margin-left: auto;
             border: 1px solid #e0e0e0;
         }
 
+        body.ltr .message.other {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
         .message.ai {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             margin-left: auto;
+        }
+
+        body.ltr .message.ai {
+            margin-left: 0;
+            margin-right: auto;
         }
 
         .message-header {
@@ -364,7 +431,7 @@
             border: 2px solid #ddd;
             border-radius: 25px;
             font-size: 14px;
-            direction: rtl;
+            direction: inherit;
         }
 
         .chat-input:focus {
@@ -396,6 +463,11 @@
             gap: 10px;
         }
 
+        body.ltr .user-info {
+            margin-left: 0;
+            margin-right: 20px;
+        }
+
         .logout-btn {
             background: rgba(255, 255, 255, 0.3);
             border: none;
@@ -411,6 +483,44 @@
             background: rgba(255, 255, 255, 0.4);
         }
 
+        /* Typing indicator animation */
+        .typing-dots {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .typing-dots span {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-dots span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .typing-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            30% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
                 margin: 10px;
@@ -423,6 +533,15 @@
             
             .header h1 {
                 font-size: 1.8em;
+            }
+            
+            .language-selector {
+                position: relative;
+                top: auto;
+                right: auto;
+                left: auto;
+                justify-content: center;
+                margin-bottom: 10px;
             }
             
             .instagram-link {
@@ -442,6 +561,9 @@
                 gap: 10px;
                 padding: 10px;
                 overflow-x: auto;
+                border-left: none;
+                border-right: none;
+                border-bottom: 2px solid #e9ecef;
             }
             
             .chat-room {
@@ -467,71 +589,78 @@
 <body>
     <div class="container">
         <div class="header">
+            <div class="language-selector">
+                <button class="lang-btn active" onclick="changeLanguage('ar')" data-lang="ar">Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©</button>
+                <button class="lang-btn" onclick="changeLanguage('ku')" data-lang="ku">Ú©ÙˆØ±Ø¯ÛŒ</button>
+                <button class="lang-btn" onclick="changeLanguage('ckb')" data-lang="ckb">Ø³Û†Ø±Ø§Ù†ÛŒ</button>
+                <button class="lang-btn" onclick="changeLanguage('de')" data-lang="de">Deutsch</button>
+            </div>
+            
             <div class="header-main">
                 <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iMzUiIHZpZXdCb3g9IjAgMCA1MCAzNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjM1IiBmaWxsPSIjRkYwMDAwIi8+CjxyZWN0IHk9IjExLjY2NjciIHdpZHRoPSI1MCIgaGVpZ2h0PSIxMS42NjY3IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjIzLjMzMzMiIHdpZHRoPSI1MCIgaGVpZ2h0PSIxMS42NjY3IiBmaWxsPSIjMDA4MDAwIi8+CjxjaXJjbGUgY3g9IjI1IiBjeT0iMTcuNSIgcj0iNSIgZmlsbD0iI0ZGRkYwMCIvPgo8L3N2Zz4K" alt="Kurdistan Flag" class="flag">
-                <h1>Kurd GPT</h1>
+                <h1 data-translate="title">Kurd GPT</h1>
                 <div class="user-info" id="userInfo">
                     <span id="userName"></span>
-                    <button class="logout-btn" onclick="logout()">تسجيل خروج</button>
+                    <button class="logout-btn" onclick="logout()" data-translate="logout">ØªØ³Ø¬ÙŠÙ„ Ø®Ø±ÙˆØ¬</button>
                 </div>
             </div>
             <a href="https://www.instagram.com/redoan.m7?igsh=MTV2eXhyZXcyZTg0cQ==" target="_blank" class="instagram-link">
-                📸 Instagram
+                ðŸ“¸ Instagram
             </a>
         </div>
 
         <!-- Auth Container -->
         <div class="auth-container" id="authContainer">
             <div class="auth-form" id="loginForm">
-                <h2>تسجيل الدخول</h2>
+                <h2 data-translate="login_title">ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„</h2>
                 <div class="form-group">
-                    <label>الاسم الأول:</label>
-                    <input type="text" id="loginFirstName" placeholder="أدخل اسمك الأول">
+                    <label data-translate="first_name">Ø§Ù„Ø§Ø³Ù… Ø§Ù„Ø£ÙˆÙ„:</label>
+                    <input type="text" id="loginFirstName" data-translate-placeholder="first_name_placeholder">
                 </div>
                 <div class="form-group">
-                    <label>اسم العائلة:</label>
-                    <input type="text" id="loginLastName" placeholder="أدخل اسم العائلة">
+                    <label data-translate="last_name">Ø§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø©:</label>
+                    <input type="text" id="loginLastName" data-translate-placeholder="last_name_placeholder">
                 </div>
                 <div class="form-group">
-                    <label>المدينة:</label>
-                    <input type="text" id="loginCity" placeholder="أدخل مدينتك">
+                    <label data-translate="city">Ø§Ù„Ù…Ø¯ÙŠÙ†Ø©:</label>
+                    <input type="text" id="loginCity" data-translate-placeholder="city_placeholder">
                 </div>
-                <button class="auth-btn" onclick="login( )">تسجيل الدخول</button>
-                <div class="auth-switch" onclick="showRegister()">إنشاء حساب جديد</div>
+                <button class="auth-btn" onclick="login()" data-translate="login_btn">ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„</button>
+                <div class="auth-switch" onclick="showRegister()" data-translate="create_account">Ø¥Ù†Ø´Ø§Ø¡ Ø­Ø³Ø§Ø¨ Ø¬Ø¯ÙŠØ¯</div>
             </div>
 
             <div class="auth-form" id="registerForm" style="display: none;">
-                <h2>إنشاء حساب جديد</h2>
+                <h2 data-translate="register_title">Ø¥Ù†Ø´Ø§Ø¡ Ø­Ø³Ø§Ø¨ Ø¬Ø¯ÙŠØ¯</h2>
                 <div class="form-group">
-                    <label>الاسم الأول:</label>
-                    <input type="text" id="regFirstName" placeholder="أدخل اسمك الأول" required>
+                    <label data-translate="first_name">Ø§Ù„Ø§Ø³Ù… Ø§Ù„Ø£ÙˆÙ„:</label>
+                    <input type="text" id="regFirstName" data-translate-placeholder="first_name_placeholder" required>
                 </div>
                 <div class="form-group">
-                    <label>اسم العائلة:</label>
-                    <input type="text" id="regLastName" placeholder="أدخل اسم العائلة" required>
+                    <label data-translate="last_name">Ø§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø©:</label>
+                    <input type="text" id="regLastName" data-translate-placeholder="last_name_placeholder" required>
                 </div>
                 <div class="form-group">
-                    <label>تاريخ الميلاد:</label>
+                    <label data-translate="birth_date">ØªØ§Ø±ÙŠØ® Ø§Ù„Ù…ÙŠÙ„Ø§Ø¯:</label>
                     <input type="date" id="regBirthDate" required>
                 </div>
                 <div class="form-group">
-                    <label>رقم الهاتف:</label>
-                    <input type="tel" id="regPhone" placeholder="أدخل رقم هاتفك" required>
+                    <label data-translate="phone">Ø±Ù‚Ù… Ø§Ù„Ù‡Ø§ØªÙ:</label>
+                    <input type="tel" id="regPhone" data-translate-placeholder="phone_placeholder" required>
                 </div>
                 <div class="form-group">
-                    <label>المدينة:</label>
-                    <input type="text" id="regCity" placeholder="أدخل مدينتك" required>
+                    <label data-translate="city">Ø§Ù„Ù…Ø¯ÙŠÙ†Ø©:</label>
+                    <input type="text" id="regCity" data-translate-placeholder="city_placeholder" required>
                 </div>
                 
                 <div class="privacy-notice">
-                    <div class="icon">🔒</div>
-                    <strong>جميع بياناتك محمية ومؤمنة</strong><br>
-                    لا يمكن لأحد رؤية معلوماتك الشخصية<br>
-                    الأعضاء الآخرون يمكنهم رؤية اسمك واسم العائلة فقط
+                    <div class="icon">ðŸ”’</div>
+                    <strong data-translate="privacy_title">Ø¬Ù…ÙŠØ¹ Ø¨ÙŠØ§Ù†Ø§ØªÙƒ Ù…Ø­Ù…ÙŠØ© ÙˆÙ…Ø¤Ù…Ù†Ø©</strong><br>
+                    <span data-translate="privacy_text1">Ù„Ø§ ÙŠÙ…ÙƒÙ† Ù„Ø£Ø­Ø¯ Ø±Ø¤ÙŠØ© Ù…Ø¹Ù„ÙˆÙ…Ø§ØªÙƒ Ø§Ù„Ø´Ø®ØµÙŠØ©</span><br>
+                    <span data-translate="privacy_text2">Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡ Ø§Ù„Ø¢Ø®Ø±ÙˆÙ† ÙŠÙ…ÙƒÙ†Ù‡Ù… Ø±Ø¤ÙŠØ© Ø§Ø³Ù…Ùƒ ÙˆØ§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø© ÙÙ‚Ø·</span>
                 </div>
                 
-                <button class="auth-btn" onclick="register()">إنشاء الحساب</button>
-                <div class="auth-switch" onclick="showLogin()">لديك حساب؟ تسجيل الدخول</div>
+                <button class="auth-btn" onclick="register()" data-translate="register_btn">Ø¥Ù†Ø´Ø§Ø¡ Ø§Ù„Ø­Ø³Ø§Ø¨</button>
+                <div class="auth-switch" onclick="showLogin()" data-translate="have_account">Ù„Ø¯ÙŠÙƒ Ø­Ø³Ø§Ø¨ØŸ ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„</div>
             </div>
         </div>
 
@@ -540,43 +669,43 @@
             <div class="stats-bar">
                 <div class="stats-section">
                     <div class="stat-item">
-                        <span>👥</span>
-                        <span>إجمالي الأعضاء: <span id="totalMembers">0</span></span>
+                        <span>ðŸ‘¥</span>
+                        <span><span data-translate="total_members">Ø¥Ø¬Ù…Ø§Ù„ÙŠ Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡</span>: <span id="totalMembers">0</span></span>
                     </div>
                     <div class="stat-item">
-                        <span>🟢</span>
-                        <span>متصل الآن: <span id="onlineCount" class="live-counter">0</span></span>
+                        <span>ðŸŸ¢</span>
+                        <span><span data-translate="online_now">Ù…ØªØµÙ„ Ø§Ù„Ø¢Ù†</span>: <span id="onlineCount" class="live-counter">0</span></span>
                     </div>
                 </div>
                 <div class="online-status">
                     <div class="online-dot" id="connectionDot"></div>
-                    <span id="connectionStatus">متصل</span>
+                    <span id="connectionStatus" data-translate="connected">Ù…ØªØµÙ„</span>
                 </div>
             </div>
             
             <div class="chat-container">
                 <div class="chat-sidebar">
                     <div class="chat-room ai active" onclick="switchRoom('ai')">
-                        🤖 الذكاء الاصطناعي
+                        ðŸ¤– <span data-translate="ai_chat">Ø§Ù„Ø°ÙƒØ§Ø¡ Ø§Ù„Ø§ØµØ·Ù†Ø§Ø¹ÙŠ</span>
                     </div>
                     <div class="chat-room help" onclick="switchRoom('help')">
-                        🆘 دردشة الطوارئ
+                        ðŸ†˜ <span data-translate="emergency_chat">Ø¯Ø±Ø¯Ø´Ø© Ø§Ù„Ø·ÙˆØ§Ø±Ø¦</span>
                     </div>
                 </div>
                 <div class="chat-main">
                     <div class="chat-header" id="chatHeader">
-                        <span>🤖 الذكاء الاصطناعي - KurdGPT</span>
-                        <span class="room-members" id="roomMembers">الأعضاء النشطين: 1</span>
+                        <span>ðŸ¤– <span data-translate="ai_chat_header">Ø§Ù„Ø°ÙƒØ§Ø¡ Ø§Ù„Ø§ØµØ·Ù†Ø§Ø¹ÙŠ - KurdGPT</span></span>
+                        <span class="room-members" id="roomMembers" data-translate="active_members">Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡ Ø§Ù„Ù†Ø´Ø·ÙŠÙ†: 1</span>
                     </div>
                     <div class="chat-messages" id="chatMessages">
                         <div class="message ai">
                             <div class="message-header">KurdGPT</div>
-                            مرحباً! أنا KurdGPT، ذكاءك الاصطناعي الشخصي. كيف يمكنني مساعدتك اليوم؟
+                            <span data-translate="welcome_message">Ù…Ø±Ø­Ø¨Ø§Ù‹! Ø£Ù†Ø§ KurdGPTØŒ Ø°ÙƒØ§Ø¡Ùƒ Ø§Ù„Ø§ØµØ·Ù†Ø§Ø¹ÙŠ Ø§Ù„Ø´Ø®ØµÙŠ. ÙƒÙŠÙ ÙŠÙ…ÙƒÙ†Ù†ÙŠ Ù…Ø³Ø§Ø¹Ø¯ØªÙƒ Ø§Ù„ÙŠÙˆÙ…ØŸ</span>
                         </div>
                     </div>
                     <div class="chat-input-container">
-                        <input type="text" class="chat-input" id="messageInput" placeholder="اكتب رسالتك هنا..." onkeypress="handleKeyPress(event)">
-                        <button class="send-btn" onclick="sendMessage()">إرسال</button>
+                        <input type="text" class="chat-input" id="messageInput" data-translate-placeholder="message_placeholder" onkeypress="handleKeyPress(event)">
+                        <button class="send-btn" onclick="sendMessage()" data-translate="send">Ø¥Ø±Ø³Ø§Ù„</button>
                     </div>
                 </div>
             </div>
@@ -584,6 +713,159 @@
     </div>
 
     <script>
+        // Language translations
+        const translations = {
+            ar: {
+                title: "Kurd GPT",
+                login_title: "ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„",
+                register_title: "Ø¥Ù†Ø´Ø§Ø¡ Ø­Ø³Ø§Ø¨ Ø¬Ø¯ÙŠØ¯",
+                first_name: "Ø§Ù„Ø§Ø³Ù… Ø§Ù„Ø£ÙˆÙ„:",
+                last_name: "Ø§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø©:",
+                city: "Ø§Ù„Ù…Ø¯ÙŠÙ†Ø©:",
+                birth_date: "ØªØ§Ø±ÙŠØ® Ø§Ù„Ù…ÙŠÙ„Ø§Ø¯:",
+                phone: "Ø±Ù‚Ù… Ø§Ù„Ù‡Ø§ØªÙ:",
+                first_name_placeholder: "Ø£Ø¯Ø®Ù„ Ø§Ø³Ù…Ùƒ Ø§Ù„Ø£ÙˆÙ„",
+                last_name_placeholder: "Ø£Ø¯Ø®Ù„ Ø§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø©",
+                city_placeholder: "Ø£Ø¯Ø®Ù„ Ù…Ø¯ÙŠÙ†ØªÙƒ",
+                phone_placeholder: "Ø£Ø¯Ø®Ù„ Ø±Ù‚Ù… Ù‡Ø§ØªÙÙƒ",
+                login_btn: "ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„",
+                register_btn: "Ø¥Ù†Ø´Ø§Ø¡ Ø§Ù„Ø­Ø³Ø§Ø¨",
+                create_account: "Ø¥Ù†Ø´Ø§Ø¡ Ø­Ø³Ø§Ø¨ Ø¬Ø¯ÙŠØ¯",
+                have_account: "Ù„Ø¯ÙŠÙƒ Ø­Ø³Ø§Ø¨ØŸ ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„",
+                privacy_title: "Ø¬Ù…ÙŠØ¹ Ø¨ÙŠØ§Ù†Ø§ØªÙƒ Ù…Ø­Ù…ÙŠØ© ÙˆÙ…Ø¤Ù…Ù†Ø©",
+                privacy_text1: "Ù„Ø§ ÙŠÙ…ÙƒÙ† Ù„Ø£Ø­Ø¯ Ø±Ø¤ÙŠØ© Ù…Ø¹Ù„ÙˆÙ…Ø§ØªÙƒ Ø§Ù„Ø´Ø®ØµÙŠØ©",
+                privacy_text2: "Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡ Ø§Ù„Ø¢Ø®Ø±ÙˆÙ† ÙŠÙ…ÙƒÙ†Ù‡Ù… Ø±Ø¤ÙŠØ© Ø§Ø³Ù…Ùƒ ÙˆØ§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø© ÙÙ‚Ø·",
+                total_members: "Ø¥Ø¬Ù…Ø§Ù„ÙŠ Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡",
+                online_now: "Ù…ØªØµÙ„ Ø§Ù„Ø¢Ù†",
+                connected: "Ù…ØªØµÙ„",
+                disconnected: "ØºÙŠØ± Ù…ØªØµÙ„",
+                ai_chat: "Ø§Ù„Ø°ÙƒØ§Ø¡ Ø§Ù„Ø§ØµØ·Ù†Ø§Ø¹ÙŠ",
+                emergency_chat: "Ø¯Ø±Ø¯Ø´Ø© Ø§Ù„Ø·ÙˆØ§Ø±Ø¦",
+                ai_chat_header: "Ø§Ù„Ø°ÙƒØ§Ø¡ Ø§Ù„Ø§ØµØ·Ù†Ø§Ø¹ÙŠ - KurdGPT",
+                emergency_chat_header: "Ø¯Ø±Ø¯Ø´Ø© Ø§Ù„Ø·ÙˆØ§Ø±Ø¦",
+                active_members: "Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡ Ø§Ù„Ù†Ø´Ø·ÙŠÙ†",
+                welcome_message: "Ù…Ø±Ø­Ø¨Ø§Ù‹! Ø£Ù†Ø§ KurdGPTØŒ Ø°ÙƒØ§Ø¡Ùƒ Ø§Ù„Ø§ØµØ·Ù†Ø§Ø¹ÙŠ Ø§Ù„Ø´Ø®ØµÙŠ. ÙƒÙŠÙ ÙŠÙ…ÙƒÙ†Ù†ÙŠ Ù…Ø³Ø§Ø¹Ø¯ØªÙƒ Ø§Ù„ÙŠÙˆÙ…ØŸ",
+                message_placeholder: "Ø§ÙƒØªØ¨ Ø±Ø³Ø§Ù„ØªÙƒ Ù‡Ù†Ø§...",
+                send: "Ø¥Ø±Ø³Ø§Ù„",
+                logout: "ØªØ³Ø¬ÙŠÙ„ Ø®Ø±ÙˆØ¬",
+                typing: "ÙŠÙƒØªØ¨...",
+                fill_all_fields: "ÙŠØ±Ø¬Ù‰ Ù…Ù„Ø¡ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø­Ù‚ÙˆÙ„",
+                ai_system_prompt: "Ø£Ù†Øª KurdGPTØŒ Ù…Ø³Ø§Ø¹Ø¯ Ø°ÙƒÙŠ ÙŠØªØ­Ø¯Ø« Ø§Ù„Ø¹Ø±Ø¨ÙŠØ© ÙˆØ§Ù„ÙƒØ±Ø¯ÙŠØ©. ÙƒÙ† Ù…ÙÙŠØ¯Ø§Ù‹ ÙˆÙ…Ù‡Ø°Ø¨Ø§Ù‹ ÙˆØ£Ø¬Ø¨ Ø¨Ø´ÙƒÙ„ ÙˆØ§Ø¶Ø­ ÙˆÙ…ÙØµÙ„."
+            },
+            ku: {
+                title: "Kurd GPT",
+                login_title: "TÃªketin",
+                register_title: "Hesabeke nÃ» Ã§Ãªke",
+                first_name: "NavÃª yekem:",
+                last_name: "NavÃª paÅŸ:",
+                city: "Bajar:",
+                birth_date: "DÃ®roka jidayÃ®kbÃ»nÃª:",
+                phone: "Jimareya tÃªlefonÃª:",
+                first_name_placeholder: "NavÃª xwe yÃª yekem binivÃ®se",
+                last_name_placeholder: "NavÃª xwe yÃª paÅŸ binivÃ®se",
+                city_placeholder: "BajarÃª xwe binivÃ®se",
+                phone_placeholder: "Jimareya tÃªlefonÃª binivÃ®se",
+                login_btn: "TÃªkeve",
+                register_btn: "Hesab Ã§Ãªke",
+                create_account: "Hesabeke nÃ» Ã§Ãªke",
+                have_account: "HesabÃª te heye? TÃªkeve",
+                privacy_title: "HemÃ» daneyÃªn te ewle Ã» parastÃ® ne",
+                privacy_text1: "Kesek nikare agahiyÃªn te yÃªn takekesÃ® bibÃ®ne",
+                privacy_text2: "EndamÃªn din tenÃª navÃª te Ã» navÃª paÅŸ dikarin bibÃ®nin",
+                total_members: "HemÃ» endaman",
+                online_now: "Niha serhÃªl",
+                connected: "GirÃªdayÃ®",
+                disconnected: "NegirÃªdayÃ®",
+                ai_chat: "ZÃ®rekiya Ã§ÃªkirÃ®",
+                emergency_chat: "Sohbeta lezgÃ®nÃ®",
+                ai_chat_header: "ZÃ®rekiya Ã§ÃªkirÃ® - KurdGPT",
+                emergency_chat_header: "Sohbeta lezgÃ®nÃ®",
+                active_members: "EndamÃªn Ã§alak",
+                welcome_message: "Bi xÃªr hatÃ®! Ez KurdGPT im, zÃ®rekiya te ya Ã§ÃªkirÃ® ya takekesÃ®. Ã‡awa dikarim Ã®ro alÃ®kariya te bikim?",
+                message_placeholder: "Peyama xwe li vir binivÃ®se...",
+                send: "BiÅŸÃ®ne",
+                logout: "Derkeve",
+                typing: "dinivÃ®se...",
+                fill_all_fields: "Ji kerema xwe hemÃ» qadan dagire",
+                ai_system_prompt: "Tu KurdGPT Ã®, alÃ®karek zÃ®rek ku bi kurdÃ® Ã» erebÃ® dipeyive. AlÃ®kar Ã» rÃªzdar be Ã» bi zelal Ã» tafsilÃ® bersiv bide."
+            },
+            ckb: {
+                title: "Kurd GPT",
+                login_title: "Ú†ÙˆÙˆÙ†Û• Ú˜ÙˆÙˆØ±Û•ÙˆÛ•",
+                register_title: "Ù‡Û•Ú˜Ù…Ø§Ø±ÛŽÚ©ÛŒ Ù†ÙˆÛŽ Ø¯Ø±ÙˆØ³ØªØ¨Ú©Û•",
+                first_name: "Ù†Ø§ÙˆÛŒ ÛŒÛ•Ú©Û•Ù…:",
+                last_name: "Ù†Ø§ÙˆÛŒ Ú©Û†ØªØ§ÛŒÛŒ:",
+                city: "Ø´Ø§Ø±:",
+                birth_date: "Ø¨Û•Ø±ÙˆØ§Ø±ÛŒ Ù„Û•Ø¯Ø§ÛŒÚ©Ø¨ÙˆÙˆÙ†:",
+                phone: "Ú˜Ù…Ø§Ø±Û•ÛŒ ØªÛ•Ù„Û•ÙÛ†Ù†:",
+                first_name_placeholder: "Ù†Ø§ÙˆÛŒ ÛŒÛ•Ú©Û•Ù…Øª Ø¨Ù†ÙˆÙˆØ³Û•",
+                last_name_placeholder: "Ù†Ø§ÙˆÛŒ Ú©Û†ØªØ§ÛŒÛŒØª Ø¨Ù†ÙˆÙˆØ³Û•",
+                city_placeholder: "Ø´Ø§Ø±Û•Ú©Û•Øª Ø¨Ù†ÙˆÙˆØ³Û•",
+                phone_placeholder: "Ú˜Ù…Ø§Ø±Û•ÛŒ ØªÛ•Ù„Û•ÙÛ†Ù†Û•Ú©Û•Øª Ø¨Ù†ÙˆÙˆØ³Û•",
+                login_btn: "Ø¨Ú†Û†Ø±Û• Ú˜ÙˆÙˆØ±Û•ÙˆÛ•",
+                register_btn: "Ù‡Û•Ú˜Ù…Ø§Ø± Ø¯Ø±ÙˆØ³ØªØ¨Ú©Û•",
+                create_account: "Ù‡Û•Ú˜Ù…Ø§Ø±ÛŽÚ©ÛŒ Ù†ÙˆÛŽ Ø¯Ø±ÙˆØ³ØªØ¨Ú©Û•",
+                have_account: "Ù‡Û•Ú˜Ù…Ø§Ø±Øª Ù‡Û•ÛŒÛ•ØŸ Ø¨Ú†Û†Ø±Û• Ú˜ÙˆÙˆØ±Û•ÙˆÛ•",
+                privacy_title: "Ù‡Û•Ù…ÙˆÙˆ Ø²Ø§Ù†ÛŒØ§Ø±ÛŒÛŒÛ•Ú©Ø§Ù†Øª Ù¾Ø§Ø±ÛŽØ²Ø±Ø§Ùˆ Ùˆ Ø³Û•Ù„Ø§Ù…Û•ØªÙ†",
+                privacy_text1: "Ú©Û•Ø³ Ù†Ø§ØªÙˆØ§Ù†ÛŽØª Ø²Ø§Ù†ÛŒØ§Ø±ÛŒÛŒÛ• ØªØ§ÛŒØ¨Û•ØªÛ•Ú©Ø§Ù†Øª Ø¨Ø¨ÛŒÙ†ÛŽØª",
+                privacy_text2: "Ø¦Û•Ù†Ø¯Ø§Ù…Ø§Ù†ÛŒ ØªØ± ØªÛ•Ù†Ù‡Ø§ Ù†Ø§Ùˆ Ùˆ Ù†Ø§ÙˆÛŒ Ú©Û†ØªØ§ÛŒÛŒØª Ø¯Û•Ø¨ÛŒÙ†Ù†",
+                total_members: "Ú©Û†ÛŒ Ø¦Û•Ù†Ø¯Ø§Ù…Ø§Ù†",
+                online_now: "Ø¦ÛŽØ³ØªØ§ Ø³Û•Ø±Ù‡ÛŽÚµ",
+                connected: "Ù¾Û•ÛŒÙˆÛ•Ø³Øª",
+                disconnected: "Ù¾Û•ÛŒÙˆÛ•Ø³Øª Ù†ÛŒÛŒÛ•",
+                ai_chat: "Ø²ÛŒØ±Û•Ú©ÛŒ Ø¯Û•Ø³ØªÚ©Ø±Ø¯",
+                emergency_chat: "Ú¯ÙØªÙˆÚ¯Û†ÛŒ ÙØ±ÛŒØ§Ú¯ÙˆØ²Ø§Ø±ÛŒ",
+                ai_chat_header: "Ø²ÛŒØ±Û•Ú©ÛŒ Ø¯Û•Ø³ØªÚ©Ø±Ø¯ - KurdGPT",
+                emergency_chat_header: "Ú¯ÙØªÙˆÚ¯Û†ÛŒ ÙØ±ÛŒØ§Ú¯ÙˆØ²Ø§Ø±ÛŒ",
+                active_members: "Ø¦Û•Ù†Ø¯Ø§Ù…Ø§Ù†ÛŒ Ú†Ø§Ù„Ø§Ú©",
+                welcome_message: "Ø¨Û•Ø®ÛŽØ±Ø¨ÛŽÛŒØª! Ù…Ù† KurdGPT Ù€Ù…ØŒ Ø²ÛŒØ±Û•Ú©ÛŒ Ø¯Û•Ø³ØªÚ©Ø±Ø¯ÛŒ ØªØ§ÛŒØ¨Û•ØªÛŒ ØªÛ†. Ø¦Û•Ù…Ú•Û† Ú†Û†Ù† Ø¯Û•ØªÙˆØ§Ù†Ù… ÛŒØ§Ø±Ù…Û•ØªÛŒØª Ø¨Ø¯Û•Ù…ØŸ",
+                message_placeholder: "Ù¾Û•ÛŒØ§Ù…Û•Ú©Û•Øª Ù„ÛŽØ±Û• Ø¨Ù†ÙˆÙˆØ³Û•...",
+                send: "Ø¨Ù†ÛŽØ±Û•",
+                logout: "Ø¯Û•Ø±Ú†ÙˆÙˆÙ†",
+                typing: "Ø¯Û•Ù†ÙˆÙˆØ³ÛŽØª...",
+                fill_all_fields: "ØªÚ©Ø§ÛŒÛ• Ù‡Û•Ù…ÙˆÙˆ Ø®Ø§Ù†Û•Ú©Ø§Ù† Ù¾Ú•Ø¨Ú©Û•Ø±Û•ÙˆÛ•",
+                ai_system_prompt: "ØªÛ† KurdGPT ÛŒØªØŒ ÛŒØ§Ø±ÛŒØ¯Û•Ø¯Û•Ø±ÛŽÚ©ÛŒ Ø²ÛŒØ±Û•Ú© Ú©Û• Ø¨Û• Ú©ÙˆØ±Ø¯ÛŒ Ùˆ Ø¹Û•Ø±Û•Ø¨ÛŒ Ù‚Ø³Û• Ø¯Û•Ú©Ø§Øª. ÛŒØ§Ø±ÛŒØ¯Û•Ø¯Û•Ø± Ùˆ Ø±ÛŽØ²Ø¯Ø§Ø± Ø¨Û• Ùˆ Ø¨Û• Ú•ÙˆÙˆÙ†ÛŒ Ùˆ ÙˆØ±Ø¯ ÙˆÛ•ÚµØ§Ù… Ø¨Ø¯Û•Ø±Û•ÙˆÛ•."
+            },
+            de: {
+                title: "Kurd GPT",
+                login_title: "Anmelden",
+                register_title: "Neues Konto erstellen",
+                first_name: "Vorname:",
+                last_name: "Nachname:",
+                city: "Stadt:",
+                birth_date: "Geburtsdatum:",
+                phone: "Telefonnummer:",
+                first_name_placeholder: "Geben Sie Ihren Vornamen ein",
+                last_name_placeholder: "Geben Sie Ihren Nachnamen ein",
+                city_placeholder: "Geben Sie Ihre Stadt ein",
+                phone_placeholder: "Geben Sie Ihre Telefonnummer ein",
+                login_btn: "Anmelden",
+                register_btn: "Konto erstellen",
+                create_account: "Neues Konto erstellen",
+                have_account: "Haben Sie ein Konto? Anmelden",
+                privacy_title: "Alle Ihre Daten sind geschÃ¼tzt und sicher",
+                privacy_text1: "Niemand kann Ihre persÃ¶nlichen Informationen sehen",
+                privacy_text2: "Andere Mitglieder kÃ¶nnen nur Ihren Vor- und Nachnamen sehen",
+                total_members: "Gesamte Mitglieder",
+                online_now: "Jetzt online",
+                connected: "Verbunden",
+                disconnected: "Nicht verbunden",
+                ai_chat: "KÃ¼nstliche Intelligenz",
+                emergency_chat: "Notfall-Chat",
+                ai_chat_header: "KÃ¼nstliche Intelligenz - KurdGPT",
+                emergency_chat_header: "Notfall-Chat",
+                active_members: "Aktive Mitglieder",
+                welcome_message: "Willkommen! Ich bin KurdGPT, Ihre persÃ¶nliche kÃ¼nstliche Intelligenz. Wie kann ich Ihnen heute helfen?",
+                message_placeholder: "Schreiben Sie Ihre Nachricht hier...",
+                send: "Senden",
+                logout: "Abmelden",
+                typing: "schreibt...",
+                fill_all_fields: "Bitte fÃ¼llen Sie alle Felder aus",
+                ai_system_prompt: "Du bist KurdGPT, ein intelligenter Assistent, der Deutsch, Kurdisch und Arabisch spricht. Sei hilfsreich und hÃ¶flich und antworte klar und detailliert."
+            }
+        };
+
+        let currentLanguage = 'ar';
         let currentUser = null;
         let currentRoom = 'ai';
         let messages = {
@@ -595,6 +877,65 @@
         let lastActivity = Date.now();
         let activityInterval;
         let onlineCheckInterval;
+
+        // Language functions
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('kurdgpt_language', lang);
+            
+            // Update active language button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update text direction
+            const body = document.body;
+            const html = document.documentElement;
+            
+            if (lang === 'de') {
+                body.classList.add('ltr');
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'de');
+            } else {
+                body.classList.remove('ltr');
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', lang);
+            }
+            
+            // Update all translatable elements
+            updateTranslations();
+        }
+
+        function updateTranslations() {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[currentLanguage] && translations[currentLanguage][key]) {
+                    element.textContent = translations[currentLanguage][key];
+                }
+            });
+            
+            // Update placeholders
+            const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
+            placeholderElements.forEach(element => {
+                const key = element.getAttribute('data-translate-placeholder');
+                if (translations[currentLanguage] && translations[currentLanguage][key]) {
+                    element.setAttribute('placeholder', translations[currentLanguage][key]);
+                }
+            });
+            
+            // Update document title
+            document.title = translations[currentLanguage].title + " - " + translations[currentLanguage].welcome_message.substring(0, 50) + "...";
+        }
+
+        // Initialize language
+        function initializeLanguage() {
+            const savedLang = localStorage.getItem('kurdgpt_language') || 'ar';
+            changeLanguage(savedLang);
+        }
 
         // Check if user is logged in
         function checkAuth() {
@@ -623,7 +964,7 @@
             const city = document.getElementById('loginCity').value.trim();
 
             if (!firstName || !lastName || !city) {
-                alert('يرجى ملء جميع الحقول');
+                alert(translations[currentLanguage].fill_all_fields);
                 return;
             }
 
@@ -633,7 +974,8 @@
                 city: city,
                 fullName: firstName + ' ' + lastName,
                 id: Date.now() + Math.random(),
-                lastSeen: new Date().toISOString()
+                lastSeen: new Date().toISOString(),
+                language: currentLanguage
             };
 
             localStorage.setItem('kurdgpt_user', JSON.stringify(currentUser));
@@ -650,7 +992,7 @@
             const city = document.getElementById('regCity').value.trim();
 
             if (!firstName || !lastName || !birthDate || !phone || !city) {
-                alert('يرجى ملء جميع الحقول');
+                alert(translations[currentLanguage].fill_all_fields);
                 return;
             }
 
@@ -663,7 +1005,8 @@
                 fullName: firstName + ' ' + lastName,
                 id: Date.now() + Math.random(),
                 registrationDate: new Date().toISOString(),
-                lastSeen: new Date().toISOString()
+                lastSeen: new Date().toISOString(),
+                language: currentLanguage
             };
 
             // Send user data to admin (simulate sending to server)
@@ -676,22 +1019,22 @@
 
         // Send user data to admin (simulate)
         function sendUserDataToAdmin(userData) {
-            // In a real application, this would send data to your server
-            console.log('بيانات المستخدم الجديد:', {
+            console.log('Ø¨ÙŠØ§Ù†Ø§Øª Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù… Ø§Ù„Ø¬Ø¯ÙŠØ¯:', {
                 name: userData.fullName,
                 birthDate: userData.birthDate,
                 phone: userData.phone,
                 city: userData.city,
+                language: userData.language,
                 registrationDate: userData.registrationDate
             });
             
-            // Store in localStorage for demo purposes
             let adminData = JSON.parse(localStorage.getItem('admin_users') || '[]');
             adminData.push({
                 name: userData.fullName,
                 birthDate: userData.birthDate,
                 phone: userData.phone,
                 city: userData.city,
+                language: userData.language,
                 registrationDate: userData.registrationDate
             });
             localStorage.setItem('admin_users', JSON.stringify(adminData));
@@ -706,7 +1049,8 @@
                 users[existingUserIndex] = {
                     ...users[existingUserIndex],
                     lastSeen: new Date().toISOString(),
-                    isOnline: true
+                    isOnline: true,
+                    language: currentUser.language
                 };
             } else {
                 users.push({
@@ -715,7 +1059,8 @@
                     firstName: currentUser.firstName,
                     lastName: currentUser.lastName,
                     lastSeen: new Date().toISOString(),
-                    isOnline: true
+                    isOnline: true,
+                    language: currentUser.language
                 });
             }
             
@@ -728,21 +1073,17 @@
         // Update online users
         function updateOnlineUsers() {
             const now = Date.now();
-            const fiveMinutesAgo = now - (5 * 60 * 1000); // 5 minutes ago
+            const fiveMinutesAgo = now - (5 * 60 * 1000);
             
-            // Get all users and check who was active in the last 5 minutes
             onlineUsers = globalUsers.filter(user => {
                 const lastSeen = new Date(user.lastSeen).getTime();
                 return lastSeen > fiveMinutesAgo;
             });
             
-            // Add some simulated online users for demo
-            const simulatedOnlineCount = Math.floor(Math.random() * 8) + 2; // 2-9 random online users
+            const simulatedOnlineCount = Math.floor(Math.random() * 8) + 2;
             const currentOnlineCount = Math.max(onlineUsers.length, simulatedOnlineCount);
             
             document.getElementById('onlineCount').textContent = currentOnlineCount;
-            
-            // Update connection status
             updateConnectionStatus();
         }
 
@@ -753,10 +1094,10 @@
             
             if (navigator.onLine) {
                 connectionDot.className = 'online-dot';
-                connectionStatus.textContent = 'متصل';
+                connectionStatus.textContent = translations[currentLanguage].connected;
             } else {
                 connectionDot.className = 'offline-dot';
-                connectionStatus.textContent = 'غير متصل';
+                connectionStatus.textContent = translations[currentLanguage].disconnected;
             }
         }
 
@@ -767,8 +1108,8 @@
             
             const onlineCount = parseInt(document.getElementById('onlineCount').textContent);
             const roomMembersText = currentRoom === 'ai' ? 
-                'الأعضاء النشطين: 1' : 
-                `الأعضاء النشطين: ${onlineCount}`;
+                translations[currentLanguage].active_members + ': 1' : 
+                translations[currentLanguage].active_members + ': ' + onlineCount;
             document.getElementById('roomMembers').textContent = roomMembersText;
         }
 
@@ -789,41 +1130,31 @@
             document.getElementById('userInfo').style.display = 'flex';
             document.getElementById('userName').textContent = currentUser.fullName;
             
-            // Load global users
             globalUsers = JSON.parse(localStorage.getItem('global_users') || '[]');
             updateOnlineUsers();
             updateMemberCount();
             
-            // Load saved messages
             const savedMessages = localStorage.getItem('kurdgpt_messages');
             if (savedMessages) {
                 messages = JSON.parse(savedMessages);
             }
             
-            // Start activity tracking
             startActivityTracking();
-            
             loadMessages();
         }
 
         // Start activity tracking
         function startActivityTracking() {
-            // Update activity every 30 seconds
             activityInterval = setInterval(updateActivity, 30000);
-            
-            // Update online count every 10 seconds
             onlineCheckInterval = setInterval(updateOnlineUsers, 10000);
             
-            // Track user interactions
             document.addEventListener('click', updateActivity);
             document.addEventListener('keypress', updateActivity);
             document.addEventListener('scroll', updateActivity);
             
-            // Track online/offline status
             window.addEventListener('online', updateConnectionStatus);
             window.addEventListener('offline', updateConnectionStatus);
             
-            // Initial activity update
             updateActivity();
         }
 
@@ -845,7 +1176,6 @@
 
         // Logout function
         function logout() {
-            // Mark user as offline
             if (currentUser) {
                 let users = JSON.parse(localStorage.getItem('global_users') || '[]');
                 const userIndex = users.findIndex(u => u.id === currentUser.id);
@@ -879,16 +1209,14 @@
         function switchRoom(room) {
             currentRoom = room;
             
-            // Update active room
             document.querySelectorAll('.chat-room').forEach(r => r.classList.remove('active'));
             document.querySelector(`.chat-room.${room}`).classList.add('active');
             
-            // Update header
             const headers = {
-                ai: '🤖 الذكاء الاصطناعي - KurdGPT',
-                help: '🆘 دردشة الطوارئ'
+                ai: translations[currentLanguage].ai_chat_header,
+                help: translations[currentLanguage].emergency_chat_header
             };
-            document.getElementById('chatHeader').querySelector('span').textContent = headers[room];
+            document.getElementById('chatHeader').querySelector('span').textContent = 'ðŸ¤– ' + headers[room];
             
             updateMemberCount();
             loadMessages();
@@ -901,23 +1229,17 @@
             chatMessages.innerHTML = '';
             
             if (currentRoom === 'ai') {
-                // AI welcome message
                 const welcomeMsg = document.createElement('div');
                 welcomeMsg.className = 'message ai';
                 welcomeMsg.innerHTML = `
                     <div class="message-header">KurdGPT</div>
-                    مرحباً ${currentUser.fullName}! أنا KurdGPT، ذكاءك الاصطناعي الشخصي. كيف يمكنني مساعدتك اليوم؟
+                    ${translations[currentLanguage].welcome_message.replace('{name}', currentUser ? currentUser.fullName : '')}
                 `;
                 chatMessages.appendChild(welcomeMsg);
             }
             
-            // Load saved messages for current room
             if (messages[currentRoom]) {
                 messages[currentRoom].forEach(msg => {
-                    // Only show messages from current user in help room for privacy
-                    if (currentRoom === 'help' && msg.userId !== currentUser.id) {
-                        return;
-                    }
                     addMessageToChat(msg.text, msg.sender, msg.timestamp, false);
                 });
             }
@@ -932,31 +1254,133 @@
             
             if (!text) return;
             
-            const timestamp = new Date().toLocaleTimeString('ar-SA');
+            const timestamp = new Date().toLocaleTimeString();
             
             if (currentRoom === 'ai') {
-                // Add user message
                 addMessageToChat(text, currentUser.fullName, timestamp);
-                
-                // Simulate AI response
-                setTimeout(() => {
-                    const aiResponses = [
-                        'شكراً لك على سؤالك! هذا موضوع مثير للاهتمام.',
-                        'أفهم ما تقصده. دعني أساعدك في هذا الأمر.',
-                        'هذا سؤال رائع! إليك ما أعرفه عن هذا الموضوع...',
-                        'يمكنني مساعدتك في ذلك. هل تريد المزيد من التفاصيل؟',
-                        'ممتاز! هذا يذكرني بموضوع مشابه...'
-                    ];
-                    const randomResponse = aiResponses[Math.floor(Math.random() * aiResponses.length)];
-                    addMessageToChat(randomResponse, 'KurdGPT', new Date().toLocaleTimeString('ar-SA'));
-                }, 1000);
+                showTypingIndicator();
+                getAIResponse(text);
             } else {
-                // Emergency chat - messages are private to each user
                 addMessageToChat(text, currentUser.fullName, timestamp);
             }
             
             input.value = '';
             updateActivity();
+        }
+
+        // Show typing indicator
+        function showTypingIndicator() {
+            const chatMessages = document.getElementById('chatMessages');
+            const typingDiv = document.createElement('div');
+            typingDiv.id = 'typing-indicator';
+            typingDiv.className = 'message ai';
+            typingDiv.innerHTML = `
+                <div class="message-header">KurdGPT</div>
+                <div class="typing-dots">
+                    <span></span><span></span><span></span>
+                    ${translations[currentLanguage].typing}
+                </div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Remove typing indicator
+        function removeTypingIndicator() {
+            const typingIndicator = document.getElementById('typing-indicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        // Get AI response from OpenAI
+        async function getAIResponse(userMessage) {
+            try {
+                // Replace with your actual OpenAI API key
+                const API_KEY = 'YOUR_OPENAI_API_KEY_HERE';
+                
+                const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${API_KEY}`
+                    },
+                    body: JSON.stringify({
+                        model: 'gpt-3.5-turbo',
+                        messages: [
+                            {
+                                role: 'system',
+                                content: translations[currentLanguage].ai_system_prompt
+                            },
+                            {
+                                role: 'user',
+                                content: userMessage
+                            }
+                        ],
+                        max_tokens: 500,
+                        temperature: 0.7
+                    })
+                });
+
+                removeTypingIndicator();
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const aiMessage = data.choices[0].message.content;
+                    addMessageToChat(aiMessage, 'KurdGPT', new Date().toLocaleTimeString());
+                } else {
+                    const fallbackResponses = {
+                        ar: [
+                            'Ø¹Ø°Ø±Ø§Ù‹ØŒ Ø£ÙˆØ§Ø¬Ù‡ Ù…Ø´ÙƒÙ„Ø© ØªÙ‚Ù†ÙŠØ© Ø­Ø§Ù„ÙŠØ§Ù‹. ÙŠØ±Ø¬Ù‰ Ø§Ù„Ù…Ø­Ø§ÙˆÙ„Ø© Ù…Ø±Ø© Ø£Ø®Ø±Ù‰.',
+                            'Ø£Ø¹ØªØ°Ø±ØŒ Ù„Ø§ Ø£Ø³ØªØ·ÙŠØ¹ Ø§Ù„Ø§ØªØµØ§Ù„ Ø¨Ø§Ù„Ø®Ø¯Ù…Ø© Ø­Ø§Ù„ÙŠØ§Ù‹. ÙƒÙŠÙ ÙŠÙ…ÙƒÙ†Ù†ÙŠ Ù…Ø³Ø§Ø¹Ø¯ØªÙƒ Ø¨Ø·Ø±ÙŠÙ‚Ø© Ø£Ø®Ø±Ù‰ØŸ'
+                        ],
+                        ku: [
+                            'Bibore, niha pirsgirÃªkeke teknÃ®kÃ® heye. Ji kerema xwe dÃ®sa biceribÃ®ne.',
+                            'Bibore, niha nikare bi karÃ»barÃª re tÃªkevin tÃªkiliyÃª. Ã‡awa dikarim bi awayekÃ® din alÃ®kariya te bikim?'
+                        ],
+                        ckb: [
+                            'Ø¨Ø¨ÙˆØ±Û•ØŒ Ø¦ÛŽØ³ØªØ§ Ú©ÛŽØ´Û•ÛŒÛ•Ú©ÛŒ ØªÛ•Ú©Ù†ÛŒÚ©ÛŒÙ… Ù‡Û•ÛŒÛ•. ØªÚ©Ø§ÛŒÛ• Ø¯ÙˆÙˆØ¨Ø§Ø±Û• Ù‡Û•ÙˆÚµØ¨Ø¯Û•Ø±Û•ÙˆÛ•.',
+                            'Ø¨Ø¨ÙˆØ±Û•ØŒ Ø¦ÛŽØ³ØªØ§ Ù†Ø§ØªÙˆØ§Ù†Ù… Ù¾Û•ÛŒÙˆÛ•Ù†Ø¯ÛŒ Ø¨Û• Ø®Ø²Ù…Û•ØªÚ¯ÙˆØ²Ø§Ø±ÛŒÛŒÛ•Ú©Û•ÙˆÛ• Ø¨Ú©Û•Ù…. Ú†Û†Ù† Ø¯Û•ØªÙˆØ§Ù†Ù… Ø¨Û• Ø´ÛŽÙˆÛ•ÛŒÛ•Ú©ÛŒ ØªØ± ÛŒØ§Ø±Ù…Û•ØªÛŒØª Ø¨Ø¯Û•Ù…ØŸ'
+                        ],
+                        de: [
+                            'Entschuldigung, ich habe gerade ein technisches Problem. Bitte versuchen Sie es erneut.',
+                            'Entschuldigung, ich kann derzeit keine Verbindung zum Service herstellen. Wie kann ich Ihnen anderweitig helfen?'
+                        ]
+                    };
+                    const responses = fallbackResponses[currentLanguage] || fallbackResponses['ar'];
+                    const fallbackMessage = responses[Math.floor(Math.random() * responses.length)];
+                    addMessageToChat(fallbackMessage, 'KurdGPT', new Date().toLocaleTimeString());
+                }
+            } catch (error) {
+                removeTypingIndicator();
+                console.error('Ø®Ø·Ø£ ÙÙŠ Ø§Ù„Ø§ØªØµØ§Ù„ Ø¨Ù€ OpenAI:', error);
+                
+                const smartResponses = {
+                    ar: [
+                        'Ø£ÙÙ‡Ù… Ø³Ø¤Ø§Ù„Ùƒ. Ø¯Ø¹Ù†ÙŠ Ø£ÙÙƒØ± ÙÙŠ Ù‡Ø°Ø§ Ø§Ù„Ø£Ù…Ø± ÙˆØ£Ø¹Ø·ÙŠÙƒ Ø¥Ø¬Ø§Ø¨Ø© Ù…ÙÙŠØ¯Ø©.',
+                        'Ù‡Ø°Ø§ Ù…ÙˆØ¶ÙˆØ¹ Ù…Ø«ÙŠØ± Ù„Ù„Ø§Ù‡ØªÙ…Ø§Ù…! ÙŠÙ…ÙƒÙ†Ù†ÙŠ Ù…Ø³Ø§Ø¹Ø¯ØªÙƒ Ø¨Ù†Ø§Ø¡Ù‹ Ø¹Ù„Ù‰ Ø®Ø¨Ø±ØªÙŠ.',
+                        'Ø³Ø¤Ø§Ù„ Ø±Ø§Ø¦Ø¹! Ø¥Ù„ÙŠÙƒ Ù…Ø§ Ø£Ø¹Ø±ÙÙ‡ Ø¹Ù† Ù‡Ø°Ø§ Ø§Ù„Ù…ÙˆØ¶ÙˆØ¹...'
+                    ],
+                    ku: [
+                        'PirsÃª te fam dikim. Bila ez li ser vÃª mijarÃª bifikirim Ã» bersiveke bikÃªr bidim te.',
+                        'Ev mijara balkÃªÅŸ e! Dikarim li ser bingeha ezmÃ»na xwe alÃ®kariya te bikim.',
+                        'Pirseke gewre ye! Li vir Ã§i ez li ser vÃª mijarÃª dizanim...'
+                    ],
+                    ckb: [
+                        'Ù¾Ø±Ø³ÛŒØ§Ø±Û•Ú©Û•Øª ØªÛŽØ¯Û•Ú¯Û•Ù…. Ø¨Ø§ Ø¨ÛŒØ± Ù„Û•Ù… Ø¨Ø§Ø¨Û•ØªÛ• Ø¨Ú©Û•Ù…Û•ÙˆÛ• Ùˆ ÙˆÛ•ÚµØ§Ù…ÛŽÚ©ÛŒ Ø¨Û•Ø³ÙˆÙˆØ¯Øª Ù¾ÛŽØ¨Ø¯Û•Ù….',
+                        'Ø¦Û•Ù…Û• Ø¨Ø§Ø¨Û•ØªÛŽÚ©ÛŒ Ø³Û•Ø±Ù†Ø¬Ú•Ø§Ú©ÛŽØ´Û•! Ø¯Û•ØªÙˆØ§Ù†Ù… Ø¨Û•Ù¾ÛŽÛŒ Ø¦Û•Ø²Ù…ÙˆÙˆÙ†Û•Ú©Û•Ù… ÛŒØ§Ø±Ù…Û•ØªÛŒØª Ø¨Ø¯Û•Ù….',
+                        'Ù¾Ø±Ø³ÛŒØ§Ø±ÛŽÚ©ÛŒ Ù†Ø§ÛŒØ§Ø¨Û•! Ø¦Û•ÙˆÛ•ÛŒ Ù„Û•Ø³Û•Ø± Ø¦Û•Ù… Ø¨Ø§Ø¨Û•ØªÛ• Ø¯Û•ÛŒØ²Ø§Ù†Ù…...'
+                    ],
+                    de: [
+                        'Ich verstehe Ihre Frage. Lassen Sie mich darÃ¼ber nachdenken und Ihnen eine hilfreiche Antwort geben.',
+                        'Das ist ein interessantes Thema! Ich kann Ihnen basierend auf meiner Erfahrung helfen.',
+                        'GroÃŸartige Frage! Hier ist, was ich Ã¼ber dieses Thema weiÃŸ...'
+                    ]
+                };
+                const responses = smartResponses[currentLanguage] || smartResponses['ar'];
+                const smartResponse = responses[Math.floor(Math.random() * responses.length)];
+                addMessageToChat(smartResponse, 'KurdGPT', new Date().toLocaleTimeString());
+            }
         }
 
         // Add message to chat
@@ -982,7 +1406,6 @@
             chatMessages.appendChild(messageDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
             
-            // Save message
             if (save && sender !== 'KurdGPT') {
                 if (!messages[currentRoom]) {
                     messages[currentRoom] = [];
@@ -1006,6 +1429,7 @@
 
         // Initialize
         window.onload = function() {
+            initializeLanguage();
             checkAuth();
             updateConnectionStatus();
         };
@@ -1013,7 +1437,6 @@
         // Handle page unload
         window.addEventListener('beforeunload', function() {
             if (currentUser) {
-                // Mark user as going offline
                 let users = JSON.parse(localStorage.getItem('global_users') || '[]');
                 const userIndex = users.findIndex(u => u.id === currentUser.id);
                 if (userIndex !== -1) {
@@ -1026,3 +1449,4 @@
     </script>
 </body>
 </html>
+
